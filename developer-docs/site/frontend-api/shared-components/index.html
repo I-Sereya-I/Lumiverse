@@ -1,0 +1,5571 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build extensions for Lumiverse using Spindle">
+      
+      
+        <meta name="author" content="Lumiverse">
+      
+      
+      
+        <link rel="prev" href="../ui-placement/">
+      
+      
+        <link rel="next" href="../backend-communication/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.45">
+    
+    
+      
+        <title>Shared Components - Lumiverse Developer Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#shared-components" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-header__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumiverse Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Shared Components
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend-and-extensions/" class="md-tabs__link">
+          
+  
+  Developer Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../backend-api/" class="md-tabs__link">
+          
+  
+  Backend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Frontend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lifecycle/" class="md-tabs__link">
+        
+  
+  Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rest-api/" class="md-tabs__link">
+        
+  
+  REST API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-nav__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Lumiverse Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer Maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer Maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-and-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend and Extensions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings-to-css-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings to CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-productivity-overhaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-modification-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Modification Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Getting Started
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quick Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manifest
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Capabilities
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime Modes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/typescript-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  TypeScript Setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../backend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Backend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Macros
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/interceptors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interceptors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/context-handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Context Handlers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/llm-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LLM Tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/image-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Image Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/shared-rpc-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared RPC Pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/ephemeral-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ephemeral Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tokens
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Characters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/chats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Presets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/world-books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Books
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/regex-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regex Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/databanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Databanks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/memories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Memories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Personas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/council/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Council
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/chat-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat Mutation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/event-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/secure-enclave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Secure Enclave
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/cors-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CORS Proxy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAuth
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Toast Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/text-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Text Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/push-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Push Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/web-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/user-presence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  User Context
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/frontend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/frontend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/backend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/ui-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Automation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Frontend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dom-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM Helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-events-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Event Helpers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-mounting-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How mounting works
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How mounting works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-handle-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shared handle shape
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-vs-auto-controlled" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controlled vs. auto-controlled
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Component catalog
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text inputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindletextinputoptions-spindletextareaoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleTextInputOptions / SpindleTextAreaOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Numeric inputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numeric inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlenumericinputoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleNumericInputOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Range slider
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range slider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlerangeslideroptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleRangeSliderOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlerangesliderformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleRangeSliderFormat
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlerangesliderhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleRangeSliderHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Boolean inputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlecheckboxoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCheckboxOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleswitchoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSwitchOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Selects
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindleselectoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSelectOption
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleselectoptionsbase-shared-by-single-multi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSelectOptionsBase (shared by single &amp; multi)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leading-cells-avatars-icons-swatches-initials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Leading cells: avatars, icons, swatches, initials
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leading cells: avatars, icons, swatches, initials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-example-persona-picker" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Full example: persona picker
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-combobox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Model combobox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model combobox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-bound-mode-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection-bound mode (recommended)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Manual mode
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlemodelcomboboxoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleModelComboboxOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Folder dropdown
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Folder dropdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlefolderdropdownoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleFolderDropdownOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collapsible-sections-with-host-managed-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Collapsible sections (with host-managed chrome)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collapsible sections (with host-managed chrome)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlecollapsiblesectionoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCollapsibleSectionOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlecollapsiblesectionhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCollapsibleSectionHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Display utilities
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlebadgeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleBadgeOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlespinneroptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSpinnerOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleclosebuttonoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCloseButtonOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pagination
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pagination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlepaginationoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindlePaginationOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Lifecycle &amp; cleanup
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-styling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Theming &amp; styling
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacity-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Capacity limits
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Uploads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/minimal-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Minimal Backend
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/prompt-interceptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prompt Interceptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/full-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Full Stack
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/backend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  REST API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#how-mounting-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How mounting works
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How mounting works">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-handle-shape" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shared handle shape
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controlled-vs-auto-controlled" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controlled vs. auto-controlled
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#component-catalog" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Component catalog
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text inputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Text inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindletextinputoptions-spindletextareaoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleTextInputOptions / SpindleTextAreaOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numeric-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Numeric inputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Numeric inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlenumericinputoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleNumericInputOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#range-slider" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Range slider
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Range slider">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlerangeslideroptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleRangeSliderOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlerangesliderformat" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleRangeSliderFormat
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlerangesliderhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleRangeSliderHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#boolean-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Boolean inputs
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Boolean inputs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlecheckboxoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCheckboxOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleswitchoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSwitchOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Selects
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Selects">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindleselectoption" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSelectOption
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleselectoptionsbase-shared-by-single-multi" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSelectOptionsBase (shared by single &amp; multi)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leading-cells-avatars-icons-swatches-initials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Leading cells: avatars, icons, swatches, initials
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Leading cells: avatars, icons, swatches, initials">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#full-example-persona-picker" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Full example: persona picker
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#model-combobox" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Model combobox
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Model combobox">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connection-bound-mode-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection-bound mode (recommended)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Manual mode
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlemodelcomboboxoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleModelComboboxOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#folder-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Folder dropdown
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Folder dropdown">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlefolderdropdownoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleFolderDropdownOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#collapsible-sections-with-host-managed-chrome" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Collapsible sections (with host-managed chrome)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Collapsible sections (with host-managed chrome)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlecollapsiblesectionoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCollapsibleSectionOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlecollapsiblesectionhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCollapsibleSectionHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#display-utilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Display utilities
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Display utilities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlebadgeoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleBadgeOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlespinneroptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleSpinnerOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleclosebuttonoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleCloseButtonOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pagination" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pagination
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pagination">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlepaginationoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindlePaginationOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lifecycle-cleanup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Lifecycle &amp; cleanup
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theming-styling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Theming &amp; styling
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacity-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Capacity limits
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Frontend API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="shared-components">Shared Components<a class="headerlink" href="#shared-components" title="Permanent link">&para;</a></h1>
+<p>Lumiverse's first-party React components — model pickers, form atoms, searchable selects, pagination, collapsible sections — are exposed to extensions via <code>ctx.components.*</code>. The host renders the real component into a DOM node you control. You never need to depend on React, ship the component CSS, or replicate the look in plain HTML.</p>
+<p>Mounted components automatically inherit the active Lumiverse theme (accent color, glass mode, dark/light, density), so they visually match the rest of the host UI without any styling work on your part.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="k">import</span><span class="w"> </span><span class="kr">type</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">SpindleFrontendContext</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;lumiverse-spindle-types&#39;</span>
+
+<span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">setup</span><span class="p">(</span><span class="nx">ctx</span><span class="o">:</span><span class="w"> </span><span class="kt">SpindleFrontendContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">registerDrawerTab</span><span class="p">({</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;demo&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Demo&#39;</span><span class="w"> </span><span class="p">})</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">wrap</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">wrap</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;display:flex;flex-direction:column;gap:12px;padding:12px&#39;</span>
+<span class="w">  </span><span class="nx">tab</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">wrap</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">labelEl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">wrap</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">labelEl</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">modelSlot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">wrap</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">modelSlot</span><span class="p">)</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">enabledSlot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">wrap</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">enabledSlot</span><span class="p">)</span>
+
+<span class="w">  </span><span class="c1">// Mount a model picker bound to the user&#39;s active LLM connection</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountModelCombobox</span><span class="p">(</span><span class="nx">modelSlot</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">connection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;llm&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">appearance</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;standard&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">labelEl</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`Selected: </span><span class="si">${</span><span class="nx">m</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">})</span>
+
+<span class="w">  </span><span class="c1">// Mount a switch</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">toggle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountSwitch</span><span class="p">(</span><span class="nx">enabledSlot</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">checked</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">on</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_enabled&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">on</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">  </span><span class="p">})</span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">model</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">toggle</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+<span class="w">    </span><span class="nx">tab</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h2 id="how-mounting-works">How mounting works<a class="headerlink" href="#how-mounting-works" title="Permanent link">&para;</a></h2>
+<p>Every <code>mountX(target, options)</code> call:</p>
+<ol>
+<li><strong>Resolves the target</strong> — pass either an <code>HTMLElement</code> or a CSS selector string scoped to your extension's DOM.</li>
+<li><strong>Renders the real component</strong> into that element.</li>
+<li><strong>Returns a handle</strong> with <code>update()</code>, <code>getValue()</code>, <code>destroy()</code>, and component-specific helpers.</li>
+</ol>
+<p>The handle is the only thing you need to keep alive. Mounted components are auto-destroyed when your extension is disabled or unloaded — but you should still call <code>destroy()</code> yourself when you reuse the target for something else, to avoid leaking memory.</p>
+<h3 id="shared-handle-shape">Shared handle shape<a class="headerlink" href="#shared-handle-shape" title="Permanent link">&para;</a></h3>
+<p>Every handle implements <code>SpindleMountedComponent&lt;TOptions&gt;</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Method / Property</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>componentId</code></td>
+<td><code>string</code></td>
+<td>Host-assigned ID, unique per extension. Useful in logs.</td>
+</tr>
+<tr>
+<td><code>element</code></td>
+<td><code>HTMLElement</code></td>
+<td>The target element the component was mounted into.</td>
+</tr>
+<tr>
+<td><code>update(patch)</code></td>
+<td><code>void</code></td>
+<td>Merge a partial of the original options into the live component. Pass only the fields you want to change.</td>
+</tr>
+<tr>
+<td><code>destroy()</code></td>
+<td><code>void</code></td>
+<td>Unmount the React tree and release host resources. The target element is left in place.</td>
+</tr>
+</tbody>
+</table>
+<p>Form components add <code>getValue()</code> so you can read the current value at any time:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">handle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountTextInput</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hello&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">handle</span><span class="p">.</span><span class="nx">getValue</span><span class="p">())</span><span class="w">     </span><span class="c1">// → &#39;hello&#39;</span>
+<span class="nx">handle</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;world&#39;</span><span class="w"> </span><span class="p">})</span><span class="w">  </span><span class="c1">// programmatic value change</span>
+<span class="nx">handle</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">disabled</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">})</span><span class="w">  </span><span class="c1">// any partial option works</span>
+</code></pre></div>
+<h3 id="controlled-vs-auto-controlled">Controlled vs. auto-controlled<a class="headerlink" href="#controlled-vs-auto-controlled" title="Permanent link">&para;</a></h3>
+<p>Components are <strong>auto-controlled</strong> by the host. You supply an initial value and an <code>onChange</code> callback — the host owns internal state across user interactions. To force the value from your code, call <code>handle.update({ value })</code>. To read the current value, call <code>handle.getValue()</code>.</p>
+<p>You do <strong>not</strong> need to mirror state into your own variables and call <code>update()</code> on every change — that's already happening inside the host.</p>
+<h2 id="component-catalog">Component catalog<a class="headerlink" href="#component-catalog" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Helper</th>
+<th>What it mounts</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mountTextInput</code></td>
+<td>Single-line text field</td>
+</tr>
+<tr>
+<td><code>mountTextArea</code></td>
+<td>Multi-line text editor</td>
+</tr>
+<tr>
+<td><code>mountNumericInput</code></td>
+<td>Validated number input with optional empty state</td>
+</tr>
+<tr>
+<td><code>mountNumberStepper</code></td>
+<td>Number input with +/− buttons</td>
+</tr>
+<tr>
+<td><code>mountRangeSlider</code></td>
+<td>Touch-friendly slider with optional label, hint, and formatted value display</td>
+</tr>
+<tr>
+<td><code>mountCheckbox</code></td>
+<td>Standard checkbox with optional label and hint</td>
+</tr>
+<tr>
+<td><code>mountSwitch</code></td>
+<td>Toggle switch</td>
+</tr>
+<tr>
+<td><code>mountSelect</code></td>
+<td>Searchable single-select dropdown</td>
+</tr>
+<tr>
+<td><code>mountMultiSelect</code></td>
+<td>Searchable multi-select dropdown</td>
+</tr>
+<tr>
+<td><code>mountModelCombobox</code></td>
+<td>LLM/image/TTS model picker, connection-aware</td>
+</tr>
+<tr>
+<td><code>mountFolderDropdown</code></td>
+<td>Folder picker with inline "create folder" affordance</td>
+</tr>
+<tr>
+<td><code>mountBadge</code></td>
+<td>Inline status/label badge</td>
+</tr>
+<tr>
+<td><code>mountSpinner</code></td>
+<td>Loading spinner</td>
+</tr>
+<tr>
+<td><code>mountCollapsibleSection</code></td>
+<td>Titled, expandable container — see <a href="#collapsible-sections-with-host-managed-chrome">body slot</a></td>
+</tr>
+<tr>
+<td><code>mountPagination</code></td>
+<td>Page navigation with per-page selector</td>
+</tr>
+<tr>
+<td><code>mountCloseButton</code></td>
+<td>Themed X button</td>
+</tr>
+</tbody>
+</table>
+<h2 id="text-inputs">Text inputs<a class="headerlink" href="#text-inputs" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">note</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountTextArea</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">rows</span><span class="o">:</span><span class="w"> </span><span class="kt">6</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">placeholder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Notes…&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">text</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;save_note&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+
+<span class="c1">// Save on a hotkey from elsewhere in your extension</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">flush</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;save_note&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="kt">note.getValue</span><span class="p">()</span><span class="w"> </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">// Programmatically focus</span>
+<span class="nx">note</span><span class="p">.</span><span class="nx">focus</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="spindletextinputoptions-spindletextareaoptions">SpindleTextInputOptions / SpindleTextAreaOptions<a class="headerlink" href="#spindletextinputoptions-spindletextareaoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Initial value</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>(v: string) =&gt; void</code></td>
+<td>—</td>
+<td>Fired on every user change</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Placeholder text</td>
+</tr>
+<tr>
+<td><code>autoFocus</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Focus on mount (text input only)</td>
+</tr>
+<tr>
+<td><code>rows</code></td>
+<td><code>number</code></td>
+<td><code>4</code></td>
+<td>Visible rows (text area only)</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable user interaction</td>
+</tr>
+<tr>
+<td><code>className</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Additional CSS class</td>
+</tr>
+<tr>
+<td><code>ariaLabel</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Accessible label</td>
+</tr>
+</tbody>
+</table>
+<p>Both handles expose <code>getValue()</code>, <code>focus()</code>, and <code>blur()</code> in addition to the shared methods.</p>
+<h2 id="numeric-inputs">Numeric inputs<a class="headerlink" href="#numeric-inputs" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">temperature</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountNumberStepper</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">0.7</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="kt">2</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="kt">0.1</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_temp&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">v</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="spindlenumericinputoptions">SpindleNumericInputOptions<a class="headerlink" href="#spindlenumericinputoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td><code>number \| null</code></td>
+<td><code>null</code></td>
+<td>Initial value. <code>null</code> means empty.</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>(v: number \| null) =&gt; void</code></td>
+<td>—</td>
+<td>Fired on every user change</td>
+</tr>
+<tr>
+<td><code>allowEmpty</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Allow <code>null</code> as a valid value</td>
+</tr>
+<tr>
+<td><code>integer</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Restrict to integers</td>
+</tr>
+<tr>
+<td><code>min</code> / <code>max</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Bounds</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Native step size</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Placeholder text</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable user interaction</td>
+</tr>
+</tbody>
+</table>
+<p><code>SpindleNumberStepperOptions</code> accepts the same fields except <code>integer</code>, and uses <code>step: 1</code> by default.</p>
+<h3 id="range-slider">Range slider<a class="headerlink" href="#range-slider" title="Permanent link">&para;</a></h3>
+<p>A touch-first slider with horizontal drag. Vertical scroll passes through the slider on mobile (the host does JS direction detection and only claims horizontal gestures), and mid-drag interruptions don't kill the gesture — the slider commits the last live value if the touch is cancelled after movement. The built-in header tracks the live drag value in real time; <code>onCommit</code> only fires once when the gesture ends.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">opacity</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountRangeSlider</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Opacity&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="kt">5</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">integer</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">35</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">format</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">suffix</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;%&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">onCommit</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_opacity&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">v</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="mf">100</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+
+<span class="c1">// Programmatically jump to a value</span>
+<span class="nx">opacity</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">80</span><span class="w"> </span><span class="p">})</span>
+
+<span class="c1">// Read the latest committed value</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">opacity</span><span class="p">.</span><span class="nx">getValue</span><span class="p">()</span>
+</code></pre></div>
+<p>Omit <code>label</code> to render the bare track without a header — useful when you want to lay out your own label/value display alongside other content. In that case, use <code>onDragValue</code> to mirror the live value into your own UI:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">valueLabel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)</span>
+<span class="nx">container</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">valueLabel</span><span class="p">)</span>
+
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountRangeSlider</span><span class="p">(</span><span class="nx">track</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">min</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"> </span><span class="nx">max</span><span class="o">:</span><span class="w"> </span><span class="kt">1</span><span class="p">,</span><span class="w"> </span><span class="nx">step</span><span class="o">:</span><span class="w"> </span><span class="kt">0.05</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">0.5</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onDragValue</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">valueLabel</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">v</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;0.50&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">onCommit</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">valueLabel</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">v</span><span class="p">.</span><span class="nx">toFixed</span><span class="p">(</span><span class="mf">2</span><span class="p">);</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_strength&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">v</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div>
+<h4 id="spindlerangeslideroptions">SpindleRangeSliderOptions<a class="headerlink" href="#spindlerangeslideroptions" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>min</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td><strong>Required.</strong> Inclusive lower bound.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td><strong>Required.</strong> Inclusive upper bound.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>number</code></td>
+<td><code>min</code></td>
+<td>Initial committed value.</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Snap increment.</td>
+</tr>
+<tr>
+<td><code>integer</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Round to integers regardless of <code>step</code> formatting.</td>
+</tr>
+<tr>
+<td><code>onCommit</code></td>
+<td><code>(v: number) =&gt; void</code></td>
+<td>—</td>
+<td>Fired once when a drag ends or the user taps the track. Not fired during the drag.</td>
+</tr>
+<tr>
+<td><code>onDragValue</code></td>
+<td><code>(v: number \| null) =&gt; void</code></td>
+<td>—</td>
+<td>Fired with the live value during a drag, and with <code>null</code> if the gesture ends without committing.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>If set, renders a header above the track with the label and live value.</td>
+</tr>
+<tr>
+<td><code>hint</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Helper text under the header. Ignored if <code>label</code> is omitted.</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td><code>SpindleRangeSliderFormat</code></td>
+<td>—</td>
+<td>Declarative formatting for the value in the header (see below). Ignored if <code>label</code> is omitted.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Dim the track and ignore input.</td>
+</tr>
+<tr>
+<td><code>className</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Additional CSS class merged onto the track area.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="spindlerangesliderformat">SpindleRangeSliderFormat<a class="headerlink" href="#spindlerangesliderformat" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>decimals</code></td>
+<td><code>number</code></td>
+<td>Number of decimal places to show. Defaults to whatever <code>step</code> implies (or <code>0</code> for <code>integer</code> sliders).</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td><code>string</code></td>
+<td>Prepended before the value, e.g. <code>"$"</code>.</td>
+</tr>
+<tr>
+<td><code>suffix</code></td>
+<td><code>string</code></td>
+<td>Appended after the value, e.g. <code>"%"</code> or <code>"ms"</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="spindlerangesliderhandle">SpindleRangeSliderHandle<a class="headerlink" href="#spindlerangesliderhandle" title="Permanent link">&para;</a></h4>
+<p>In addition to the <a href="#shared-handle-shape">shared handle methods</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>getValue()</code></td>
+<td><code>number</code></td>
+<td>The current committed value.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="boolean-inputs">Boolean inputs<a class="headerlink" href="#boolean-inputs" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">showAdvanced</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountCheckbox</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">checked</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Show advanced controls&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">hint</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Reveal sampler and routing options&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">on</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">detailsRow</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">display</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">on</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;block&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;none&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="spindlecheckboxoptions">SpindleCheckboxOptions<a class="headerlink" href="#spindlecheckboxoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>checked</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Initial state</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>(checked: boolean) =&gt; void</code></td>
+<td>—</td>
+<td>Fired on every toggle</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Label rendered next to the checkbox</td>
+</tr>
+<tr>
+<td><code>hint</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Helper text rendered under the label</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable user interaction</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindleswitchoptions">SpindleSwitchOptions<a class="headerlink" href="#spindleswitchoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>checked</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Initial state</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>(checked: boolean) =&gt; void</code></td>
+<td>—</td>
+<td>Fired on every toggle</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>'sm' \| 'md'</code></td>
+<td><code>'md'</code></td>
+<td>Visual size</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable user interaction</td>
+</tr>
+<tr>
+<td><code>ariaLabel</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Accessible label</td>
+</tr>
+</tbody>
+</table>
+<h2 id="selects">Selects<a class="headerlink" href="#selects" title="Permanent link">&para;</a></h2>
+<p><code>mountSelect</code> (single) and <code>mountMultiSelect</code> share the same option surface except for value/onChange types. Both support search, grouped options, themed dropdowns, leading cells (icons / avatars / swatches), and portal rendering.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">picker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountSelect</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">placeholder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Pick a tone…&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">searchPlaceholder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Search tones…&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">v</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_tone&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">v</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;casual&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Casual&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Conversational&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;witty&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Witty&#39;</span><span class="p">,</span><span class="w">   </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Conversational&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;formal&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Formal&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Professional&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dry&#39;</span><span class="p">,</span><span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Dry&#39;</span><span class="p">,</span><span class="w">    </span><span class="nx">group</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Professional&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="spindleselectoption">SpindleSelectOption<a class="headerlink" href="#spindleselectoption" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Stable value emitted to <code>onChange</code></td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Display label</td>
+</tr>
+<tr>
+<td><code>sublabel</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Secondary text rendered beneath the label</td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Group key. Options sharing a group cluster under a shared header.</td>
+</tr>
+<tr>
+<td><code>leading</code></td>
+<td><code>SpindleSelectOptionLeading</code></td>
+<td>—</td>
+<td>Leading-cell content (avatar / icon / swatch / initial). See below.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Render as disabled</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindleselectoptionsbase-shared-by-single-multi">SpindleSelectOptionsBase (shared by single &amp; multi)<a class="headerlink" href="#spindleselectoptionsbase-shared-by-single-multi" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>options</code></td>
+<td><code>SpindleSelectOption[]</code></td>
+<td><code>[]</code></td>
+<td>Available choices</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Placeholder text when no value is selected</td>
+</tr>
+<tr>
+<td><code>searchPlaceholder</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Placeholder for the search input</td>
+</tr>
+<tr>
+<td><code>searchThreshold</code></td>
+<td><code>number</code></td>
+<td><code>8</code></td>
+<td>Minimum option count before the search input is shown</td>
+</tr>
+<tr>
+<td><code>emptyMessage</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Message when no options were supplied</td>
+</tr>
+<tr>
+<td><code>noResultsMessage</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Message when the search query has no matches</td>
+</tr>
+<tr>
+<td><code>triggerLabel</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Force a trigger label (e.g. <code>"+ Add"</code>), ignoring current selection</td>
+</tr>
+<tr>
+<td><code>triggerIcon</code></td>
+<td><code>SpindleSelectOptionLeading</code></td>
+<td>—</td>
+<td>Custom icon shown on the trigger</td>
+</tr>
+<tr>
+<td><code>triggerClassName</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Additional CSS class on the trigger button</td>
+</tr>
+<tr>
+<td><code>ariaLabel</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Accessible label for the trigger</td>
+</tr>
+<tr>
+<td><code>portal</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Render the dropdown into <code>document.body</code> so it escapes <code>overflow:hidden</code> ancestors</td>
+</tr>
+<tr>
+<td><code>align</code></td>
+<td><code>'left' \| 'right'</code></td>
+<td><code>'left'</code></td>
+<td>Dropdown horizontal alignment relative to the trigger</td>
+</tr>
+<tr>
+<td><code>maxHeight</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Maximum dropdown height in CSS pixels</td>
+</tr>
+<tr>
+<td><code>minWidth</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Minimum dropdown width in CSS pixels</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable interaction</td>
+</tr>
+<tr>
+<td><code>className</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Additional CSS class on the wrapper</td>
+</tr>
+</tbody>
+</table>
+<p>Single-select also accepts:</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>clearable</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Show a pinned "None" option at the top of the dropdown that emits <code>onChange("")</code></td>
+</tr>
+<tr>
+<td><code>clearLabel</code></td>
+<td><code>string</code></td>
+<td><code>"None"</code></td>
+<td>Label for the clear option</td>
+</tr>
+</tbody>
+</table>
+<p>Both handles expose <code>getValue()</code>, <code>open()</code>, and <code>close()</code> in addition to the shared methods.</p>
+<h3 id="leading-cells-avatars-icons-swatches-initials">Leading cells: avatars, icons, swatches, initials<a class="headerlink" href="#leading-cells-avatars-icons-swatches-initials" title="Permanent link">&para;</a></h3>
+<p><code>SpindleSelectOptionLeading</code> is a declarative union for the small slot rendered before each option label (and on the trigger when an option is selected). Use it for persona avatars, provider brand marks, category swatches, or letter bubbles. Extensions describe what they want — no React, no <code>&lt;img&gt;</code> tags, no styling required.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:5"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><input id="__tabbed_1_5" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Image with initial fallback</label><label for="__tabbed_1_2">Inline SVG icon</label><label for="__tabbed_1_3">Icon URL</label><label for="__tabbed_1_4">Color swatch</label><label for="__tabbed_1_5">Initial bubble</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>The same pattern used by Lumiverse's own persona picker. If the image is missing or fails to load, the host falls back to the supplied initial bubble.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">leading</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="kt">persona.avatarUrl</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">rounded</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">fallback</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="kt">persona.name.charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">(),</span>
+<span class="w">    </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--lumiverse-fill-subtle)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Best for brand marks or chevron-like glyphs. The SVG is host-sanitized before insertion.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">leading</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;icon-svg&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">svg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;svg viewBox=&quot;0 0 16 16&quot;&gt;...&lt;/svg&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;var(--lumiverse-accent)&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Same as image, but without the avatar-style rounded fallback semantics.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">leading</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;icon-url&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;/icons/openai.png&#39;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Small filled circle for category tags and palette pickers.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">leading</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;swatch&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#7e57c2&#39;</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>Plain text bubble — works well with single characters or short labels.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">leading</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;initial&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">background</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#3a3a3a&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;#fff&#39;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<h4 id="full-example-persona-picker">Full example: persona picker<a class="headerlink" href="#full-example-persona-picker" title="Permanent link">&para;</a></h4>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountSelect</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">currentPersonaId</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">triggerLabel</span><span class="o">:</span><span class="w"> </span><span class="kt">currentPersonaId</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="kc">undefined</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;+ Choose persona&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">searchPlaceholder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Search personas…&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">noResultsMessage</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;No personas match your search.&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clearable</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">clearLabel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Unassign&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">options</span><span class="o">:</span><span class="w"> </span><span class="kt">personas.map</span><span class="p">((</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">({</span>
+<span class="w">    </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">p.id</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="kt">p.name</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">sublabel</span><span class="o">:</span><span class="w"> </span><span class="kt">p.title</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">leading</span><span class="o">:</span><span class="w"> </span><span class="kt">p.avatarUrl</span>
+<span class="w">      </span><span class="o">?</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">src</span><span class="o">:</span><span class="w"> </span><span class="kt">p.avatarUrl</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">fallback</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="kt">p.name.charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;initial&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="kt">p.name.charAt</span><span class="p">(</span><span class="mf">0</span><span class="p">).</span><span class="nx">toUpperCase</span><span class="p">()</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">})),</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">id</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_persona&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">personaId</span><span class="o">:</span><span class="w"> </span><span class="kt">id</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+</code></pre></div>
+<h2 id="model-combobox">Model combobox<a class="headerlink" href="#model-combobox" title="Permanent link">&para;</a></h2>
+<p><code>mountModelCombobox</code> is the same picker Lumiverse uses for selecting LLM, image-gen, and TTS models. It has two operating modes.</p>
+<h3 id="connection-bound-mode-recommended">Connection-bound mode (recommended)<a class="headerlink" href="#connection-bound-mode-recommended" title="Permanent link">&para;</a></h3>
+<p>Supply a <code>connection</code> reference and the host wires up everything for you — the model list, the refresh affordance, the loading spinner, and live updates when the user switches their active connection.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountModelCombobox</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="c1">// Follow the user&#39;s currently-active LLM connection</span>
+<span class="w">  </span><span class="nx">connection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;llm&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">appearance</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;standard&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">model</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_model&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>To pin to a specific connection instead of the active one:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">connection</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">kind</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;image&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="kt">profileId</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p>Supported <code>kind</code> values:</p>
+<table>
+<thead>
+<tr>
+<th>Kind</th>
+<th>Source</th>
+<th>Active connection follows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'llm'</code></td>
+<td>LLM connection profiles</td>
+<td><code>activeProfileId</code></td>
+</tr>
+<tr>
+<td><code>'image'</code></td>
+<td>Image-gen connection profiles</td>
+<td><code>activeImageGenConnectionId</code></td>
+</tr>
+<tr>
+<td><code>'tts'</code></td>
+<td>TTS connection profiles + their voice catalogs</td>
+<td><code>voiceSettings.ttsConnectionId</code></td>
+</tr>
+<tr>
+<td><code>'embedding'</code></td>
+<td><em>Not yet supported in connection-bound mode — use manual mode.</em></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>The host fetches via Lumiverse's authenticated API on your behalf, so you don't need <code>cors_proxy</code> or any backend wiring for the model list. Call <code>handle.refresh()</code> to force a re-fetch (e.g. after the user adds a new model in your extension's settings).</p>
+<h3 id="manual-mode">Manual mode<a class="headerlink" href="#manual-mode" title="Permanent link">&para;</a></h3>
+<p>Supply <code>models</code>, <code>loading</code>, and <code>onRefresh</code> yourself when you maintain the catalog. Useful for OpenRouter-style listings, custom proxies, or filtered subsets.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">models</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">[]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">loading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">picker</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountModelCombobox</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">models</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">loading</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onRefresh</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">loading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="nx">picker</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">loading</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="nx">fetchModelsFromBackend</span><span class="p">().</span><span class="nx">then</span><span class="p">((</span><span class="nx">next</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">loading</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">      </span><span class="nx">picker</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">models</span><span class="o">:</span><span class="w"> </span><span class="kt">next</span><span class="p">,</span><span class="w"> </span><span class="nx">loading</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">m</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_model&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="kt">m</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>If both <code>connection</code> and <code>models</code> are supplied, <code>connection</code> wins and the manual fields are ignored.</p>
+<h3 id="spindlemodelcomboboxoptions">SpindleModelComboboxOptions<a class="headerlink" href="#spindlemodelcomboboxoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Currently entered model ID</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>(v: string) =&gt; void</code></td>
+<td>—</td>
+<td>Fired on every change</td>
+</tr>
+<tr>
+<td><code>connection</code></td>
+<td><code>{ kind, id? }</code></td>
+<td>—</td>
+<td>Bind to a host-managed connection. See above.</td>
+</tr>
+<tr>
+<td><code>models</code></td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td>Manual mode: explicit model list</td>
+</tr>
+<tr>
+<td><code>modelLabels</code></td>
+<td><code>Record&lt;string, string&gt;</code></td>
+<td><code>{}</code></td>
+<td>Manual mode: ID → human label</td>
+</tr>
+<tr>
+<td><code>loading</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Manual mode: show the spinner in the refresh affordance</td>
+</tr>
+<tr>
+<td><code>onRefresh</code></td>
+<td><code>() =&gt; void</code></td>
+<td>—</td>
+<td>Manual mode: invoked when the user clicks refresh</td>
+</tr>
+<tr>
+<td><code>autoRefreshOnFocus</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Auto-refresh once the first time the input gains focus</td>
+</tr>
+<tr>
+<td><code>refreshKey</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Opaque key — when it changes, re-arms <code>autoRefreshOnFocus</code></td>
+</tr>
+<tr>
+<td><code>appearance</code></td>
+<td><code>'compact' \| 'standard' \| 'editor'</code></td>
+<td><code>'compact'</code></td>
+<td>Visual density to match the surrounding form</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td><code>"gpt-4o"</code></td>
+<td>Placeholder text</td>
+</tr>
+<tr>
+<td><code>emptyMessage</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Message when the list is empty</td>
+</tr>
+<tr>
+<td><code>loadingMessage</code></td>
+<td><code>string</code></td>
+<td><code>"Loading models..."</code></td>
+<td>Message shown in the dropdown while loading</td>
+</tr>
+<tr>
+<td><code>browseHint</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Optional hint shown beneath the input</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable interaction</td>
+</tr>
+</tbody>
+</table>
+<p>The handle exposes <code>refresh()</code> in addition to <code>getValue()</code> and the shared methods.</p>
+<h2 id="folder-dropdown">Folder dropdown<a class="headerlink" href="#folder-dropdown" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountFolderDropdown</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">folders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;Personal&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Work&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Drafts&#39;</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Personal&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">placeholder</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;No folder&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">folder</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;move_to&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">folder</span><span class="w"> </span><span class="p">}),</span>
+<span class="w">  </span><span class="nx">onCreateFolder</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;create_folder&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="spindlefolderdropdownoptions">SpindleFolderDropdownOptions<a class="headerlink" href="#spindlefolderdropdownoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>folders</code></td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td>Available folder names</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Currently selected folder</td>
+</tr>
+<tr>
+<td><code>onChange</code></td>
+<td><code>(folder: string) =&gt; void</code></td>
+<td>—</td>
+<td>Fired when the user picks a folder</td>
+</tr>
+<tr>
+<td><code>onCreateFolder</code></td>
+<td><code>(name: string) =&gt; void</code></td>
+<td>—</td>
+<td>Fired when the user creates a new folder inline</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Placeholder shown when no folder is selected</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Disable interaction</td>
+</tr>
+</tbody>
+</table>
+<h2 id="collapsible-sections-with-host-managed-chrome">Collapsible sections (with host-managed chrome)<a class="headerlink" href="#collapsible-sections-with-host-managed-chrome" title="Permanent link">&para;</a></h2>
+<p>Unlike other components, <code>mountCollapsibleSection</code> gives you back a <strong><code>body</code> element</strong> — the host renders the header/chevron chrome, and you fully own the body contents. Append your own elements to <code>handle.body</code> exactly as you would to a <code>tab.root</code> or <code>panel.root</code>.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">section</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountCollapsibleSection</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Advanced&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">iconSvg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;svg&gt;...&lt;/svg&gt;&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">badge</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;3&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">defaultExpanded</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">onToggle</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">open</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;section is now&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">open</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;open&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;closed&#39;</span><span class="p">),</span>
+<span class="p">})</span>
+
+<span class="c1">// Build whatever you want into the body</span>
+<span class="nx">section</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;p&gt;Body content owned by the extension.&lt;/p&gt;&#39;</span>
+
+<span class="c1">// Imperative controls</span>
+<span class="nx">section</span><span class="p">.</span><span class="nx">expand</span><span class="p">()</span>
+<span class="nx">section</span><span class="p">.</span><span class="nx">collapse</span><span class="p">()</span>
+<span class="nx">section</span><span class="p">.</span><span class="nx">toggle</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">section</span><span class="p">.</span><span class="nx">isExpanded</span><span class="p">())</span>
+</code></pre></div>
+<h3 id="spindlecollapsiblesectionoptions">SpindleCollapsibleSectionOptions<a class="headerlink" href="#spindlecollapsiblesectionoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Header text</td>
+</tr>
+<tr>
+<td><code>iconSvg</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Inline SVG icon shown next to the title</td>
+</tr>
+<tr>
+<td><code>iconUrl</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Icon image URL. Mutually exclusive with <code>iconSvg</code>.</td>
+</tr>
+<tr>
+<td><code>badge</code></td>
+<td><code>string \| number</code></td>
+<td>—</td>
+<td>Optional badge text rendered next to the title</td>
+</tr>
+<tr>
+<td><code>defaultExpanded</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Initial expanded state</td>
+</tr>
+<tr>
+<td><code>onToggle</code></td>
+<td><code>(expanded: boolean) =&gt; void</code></td>
+<td>—</td>
+<td>Fired whenever the user toggles the section</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindlecollapsiblesectionhandle">SpindleCollapsibleSectionHandle<a class="headerlink" href="#spindlecollapsiblesectionhandle" title="Permanent link">&para;</a></h3>
+<p>Adds to the shared shape:</p>
+<table>
+<thead>
+<tr>
+<th>Method / Property</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>body</code></td>
+<td><code>HTMLElement</code></td>
+<td>Container the extension owns. Append your own child elements here.</td>
+</tr>
+<tr>
+<td><code>isExpanded()</code></td>
+<td><code>boolean</code></td>
+<td>Current expanded state</td>
+</tr>
+<tr>
+<td><code>expand()</code></td>
+<td><code>void</code></td>
+<td>Open the section</td>
+</tr>
+<tr>
+<td><code>collapse()</code></td>
+<td><code>void</code></td>
+<td>Close the section</td>
+</tr>
+<tr>
+<td><code>toggle()</code></td>
+<td><code>void</code></td>
+<td>Flip the section</td>
+</tr>
+</tbody>
+</table>
+<h2 id="display-utilities">Display utilities<a class="headerlink" href="#display-utilities" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">status</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountBadge</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Beta&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;pill&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="nx">status</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;success&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">text</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Ready&#39;</span><span class="w"> </span><span class="p">})</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">spinner</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountSpinner</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="kt">16</span><span class="w"> </span><span class="p">})</span>
+<span class="nx">spinner</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">closeBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountCloseButton</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">onClick</span><span class="o">:</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">panel</span><span class="p">.</span><span class="nx">collapse</span><span class="p">(),</span>
+<span class="w">  </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;sm&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">variant</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;subtle&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="spindlebadgeoptions">SpindleBadgeOptions<a class="headerlink" href="#spindlebadgeoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>string</code></td>
+<td><code>""</code></td>
+<td>Badge text</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>'neutral' \| 'primary' \| 'success' \| 'warning' \| 'danger' \| 'info'</code></td>
+<td><code>'neutral'</code></td>
+<td>Accent color</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>'sm' \| 'md' \| 'pill'</code></td>
+<td><code>'md'</code></td>
+<td>Visual size</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindlespinneroptions">SpindleSpinnerOptions<a class="headerlink" href="#spindlespinneroptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>size</code></td>
+<td><code>number</code></td>
+<td><code>16</code></td>
+<td>Diameter in CSS pixels</td>
+</tr>
+<tr>
+<td><code>fast</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Use the faster rotation variant</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindleclosebuttonoptions">SpindleCloseButtonOptions<a class="headerlink" href="#spindleclosebuttonoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onClick</code></td>
+<td><code>() =&gt; void</code></td>
+<td>—</td>
+<td>Click handler</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td><code>'sm' \| 'md'</code></td>
+<td><code>'md'</code></td>
+<td>Visual size</td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>'subtle' \| 'solid'</code></td>
+<td><code>'subtle'</code></td>
+<td>Visual variant</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>'static' \| 'absolute'</code></td>
+<td><code>'static'</code></td>
+<td>Positioning behavior</td>
+</tr>
+<tr>
+<td><code>iconSize</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Icon size override in CSS pixels</td>
+</tr>
+</tbody>
+</table>
+<h2 id="pagination">Pagination<a class="headerlink" href="#pagination" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">1</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">pager</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">components</span><span class="p">.</span><span class="nx">mountPagination</span><span class="p">(</span><span class="nx">target</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">currentPage</span><span class="o">:</span><span class="w"> </span><span class="kt">page</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">totalPages</span><span class="o">:</span><span class="w"> </span><span class="kt">12</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">totalItems</span><span class="o">:</span><span class="w"> </span><span class="kt">234</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">perPage</span><span class="o">:</span><span class="w"> </span><span class="kt">20</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">perPageOptions</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">20</span><span class="p">,</span><span class="w"> </span><span class="mf">50</span><span class="p">],</span>
+<span class="w">  </span><span class="nx">onPageChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">p</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">page</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">p</span>
+<span class="w">    </span><span class="nx">pager</span><span class="p">.</span><span class="nx">update</span><span class="p">({</span><span class="w"> </span><span class="nx">currentPage</span><span class="o">:</span><span class="w"> </span><span class="kt">p</span><span class="w"> </span><span class="p">})</span>
+<span class="w">    </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;list_page&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">page</span><span class="o">:</span><span class="w"> </span><span class="kt">p</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">onPerPageChange</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">n</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;set_page_size&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="kt">n</span><span class="w"> </span><span class="p">}),</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="spindlepaginationoptions">SpindlePaginationOptions<a class="headerlink" href="#spindlepaginationoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>currentPage</code></td>
+<td><code>number</code></td>
+<td><em>required</em></td>
+<td>Current page index (1-based)</td>
+</tr>
+<tr>
+<td><code>totalPages</code></td>
+<td><code>number</code></td>
+<td><em>required</em></td>
+<td>Total page count</td>
+</tr>
+<tr>
+<td><code>onPageChange</code></td>
+<td><code>(p: number) =&gt; void</code></td>
+<td><em>required</em></td>
+<td>Fired when the user clicks a page</td>
+</tr>
+<tr>
+<td><code>perPage</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Current per-page selection (omit to hide the selector)</td>
+</tr>
+<tr>
+<td><code>perPageOptions</code></td>
+<td><code>number[]</code></td>
+<td>—</td>
+<td>Page-size choices</td>
+</tr>
+<tr>
+<td><code>onPerPageChange</code></td>
+<td><code>(n: number) =&gt; void</code></td>
+<td>—</td>
+<td>Fired when the user changes per-page</td>
+</tr>
+<tr>
+<td><code>totalItems</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Total item count for the "Showing X–Y of N" summary</td>
+</tr>
+</tbody>
+</table>
+<p>Pagination is fully controlled — call <code>pager.update({ currentPage: next })</code> after each navigation to keep the UI in sync.</p>
+<h2 id="lifecycle-cleanup">Lifecycle &amp; cleanup<a class="headerlink" href="#lifecycle-cleanup" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>What the host does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>You call <code>handle.destroy()</code></td>
+<td>The React tree is unmounted. The target element remains in place.</td>
+</tr>
+<tr>
+<td>You replace the target's contents (e.g. <code>el.innerHTML = ''</code>)</td>
+<td><strong>Don't.</strong> Destroy the handle first. Replacing the DOM under React's feet leaks memory.</td>
+</tr>
+<tr>
+<td>Your extension is disabled / unloaded</td>
+<td>All mounted components are destroyed automatically as part of cleanup, alongside drawer tabs, dock panels, and other placements.</td>
+</tr>
+<tr>
+<td>The extension reloads (dev/manifest change)</td>
+<td>New mounts are created against fresh targets. Stale handles from the previous load are unmounted by the host.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Pairing with placement APIs</p>
+<p>Shared components are designed to live inside extension-owned containers — drawer tab roots, dock panel roots, app mount roots, modal bodies, float widget roots. Build your container with <code>ctx.dom.createElement()</code>, append it to the placement root, then mount a shared component into it.</p>
+</div>
+<h2 id="theming-styling">Theming &amp; styling<a class="headerlink" href="#theming-styling" title="Permanent link">&para;</a></h2>
+<p>You generally do not need to style mounted components. They consume the same CSS variables as Lumiverse's own UI:</p>
+<ul>
+<li>Accent colors via <code>--lumiverse-accent</code> and friends</li>
+<li>Surface/border/text colors via <code>--lumiverse-fill-subtle</code>, <code>--lumiverse-border</code>, <code>--lumiverse-text</code>, <code>--lumiverse-text-dim</code></li>
+<li>Radius via <code>--lumiverse-radius</code></li>
+</ul>
+<p>If you need to tweak spacing or alignment around a mounted component, do it on the <strong>wrapper element you own</strong> (the target you passed to <code>mount*</code>). Avoid trying to override component internals with <code>!important</code> rules — those internals are not part of the public contract and can change.</p>
+<h2 id="capacity-limits">Capacity limits<a class="headerlink" href="#capacity-limits" title="Permanent link">&para;</a></h2>
+<p>Mounting shared components has no per-extension cap — they are scoped to whatever container you already own (a drawer tab, a dock panel, a modal body, an app mount), and those placements already enforce their own <a href="../ui-placement/#capacity-limits">capacity limits</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ui-placement/" class="md-footer__link md-footer__link--prev" aria-label="Previous: UI Placement">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                UI Placement
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../backend-communication/" class="md-footer__link md-footer__link--next" aria-label="Next: Backend Communication">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Backend Communication
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Lumiverse
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

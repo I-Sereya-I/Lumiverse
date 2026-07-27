@@ -1,0 +1,461 @@
+/* ── Full-screen expanded text editor modal ── */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  height: var(--app-scaled-viewport-height, calc(100vh / var(--lumiverse-ui-scale, 1)));
+  width: var(--app-scaled-viewport-width, calc(100vw / var(--lumiverse-ui-scale, 1)));
+  bottom: calc(0px - var(--ios-viewport-offset, 0px));
+  background: var(--lumiverse-fill-deepest);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10010;
+  padding: 24px;
+}
+
+:global([data-glass]) .overlay {
+  background: var(--lumiverse-modal-backdrop, rgba(0, 0, 0, 0.6));
+  backdrop-filter: blur(var(--lcs-glass-soft-blur, 6px));
+}
+
+.dialog {
+  background: var(--lumiverse-bg, #0f0d15);
+  border: 1px solid var(--lumiverse-border);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: clamp(340px, calc(94vw / var(--lumiverse-ui-scale, 1)), min(900px, var(--lumiverse-content-max-width, 900px)));
+  height: calc(80vh / var(--lumiverse-ui-scale, 1));
+  max-height: calc(80vh / var(--lumiverse-ui-scale, 1));
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.6), 0 0 1px var(--lumiverse-primary-020);
+  overflow: hidden;
+}
+
+/* ── Inline variant (renders in-flow below the field) ── */
+
+.inlineDialog {
+  background: var(--lumiverse-bg, #0f0d15);
+  border: 1px solid var(--lumiverse-primary);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--lumiverse-border);
+  background: var(--lumiverse-bg-elevated);
+  flex-shrink: 0;
+}
+
+.headerContent {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.title {
+  margin: 0;
+  font-size: calc(15px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.macroToggle {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 10px;
+  border-radius: 6px;
+  background: var(--lumiverse-fill-subtle, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--lumiverse-border);
+  color: var(--lumiverse-text-dim);
+  font-size: calc(11.5px * var(--lumiverse-font-scale, 1));
+  cursor: pointer;
+  transition: all 0.15s ease;
+  align-self: flex-start;
+}
+
+.macroToggle:hover {
+  border-color: var(--lumiverse-primary);
+  color: var(--lumiverse-primary);
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--lumiverse-border);
+  color: var(--lumiverse-text-muted);
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.closeBtn:hover {
+  background: var(--lumiverse-fill-hover);
+  color: var(--lumiverse-text);
+}
+
+/* ── Body ── */
+
+.body {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.editorArea {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ── Plain textarea (no highlighting) ── */
+
+.textarea {
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  margin: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: var(--lumiverse-text);
+  caret-color: var(--lumiverse-text);
+  font-family: inherit;
+  font-size: calc(14px * var(--lumiverse-font-scale, 1));
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.textarea::placeholder {
+  color: var(--lumiverse-text-dim);
+}
+
+/* ── Syntax-highlighted textarea overlay ── */
+
+.highlightContainer {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.highlightBackdrop {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.highlightPre {
+  margin: 0;
+  padding: 16px;
+  font-family: var(--lumiverse-font-mono, monospace);
+  font-size: calc(13px * var(--lumiverse-font-scale, 1));
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  color: var(--lumiverse-text);
+  box-sizing: border-box;
+}
+
+.textareaHighlighted {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px;
+  margin: 0;
+  border: none;
+  outline: none;
+  resize: none;
+  background: transparent;
+  color: transparent;
+  caret-color: var(--lumiverse-text);
+  font-family: var(--lumiverse-font-mono, monospace);
+  font-size: calc(13px * var(--lumiverse-font-scale, 1));
+  line-height: 1.6;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-y: auto;
+  z-index: 2;
+  -webkit-text-fill-color: transparent;
+  box-sizing: border-box;
+}
+
+.textareaHighlighted::placeholder {
+  color: var(--lumiverse-text-dim);
+  -webkit-text-fill-color: var(--lumiverse-text-dim);
+}
+
+/* ── Syntax highlight tokens ── */
+
+.hlBracket {
+  color: #c792ea;
+  font-weight: 700;
+}
+
+.hlMacroName {
+  color: var(--lumiverse-primary, #9370db);
+  font-weight: 700;
+}
+
+.hlSep {
+  color: var(--lumiverse-text-dim, #666);
+  opacity: 0.6;
+}
+
+.hlXmlTag {
+  color: #82aaff;
+}
+
+.hlMdDelim {
+  color: var(--lumiverse-text-dim, #666);
+  opacity: 0.55;
+}
+
+.hlMdCode {
+  color: #c3e88d;
+}
+
+.hlMdHeader {
+  color: #f78c6c;
+  font-weight: 700;
+}
+
+/* ── Macro sidebar ── */
+
+.macroSidebar {
+  width: 260px;
+  flex-shrink: 0;
+  border-right: 1px solid var(--lumiverse-border);
+  display: flex;
+  flex-direction: column;
+  background: var(--lumiverse-fill-subtle, rgba(0, 0, 0, 0.06));
+  overflow-x: hidden;
+}
+
+.macroList {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.macroSearch {
+  padding: 8px;
+  border-bottom: 1px solid var(--lumiverse-border);
+}
+
+.macroSearchInner {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  background: var(--lumiverse-input-bg, rgba(0, 0, 0, 0.2));
+  border-radius: 8px;
+  border: 1px solid transparent;
+  transition: border-color 0.15s ease;
+}
+
+.macroSearchInner:focus-within {
+  border-color: var(--lumiverse-primary-020);
+}
+
+.macroSearchInput {
+  border: none;
+  padding: 2px;
+  background: transparent;
+  font-size: calc(12px * var(--lumiverse-font-scale, 1));
+  width: 100%;
+  color: var(--lumiverse-text);
+  outline: none;
+}
+
+.macroGroup {
+  padding: 6px 0;
+}
+
+.macroGroupTitle {
+  font-size: calc(10px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 12px;
+}
+
+.macroItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 5px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: calc(12px * var(--lumiverse-font-scale, 1));
+  margin: 0 4px;
+  transition: background 0.15s ease;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.macroItem:hover {
+  background: var(--lumiverse-fill-subtle, rgba(255, 255, 255, 0.05));
+}
+
+.macroSyntax {
+  font-family: var(--lumiverse-font-mono, monospace);
+  font-size: calc(11px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.macroDesc {
+  font-size: calc(10px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-dim);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* ── Expandable textarea wrapper ── */
+
+.textareaWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.textareaWrapper > textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.expandBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: var(--lumiverse-btn-icon-sm);
+  height: var(--lumiverse-btn-icon-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: var(--lumiverse-bg, #0f0d15);
+  border: 1px solid var(--lumiverse-border);
+  color: var(--lumiverse-text-dim);
+  cursor: pointer;
+  opacity: 0;
+  transition: all 0.15s ease;
+  z-index: 1;
+}
+
+.textareaWrapper:hover .expandBtn,
+.textareaWrapper:focus-within .expandBtn {
+  opacity: 1;
+}
+
+.expandBtn:hover {
+  color: var(--lumiverse-primary);
+  border-color: var(--lumiverse-primary);
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 600px) {
+  .overlay {
+    padding: 0;
+  }
+
+  .dialog {
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
+    border-radius: 0;
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
+  .body {
+    flex-direction: column;
+  }
+
+  .textarea {
+    font-size: calc(16px * var(--lumiverse-font-scale, 1)); /* Prevent iOS/Android auto-zoom on focus */
+  }
+
+  .textareaHighlighted,
+  .highlightPre {
+    font-size: calc(16px * var(--lumiverse-font-scale, 1)); /* Must match .textarea — prevents auto-zoom cursor misalignment */
+  }
+
+  .macroSidebar {
+    width: 100%;
+    max-height: 320px;
+    border-right: none;
+    border-bottom: 1px solid var(--lumiverse-border);
+    flex-shrink: 0;
+  }
+}
+
+/* Touch-only devices: disable highlight overlay (fixes cursor tracking),
+   always show expand button since there's no hover.
+   Uses `any-hover: none` so it only matches when NO input device supports hover
+   (true phones/tablets). `hover: none` incorrectly matches on Windows touchscreen
+   laptops in Firefox/Edge, disabling syntax highlighting even though a mouse is present. */
+@media (any-hover: none) {
+  .expandBtn {
+    opacity: 0.7;
+  }
+
+  .highlightBackdrop {
+    display: none;
+  }
+
+  /* With the backdrop hidden, the absolute overlay positioning is unnecessary and
+     causes cursor coordinate mismatches on Android. Switch to normal flow layout
+     so the textarea fills its container without position:absolute. */
+  .textareaHighlighted {
+    position: static;
+    -webkit-text-fill-color: unset;
+    color: var(--lumiverse-text);
+  }
+
+  .highlightContainer {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+}

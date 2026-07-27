@@ -1,0 +1,1145 @@
+/*
+ * Same rules `HomepageCharacterLibrary.module.css` documents, applied here.
+ *
+ * 1. Every `--lumiverse-*` read is BARE. A `var(--lumiverse-x, <literal>)` is the
+ *    phantom-token pattern: the token never resolves, the literal always paints,
+ *    and the theme engine cannot touch the surface. The only fallbacks left are
+ *    the two scale multipliers (`--lumiverse-font-scale` / `--lumiverse-ui-scale`,
+ *    fallback `1`), which are numeric and defined, plus non-`--lumiverse-*`
+ *    custom properties (`--lcs-*`, `--tilt-*`, `--shine-*`, `--app-scaled-*`)
+ *    that are written at runtime and intentionally unset in some states.
+ * 2. Every `border-radius` is a `--lumiverse-radius*` token. `theme/engine.ts`
+ *    recomputes those from the user's radius scale, so a literal `16px` silently
+ *    opts that corner out of the setting. `999px` (pill) and `50%` (circle) are
+ *    shape declarations, not radii, and stay literal.
+ * 3. Every `font-size` multiplies by `--lumiverse-font-scale`.
+ * 4. Surfaces, borders and text colours are tokens. The decorative one-offs —
+ *    the ambient `.bg`/`.bgGlow`/`.grid` layers, the card shine, the skeleton
+ *    shimmer — stay literal on purpose; tokenising them would change the design.
+ */
+
+.container {
+  position: relative;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  background: var(--lumiverse-bg-deep);
+}
+
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: var(--lcs-scrollbar-thumb, rgba(255, 255, 255, 0.15));
+  border-radius: 999px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: var(--lcs-scrollbar-thumb-hover, rgba(255, 255, 255, 0.25));
+}
+
+/* Ambient background */
+.bg {
+  position: fixed;
+  inset: 0;
+  height: var(--app-scaled-viewport-height, calc(100vh / var(--lumiverse-ui-scale, 1)));
+  width: var(--app-scaled-viewport-width, calc(100vw / var(--lumiverse-ui-scale, 1)));
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* Static glows — no animation. Three animated compositor layers with large
+   radial gradients were consuming ~50% GPU on high-DPI displays even with
+   transform-only keyframes. Static placement is visually equivalent. */
+.bgGlow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, var(--lumiverse-primary-015) 0%, var(--lumiverse-primary-010) 45%, transparent 72%);
+}
+
+.bgGlow1 {
+  width: 600px;
+  height: 600px;
+  top: -200px;
+  left: -100px;
+  opacity: 0.22;
+}
+
+.bgGlow2 {
+  width: 500px;
+  height: 500px;
+  bottom: -150px;
+  right: -100px;
+  opacity: 0.2;
+}
+
+.bgGlow3 {
+  width: 400px;
+  height: 400px;
+  left: calc(50% - 200px);
+  top: 40%;
+  opacity: 0.16;
+}
+
+/* Grid pattern — uses opacity instead of mask-image. A full-viewport
+   mask-image forces the compositor to maintain a large alpha texture
+   on every frame. A static low-opacity grid is nearly free. */
+.grid {
+  position: fixed;
+  inset: 0;
+  height: var(--app-scaled-viewport-height, calc(100vh / var(--lumiverse-ui-scale, 1)));
+  width: var(--app-scaled-viewport-width, calc(100vw / var(--lumiverse-ui-scale, 1)));
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--lumiverse-primary-010) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lumiverse-primary-010) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.4;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 24px 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  margin-bottom: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.headerActions {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.tempChatWrap {
+  position: relative;
+}
+
+.tempChatMenu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  z-index: 30;
+  min-width: 220px;
+  padding: 4px;
+  border-radius: var(--lumiverse-radius-lg);
+  background: var(--lumiverse-bg-elevated);
+  border: 1px solid var(--lumiverse-border);
+  box-shadow: var(--lumiverse-shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tempChatMenuItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: var(--lumiverse-radius);
+  background: transparent;
+  color: var(--lumiverse-text);
+  text-align: left;
+  cursor: pointer;
+  transition: background var(--lumiverse-transition-fast);
+}
+
+.tempChatMenuItem:hover {
+  background: var(--lumiverse-primary-015);
+}
+
+.tempChatMenuLabel {
+  font-size: calc(12px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+}
+
+.tempChatMenuHint {
+  font-size: calc(11px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 240px;
+}
+
+.accountBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: var(--lumiverse-primary-010);
+  border: 1px solid var(--lumiverse-border);
+  color: var(--lumiverse-text-muted);
+  font-size: calc(12px * var(--lumiverse-font-scale, 1));
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    color var(--lumiverse-transition-fast),
+    border-color var(--lumiverse-transition-fast),
+    background var(--lumiverse-transition-fast);
+}
+
+.accountBtn svg {
+  opacity: 0.7;
+  transition: opacity var(--lumiverse-transition-fast), color var(--lumiverse-transition-fast);
+}
+
+.accountBtn:hover {
+  color: var(--lumiverse-text);
+  border-color: var(--lumiverse-primary-050);
+  background: var(--lumiverse-primary-015);
+}
+
+.accountBtn:disabled {
+  opacity: 0.5;
+  cursor: default;
+  pointer-events: none;
+}
+
+.accountBtn:hover svg {
+  opacity: 1;
+  color: var(--lumiverse-primary);
+}
+
+.accountName {
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .accountName {
+    display: none;
+  }
+  .accountBtn {
+    padding: 7px 9px;
+  }
+}
+
+.logoIcon {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lumiverse-radius-lg);
+  background: var(--lumiverse-primary-010);
+  border: 1px solid var(--lumiverse-primary-020);
+}
+
+.logoGlow {
+  position: absolute;
+  inset: -6px;
+  border-radius: var(--lumiverse-radius-xl);
+  background: radial-gradient(circle, var(--lumiverse-primary-020) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.logoText h1 {
+  font-size: calc(24px * var(--lumiverse-font-scale, 1));
+  font-weight: 700;
+  color: var(--lumiverse-text);
+  letter-spacing: -0.02em;
+}
+
+.taglineBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: calc(13px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-muted);
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.taglineBtn svg {
+  opacity: 0;
+  transform: translateX(-4px);
+  transition: opacity 0.2s ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.taglineBtn:hover {
+  color: var(--lumiverse-primary);
+  gap: 6px;
+}
+
+.taglineBtn:hover svg {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Main */
+.main {
+  flex: 1;
+}
+
+/* The tablist row: the strip itself plus, when the character library is switched
+   off and the Characters tab is therefore not offered, the affordance that says
+   so. Wraps rather than squashing the tab strip on a narrow window. */
+.tabsRow {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Tab strip — Characters / Chats. Same segmented idiom as the character
+   browser's `.filterTabs` and the theme panel's `.segmented`. */
+.tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border-radius: var(--lumiverse-radius-lg);
+  background: var(--lumiverse-fill-subtle);
+  border: 1px solid var(--lumiverse-border);
+}
+
+.tabBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid transparent;
+  border-radius: var(--lumiverse-radius);
+  background: transparent;
+  color: var(--lumiverse-text-muted);
+  font-size: calc(13px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transition:
+    color var(--lumiverse-transition-fast),
+    border-color var(--lumiverse-transition-fast),
+    background var(--lumiverse-transition-fast);
+}
+
+.tabBtn svg {
+  opacity: 0.7;
+  transition: opacity var(--lumiverse-transition-fast);
+}
+
+.tabBtn:hover {
+  color: var(--lumiverse-text);
+  background: var(--lumiverse-primary-010);
+}
+
+.tabBtn:hover svg {
+  opacity: 1;
+}
+
+/* Roving focus means the inactive tab is not tabbable, so the focus ring is the
+   only signal that arrow keys are live. It must never be suppressed. */
+.tabBtn:focus-visible {
+  outline: 2px solid var(--lumiverse-primary-050);
+  outline-offset: 2px;
+}
+
+.tabBtnActive {
+  color: var(--lumiverse-text);
+  background: var(--lumiverse-primary-015);
+  border-color: var(--lumiverse-primary-020);
+}
+
+.tabBtnActive svg {
+  opacity: 1;
+  color: var(--lumiverse-primary);
+}
+
+/* The panel is `tabIndex={0}` so keyboard users can reach its content from the
+   tab strip; it keeps a visible ring rather than suppressing the outline. */
+.tabPanel {
+  outline-offset: 4px;
+}
+
+.tabPanel:focus-visible {
+  outline: 2px solid var(--lumiverse-primary-050);
+}
+
+/* The shared ghost Button carries the chrome; only the type scale and the muted
+   tone are landing-specific — this is an explanation, not a call to action. */
+.restoreLibraryBtn {
+  color: var(--lumiverse-text-muted);
+  font-size: calc(12px * var(--lumiverse-font-scale, 1));
+}
+
+@media (max-width: 600px) {
+  .tabsRow {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .tabs {
+    display: flex;
+    width: 100%;
+  }
+  .tabBtn {
+    flex: 1;
+    justify-content: center;
+  }
+}
+
+/* Grid */
+.gridCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.compactList {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+/* Card tilt wrapper — handles 3D tilt separately from framer-motion entry */
+.cardTilt {
+  perspective: 800px;
+  transition: transform 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cardTilt:hover {
+  z-index: 10;
+  will-change: transform;
+}
+
+.cardTilt.tilting {
+  transition: transform 100ms ease-out;
+}
+
+/* Card — uses CSS animation for entry (no lingering inline styles that
+   would promote every card to its own compositor layer). */
+.card {
+  position: relative;
+  border-radius: var(--lumiverse-radius-xl);
+  overflow: hidden;
+  background: var(--lumiverse-card-bg);
+  border: 1px solid var(--lumiverse-border);
+  box-shadow: var(--lumiverse-shadow-sm);
+  transition:
+    box-shadow 300ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 200ms ease;
+  animation: cardEntry 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes cardEntry {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+}
+
+.card:hover {
+  border-color: var(--lumiverse-primary-020);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.2),
+    0 0 24px var(--lumiverse-primary-010);
+}
+
+/* Mouse-tracking radial shine */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  opacity: 0;
+  background: radial-gradient(
+    circle at var(--shine-x, 50%) var(--shine-y, 50%),
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(255, 255, 255, 0.03) 35%,
+    transparent 60%
+  );
+  transition: opacity 300ms ease;
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Image zoom on card hover */
+.cardImage img,
+.cardImage picture img,
+.listAvatar img,
+.listAvatar picture img,
+.mosaicCell img,
+.mosaicCell picture img {
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .cardImage img,
+.card:hover .cardImage picture img,
+.listItem:hover .listAvatar img,
+.listItem:hover .listAvatar picture img {
+  transform: scale(1.06);
+}
+
+/* Parallax — the image participates in the card's tilt but sits on a
+   nearer depth layer. We fake that in 2D by (a) translating in the
+   direction of the tilt so it follows the rotation's screen-space
+   shift, and (b) counter-rotating a fraction of the card's rotation.
+   A plane that rotates less than its container reads as closer to
+   the viewer, which is the "shifts perspective with the tilt" feel.
+   --tilt-x / --tilt-y (-1..1) are set on .cardTilt by the mouse
+   handlers and drive both effects from the same source.
+
+   The scale during tilt has to exceed (translate + rotation edge offset)
+   / half-container-width on every side, or the corner of the image
+   uncovers its container and the card/cell background bleeds through.
+   Mosaic cells are ~half the width of a single-card image, so their
+   translate is scaled down to keep relative intensity in line with
+   single cards (otherwise the same 8px shift reads twice as strong
+   in a collage). */
+.cardTilt.tilting .cardImage img,
+.cardTilt.tilting .cardImage picture img,
+.cardTilt.tilting .cardAvatarFallback {
+  transition: transform 120ms ease-out;
+  transform:
+    translate3d(calc(var(--tilt-x, 0) * 8px), calc(var(--tilt-y, 0) * 8px), 0)
+    rotateX(calc(var(--tilt-y, 0) * 1.5deg))
+    rotateY(calc(var(--tilt-x, 0) * -1.5deg))
+    scale(1.14);
+  will-change: transform;
+}
+
+.cardTilt.tilting .mosaicCell img,
+.cardTilt.tilting .mosaicCell picture img {
+  transition: transform 120ms ease-out;
+  transform:
+    translate3d(calc(var(--tilt-x, 0) * 4px), calc(var(--tilt-y, 0) * 4px), 0)
+    rotateX(calc(var(--tilt-y, 0) * 1deg))
+    rotateY(calc(var(--tilt-x, 0) * -1deg))
+    scale(1.14);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cardTilt {
+    perspective: none;
+    transform: none !important;
+  }
+  .cardImage img,
+  .cardImage picture img,
+  .listAvatar img,
+  .listAvatar picture img,
+  .mosaicCell img,
+  .mosaicCell picture img {
+    transition: none;
+  }
+  .card:hover .cardImage img,
+  .card:hover .cardImage picture img,
+  .listItem:hover .listAvatar img,
+  .listItem:hover .listAvatar picture img,
+  .cardTilt.tilting .cardImage img,
+  .cardTilt.tilting .cardImage picture img,
+  .cardTilt.tilting .mosaicCell img,
+  .cardTilt.tilting .mosaicCell picture img,
+  .cardTilt.tilting .cardAvatarFallback {
+    transform: none;
+  }
+  .card::after {
+    display: none;
+  }
+}
+
+/* Suppress hover effects while scrolling */
+.container[data-scrolling] .cardTilt {
+  pointer-events: none;
+}
+
+.cardBtn {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  cursor: pointer;
+  background: none;
+  border: none;
+  text-align: left;
+  color: inherit;
+}
+
+.cardImage {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.cardImageOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--lumiverse-bg-deep) 0%, transparent 60%);
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 12px 14px;
+  z-index: 1;
+}
+
+.cardName {
+  font-size: calc(14px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.chatCountBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: calc(10px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-primary-muted);
+  background: var(--lumiverse-primary-015);
+  border: 1px solid var(--lumiverse-primary-020);
+  padding: 1px 6px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.cardTime {
+  font-size: calc(11px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-dim);
+}
+
+.cardAvatarFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(48px * var(--lumiverse-font-scale, 1));
+  font-weight: 700;
+  color: var(--lumiverse-primary-muted);
+  background: var(--lumiverse-primary-010);
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.card:hover .cardAvatarFallback {
+  transform: scale(1.06);
+}
+
+.listAvatarFallback {
+  font-size: calc(20px * var(--lumiverse-font-scale, 1));
+}
+
+.deleteBtn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  width: var(--lumiverse-btn-icon);
+  height: var(--lumiverse-btn-icon);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lumiverse-radius);
+  background: color-mix(in srgb, var(--lumiverse-bg-deep) 72%, transparent);
+  border: 1px solid var(--lumiverse-border);
+  color: var(--lumiverse-text-dim);
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity var(--lumiverse-transition-fast), color var(--lumiverse-transition-fast);
+}
+
+.card:hover .deleteBtn {
+  opacity: 1;
+}
+
+.deleteBtn:hover {
+  color: var(--lumiverse-danger);
+  border-color: var(--lumiverse-danger-020);
+}
+
+/* ---- Group Chat Card ---- */
+.groupCard {
+  border-color: var(--lumiverse-primary-020);
+}
+
+.groupCard:hover {
+  border-color: var(--lumiverse-primary-050);
+  box-shadow:
+    0 14px 28px rgba(0, 0, 0, 0.35),
+    0 4px 10px rgba(0, 0, 0, 0.2),
+    0 0 28px var(--lumiverse-primary-015);
+}
+
+.groupCard .cardBtn {
+  position: relative;
+}
+
+.groupCard .cardContent {
+  z-index: 3;
+}
+
+.groupMosaic {
+  display: grid;
+  gap: 2px;
+  width: 100%;
+  height: 100%;
+}
+
+.groupMosaic2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.groupMosaic3 {
+  grid-template-columns: 1.5fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.groupMosaic3 .mosaicCell:first-child {
+  grid-row: 1 / -1;
+}
+
+.groupMosaic4 {
+  grid-template-columns: 1.4fr 1fr;
+  grid-template-rows: 1.4fr 1fr;
+}
+
+.mosaicCell {
+  overflow: hidden;
+  min-height: 0;
+  position: relative;
+}
+
+.mosaicCell img,
+.mosaicCell picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mosaicFallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lumiverse-primary-muted);
+  background: var(--lumiverse-primary-010);
+}
+
+/* Overlay sits outside the grid so it isn't a grid item */
+.groupOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(to top, var(--lumiverse-bg-deep) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.groupMeta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.groupBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: calc(10px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-primary-muted);
+  background: var(--lumiverse-primary-015);
+  border: 1px solid var(--lumiverse-primary-020);
+  padding: 2px 7px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.listItem {
+  position: relative;
+  border-radius: var(--lumiverse-radius-xl);
+  overflow: hidden;
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--lumiverse-primary) 4%, transparent), transparent 45%),
+    var(--lumiverse-card-bg);
+  border: 1px solid var(--lumiverse-border);
+  box-shadow: var(--lumiverse-shadow-sm);
+  transition:
+    border-color var(--lumiverse-transition-fast),
+    box-shadow var(--lumiverse-transition-fast),
+    transform var(--lumiverse-transition-fast);
+  animation: cardEntry 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.listItem:hover {
+  transform: translateY(-1px);
+  border-color: var(--lumiverse-primary-020);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.22),
+    0 0 22px var(--lumiverse-primary-010);
+}
+
+.listItemGroup {
+  border-color: var(--lumiverse-primary-020);
+}
+
+.listBtn {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 14px;
+  background: none;
+  border: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.listAvatar {
+  width: 56px;
+  height: 56px;
+  min-width: 56px;
+  border-radius: var(--lumiverse-radius-xl);
+  overflow: hidden;
+  background: var(--lumiverse-primary-010);
+  border: 1px solid var(--lumiverse-primary-020);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.listAvatar img,
+.listAvatar picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.listBody {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listTopRow,
+.listBottomRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.listName {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: calc(14px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-text);
+}
+
+.listTime {
+  flex-shrink: 0;
+  font-size: calc(11px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-dim);
+}
+
+.listSubtitle {
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: calc(12px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-muted);
+}
+
+.listMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.listStatusPill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 20px;
+  padding: 1px 8px;
+  border-radius: 999px;
+  font-size: calc(10px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--lumiverse-text-dim);
+  background: var(--lumiverse-fill-subtle);
+  border: 1px solid color-mix(in srgb, var(--lumiverse-border) 85%, transparent);
+  white-space: nowrap;
+}
+
+.listDeleteBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 2;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--lumiverse-radius-md);
+  background: color-mix(in srgb, var(--lumiverse-bg-deep) 74%, transparent);
+  border: 1px solid var(--lumiverse-border);
+  color: var(--lumiverse-text-dim);
+  cursor: pointer;
+  opacity: 0;
+  transition:
+    opacity var(--lumiverse-transition-fast),
+    color var(--lumiverse-transition-fast),
+    border-color var(--lumiverse-transition-fast);
+}
+
+.listItem:hover .listDeleteBtn,
+.listItem:focus-within .listDeleteBtn {
+  opacity: 1;
+}
+
+.listDeleteBtn:hover {
+  color: var(--lumiverse-danger);
+  border-color: var(--lumiverse-danger-020);
+}
+
+.listSkeleton {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: var(--lumiverse-radius-xl);
+  background: var(--lumiverse-card-bg);
+  border: 1px solid var(--lumiverse-border);
+}
+
+.listSkeletonAvatar {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--lumiverse-radius-xl);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 75%);
+  background-size: 200% 100%;
+  animation: lumiverseShimmer 1.5s ease-in-out infinite;
+}
+
+.listSkeletonBody {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.listSkeletonTitle,
+.listSkeletonMeta {
+  border-radius: var(--lumiverse-radius-sm);
+  background: var(--lumiverse-fill-subtle);
+}
+
+.listSkeletonTitle {
+  width: 72%;
+  height: 14px;
+}
+
+.listSkeletonMeta {
+  width: 46%;
+  height: 10px;
+}
+
+/* Skeleton */
+.skeletonCard {
+  border-radius: var(--lumiverse-radius-xl);
+  overflow: hidden;
+  background: var(--lumiverse-card-bg);
+  border: 1px solid var(--lumiverse-border);
+}
+
+.skeletonImage {
+  aspect-ratio: 3 / 4;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.02) 25%, rgba(255, 255, 255, 0.06) 50%, rgba(255, 255, 255, 0.02) 75%);
+  background-size: 200% 100%;
+  animation: lumiverseShimmer 1.5s ease-in-out infinite;
+}
+
+.skeletonContent {
+  padding: 12px 14px;
+}
+
+.skeletonTitle {
+  height: 14px;
+  width: 70%;
+  border-radius: var(--lumiverse-radius-sm);
+  background: var(--lumiverse-fill-subtle);
+  margin-bottom: 6px;
+}
+
+.skeletonMeta {
+  height: 10px;
+  width: 40%;
+  border-radius: var(--lumiverse-radius-sm);
+  background: var(--lumiverse-fill-subtle);
+}
+
+/* Empty & Error */
+.emptyState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.emptyIcon {
+  color: var(--lumiverse-primary-muted);
+  margin-bottom: 20px;
+  opacity: 0.5;
+}
+
+.emptyState h3 {
+  font-size: calc(20px * var(--lumiverse-font-scale, 1));
+  font-weight: 600;
+  color: var(--lumiverse-text);
+  margin-bottom: 8px;
+}
+
+.emptyState p {
+  font-size: calc(14px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-muted);
+}
+
+.errorState {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 16px;
+  color: var(--lumiverse-text-muted);
+}
+
+.primaryBtn {
+  padding: 10px 24px;
+  border-radius: var(--lumiverse-radius-md);
+  background: linear-gradient(135deg, var(--lumiverse-primary), var(--lumiverse-primary-hover));
+  border: 1px solid var(--lumiverse-primary-050);
+  color: var(--lumiverse-primary-contrast);
+  font-weight: 600;
+  font-size: calc(14px * var(--lumiverse-font-scale, 1));
+  cursor: pointer;
+}
+
+/* Infinite scroll sentinel */
+.loadMoreSentinel {
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
+  min-height: 60px;
+}
+
+.loadingMore {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: calc(13px * var(--lumiverse-font-scale, 1));
+  color: var(--lumiverse-text-muted);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 24px 0;
+  color: var(--lumiverse-text-hint);
+  font-size: calc(13px * var(--lumiverse-font-scale, 1));
+}
+
+@media (max-width: 600px) {
+  .content {
+    padding: 16px;
+  }
+  .gridCards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  .compactList {
+    grid-template-columns: 1fr;
+  }
+  .listBtn {
+    gap: 12px;
+    padding: 12px;
+  }
+  .listAvatar,
+  .listSkeletonAvatar {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+  }
+  .listTopRow,
+  .listBottomRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .listTime,
+  .listMeta {
+    flex-shrink: 1;
+  }
+}

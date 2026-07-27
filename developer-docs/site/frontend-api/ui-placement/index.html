@@ -1,0 +1,4775 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build extensions for Lumiverse using Spindle">
+      
+      
+        <meta name="author" content="Lumiverse">
+      
+      
+      
+        <link rel="prev" href="../events/">
+      
+      
+        <link rel="next" href="../shared-components/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.45">
+    
+    
+      
+        <title>UI Placement API - Lumiverse Developer Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ui-placement-api" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-header__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumiverse Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UI Placement API
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend-and-extensions/" class="md-tabs__link">
+          
+  
+  Developer Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../backend-api/" class="md-tabs__link">
+          
+  
+  Backend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Frontend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lifecycle/" class="md-tabs__link">
+        
+  
+  Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rest-api/" class="md-tabs__link">
+        
+  
+  REST API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-nav__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Lumiverse Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer Maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer Maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-and-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend and Extensions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings-to-css-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings to CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-productivity-overhaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-modification-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Modification Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Getting Started
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quick Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manifest
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Capabilities
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime Modes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/typescript-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  TypeScript Setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../backend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Backend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Macros
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/interceptors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interceptors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/context-handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Context Handlers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/llm-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LLM Tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/image-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Image Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/shared-rpc-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared RPC Pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/ephemeral-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ephemeral Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tokens
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Characters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/chats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Presets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/world-books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Books
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/regex-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regex Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/databanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Databanks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/memories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Memories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Personas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/council/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Council
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/chat-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat Mutation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/event-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/secure-enclave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Secure Enclave
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/cors-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CORS Proxy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAuth
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Toast Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/text-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Text Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/push-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Push Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/web-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/user-presence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  User Context
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/frontend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/frontend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/backend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/ui-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Automation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-api/version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Frontend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dom-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM Helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-events-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Event Helpers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#drawer-tabs-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawer Tabs (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Drawer Tabs (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindledrawertaboptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleDrawerTabOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindledrawertabhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleDrawerTabHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-palette-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Command Palette Integration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float-widgets-requires-ui_panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Float Widgets (requires <code>ui_panels</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Float Widgets (requires ui_panels)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlefloatwidgetoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleFloatWidgetOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dock-panels-requires-ui_panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dock Panels (requires <code>ui_panels</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-mounts-requires-app_manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        App Mounts (requires <code>app_manipulation</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-bar-actions-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Input Bar Actions (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Bar Actions (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindleinputbaractionoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleInputBarActionOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleinputbaractionhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleInputBarActionHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-menu-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Context Menu (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Menu (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlecontextmenuoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleContextMenuOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlecontextmenuitemdef" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleContextMenuItemDef
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlecontextmenuresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleContextMenuResult
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mobile Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modal-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modal (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modal (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlemodaloptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleModalOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlemodalhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleModalHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stack Limit
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-initiated-modals" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Backend-Initiated Modals
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-history-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: History Viewer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confirmation-modal-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Confirmation Modal (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Confirmation Modal (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Variants
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleconfirmoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleConfirmOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleconfirmresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleConfirmResult
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-initiated-confirmations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Backend-Initiated Confirmations
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-guarding-a-destructive-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: Guarding a Destructive Action
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacity-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Capacity Limits
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Control
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shared-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../message-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file-uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Uploads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/minimal-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Minimal Backend
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/prompt-interceptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prompt Interceptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/full-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Full Stack
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/backend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  REST API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#drawer-tabs-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawer Tabs (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Drawer Tabs (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindledrawertaboptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleDrawerTabOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindledrawertabhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleDrawerTabHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#command-palette-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Command Palette Integration
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#float-widgets-requires-ui_panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Float Widgets (requires <code>ui_panels</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Float Widgets (requires ui_panels)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlefloatwidgetoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleFloatWidgetOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dock-panels-requires-ui_panels" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dock Panels (requires <code>ui_panels</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-mounts-requires-app_manipulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        App Mounts (requires <code>app_manipulation</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#input-bar-actions-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Input Bar Actions (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Input Bar Actions (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindleinputbaractionoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleInputBarActionOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleinputbaractionhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleInputBarActionHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#context-menu-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Context Menu (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Context Menu (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlecontextmenuoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleContextMenuOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlecontextmenuitemdef" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleContextMenuItemDef
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlecontextmenuresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleContextMenuResult
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mobile Support
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modal-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modal (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Modal (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlemodaloptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleModalOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlemodalhandle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleModalHandle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stack-limit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stack Limit
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-initiated-modals" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Backend-Initiated Modals
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-history-viewer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: History Viewer
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#confirmation-modal-free-no-permission-needed" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Confirmation Modal (free — no permission needed)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Confirmation Modal (free — no permission needed)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#variants" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Variants
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleconfirmoptions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleConfirmOptions
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleconfirmresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        SpindleConfirmResult
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-initiated-confirmations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Backend-Initiated Confirmations
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-guarding-a-destructive-action" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: Guarding a Destructive Action
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#capacity-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Capacity Limits
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Control
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Frontend API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="ui-placement-api">UI Placement API<a class="headerlink" href="#ui-placement-api" title="Permanent link">&para;</a></h1>
+<p>Beyond the basic <code>ctx.ui.mount()</code> for fixed mount points, extensions can request richer screen placements.</p>
+<p>These placement APIs return normal host DOM roots. Render directly into those roots for ordinary extension UI.</p>
+<p>If a placement needs an isolated child document with inline scripts, create and append a <code>ctx.dom.createSandboxFrame(...)</code> inside the returned root instead of replacing the placement path itself.</p>
+<h2 id="drawer-tabs-free-no-permission-needed">Drawer Tabs (free — no permission needed)<a class="headerlink" href="#drawer-tabs-free-no-permission-needed" title="Permanent link">&para;</a></h2>
+<p>Register a tab in the ViewportDrawer sidebar. Max 4 per extension, 8 global.</p>
+<p>Drawer tabs are managed by Lumiverse's central tab registry. When you register a tab, it automatically appears in the sidebar <strong>and</strong> the command palette (<code>Ctrl+K</code>). The metadata you provide controls how the tab looks and how users find it.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">tab</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">registerDrawerTab</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;stats&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Character Stats&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">shortName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Stats&#39;</span><span class="p">,</span><span class="w">                        </span><span class="c1">// sidebar icon label (max ~8 chars)</span>
+<span class="w">  </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;View character performance metrics and trends&#39;</span><span class="p">,</span><span class="w">  </span><span class="c1">// command palette subtitle</span>
+<span class="w">  </span><span class="nx">keywords</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;analytics&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;metrics&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;data&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;charts&#39;</span><span class="p">],</span><span class="w">         </span><span class="c1">// fuzzy search terms</span>
+<span class="w">  </span><span class="nx">headerTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Stats&#39;</span><span class="p">,</span><span class="w">                       </span><span class="c1">// panel header (shorter than full title)</span>
+<span class="w">  </span><span class="nx">iconSvg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;svg&gt;...&lt;/svg&gt;&#39;</span><span class="p">,</span><span class="w">                  </span><span class="c1">// 20x20 inline SVG</span>
+<span class="p">})</span>
+
+<span class="c1">// Render into the tab&#39;s content area</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">h2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;h2&#39;</span><span class="p">)</span>
+<span class="nx">h2</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Hello from my extension!&#39;</span>
+<span class="nx">tab</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">h2</span><span class="p">)</span>
+
+<span class="c1">// Update badge</span>
+<span class="nx">tab</span><span class="p">.</span><span class="nx">setBadge</span><span class="p">(</span><span class="s1">&#39;3&#39;</span><span class="p">)</span>
+
+<span class="c1">// Update the sidebar label at runtime</span>
+<span class="nx">tab</span><span class="p">.</span><span class="nx">setShortName</span><span class="p">(</span><span class="s1">&#39;Stats!&#39;</span><span class="p">)</span>
+
+<span class="c1">// Programmatically switch to this tab</span>
+<span class="nx">tab</span><span class="p">.</span><span class="nx">activate</span><span class="p">()</span>
+
+<span class="c1">// Listen for activation</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">unsub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">tab</span><span class="p">.</span><span class="nx">onActivate</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;User switched to my tab&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// Cleanup</span>
+<span class="nx">tab</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="spindledrawertaboptions">SpindleDrawerTabOptions<a class="headerlink" href="#spindledrawertaboptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Unique identifier within your extension</td>
+</tr>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Full display title. Shown in the panel header and command palette listing.</td>
+</tr>
+<tr>
+<td><code>shortName</code></td>
+<td><code>string</code></td>
+<td>truncated <code>title</code></td>
+<td>Short label rendered beneath the sidebar icon. Keep to ~8 characters. Longer values are truncated with an ellipsis.</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td><code>"Open {title} extension tab"</code></td>
+<td>One-line description shown below the title in the command palette.</td>
+</tr>
+<tr>
+<td><code>keywords</code></td>
+<td><code>string[]</code></td>
+<td><code>[]</code></td>
+<td>Additional terms for command palette fuzzy search. Your extension name is always included automatically.</td>
+</tr>
+<tr>
+<td><code>headerTitle</code></td>
+<td><code>string</code></td>
+<td><code>title</code></td>
+<td>Title shown in the panel header navbar. Useful when the header should be shorter than the full command palette entry.</td>
+</tr>
+<tr>
+<td><code>iconSvg</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Inline SVG string for the tab icon. Rendered at 20x20. Sanitized via DOMPurify.</td>
+</tr>
+<tr>
+<td><code>iconUrl</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>URL to an icon image (16x16 or 24x24). Mutually exclusive with <code>iconSvg</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindledrawertabhandle">SpindleDrawerTabHandle<a class="headerlink" href="#spindledrawertabhandle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method / Property</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>root</code></td>
+<td><code>HTMLElement</code></td>
+<td>The tab's content container. Render your UI into this element.</td>
+</tr>
+<tr>
+<td><code>tabId</code></td>
+<td><code>string</code></td>
+<td>The scoped tab ID assigned by the host.</td>
+</tr>
+<tr>
+<td><code>setTitle(title)</code></td>
+<td><code>void</code></td>
+<td>Update the full title (affects command palette and panel header).</td>
+</tr>
+<tr>
+<td><code>setShortName(shortName)</code></td>
+<td><code>void</code></td>
+<td>Update the sidebar icon label.</td>
+</tr>
+<tr>
+<td><code>setBadge(text)</code></td>
+<td><code>void</code></td>
+<td>Show a badge next to the tab icon. Pass <code>null</code> to clear.</td>
+</tr>
+<tr>
+<td><code>activate()</code></td>
+<td><code>void</code></td>
+<td>Programmatically switch the drawer to this tab.</td>
+</tr>
+<tr>
+<td><code>destroy()</code></td>
+<td><code>void</code></td>
+<td>Remove the tab and all event listeners.</td>
+</tr>
+<tr>
+<td><code>onActivate(handler)</code></td>
+<td><code>() =&gt; void</code></td>
+<td>Register a callback fired when the user switches to this tab. Returns an unsubscribe function.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="command-palette-integration">Command Palette Integration<a class="headerlink" href="#command-palette-integration" title="Permanent link">&para;</a></h3>
+<p>Every registered drawer tab is automatically available in the command palette. Users can open your tab by pressing <code>Ctrl+K</code> (or <code>Cmd+K</code>) and typing any of these:</p>
+<ul>
+<li>The tab <code>title</code> or <code>shortName</code></li>
+<li>Any word from <code>description</code></li>
+<li>Any entry in <code>keywords</code></li>
+<li>Your extension's identifier</li>
+</ul>
+<p>No extra code needed. The registry handles the wiring.</p>
+<h2 id="float-widgets-requires-ui_panels">Float Widgets (requires <code>ui_panels</code>)<a class="headerlink" href="#float-widgets-requires-ui_panels" title="Permanent link">&para;</a></h2>
+<p>Create a small draggable widget overlaying the UI. Max 2 per extension, 8 global.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">widget</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">createFloatWidget</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">width</span><span class="o">:</span><span class="w"> </span><span class="kt">48</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">height</span><span class="o">:</span><span class="w"> </span><span class="kt">48</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">initialPosition</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">100</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">snapToEdge</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">tooltip</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My Widget&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">chromeless</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w">   </span><span class="c1">// strip default chrome — extension owns all styling</span>
+<span class="p">})</span>
+
+<span class="c1">// Render into the widget</span>
+<span class="nx">widget</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;button&gt;Click&lt;/button&gt;&#39;</span>
+
+<span class="c1">// Move programmatically</span>
+<span class="nx">widget</span><span class="p">.</span><span class="nx">moveTo</span><span class="p">(</span><span class="mf">200</span><span class="p">,</span><span class="w"> </span><span class="mf">200</span><span class="p">)</span>
+
+<span class="c1">// Read current position</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">pos</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">widget</span><span class="p">.</span><span class="nx">getPosition</span><span class="p">()</span><span class="w"> </span><span class="c1">// { x: number, y: number }</span>
+
+<span class="c1">// Show/hide</span>
+<span class="nx">widget</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="nx">widget</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">widget</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">())</span><span class="w"> </span><span class="c1">// false</span>
+
+<span class="c1">// Listen for drag end</span>
+<span class="nx">widget</span><span class="p">.</span><span class="nx">onDragEnd</span><span class="p">((</span><span class="nx">pos</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Widget dropped at&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">pos</span><span class="p">.</span><span class="nx">x</span><span class="p">,</span><span class="w"> </span><span class="nx">pos</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">widget</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="spindlefloatwidgetoptions">SpindleFloatWidgetOptions<a class="headerlink" href="#spindlefloatwidgetoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>width</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Widget width in pixels</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>number</code></td>
+<td>—</td>
+<td>Widget height in pixels</td>
+</tr>
+<tr>
+<td><code>initialPosition</code></td>
+<td><code>{ x, y }</code></td>
+<td>—</td>
+<td>Starting position in viewport coordinates</td>
+</tr>
+<tr>
+<td><code>snapToEdge</code></td>
+<td><code>boolean</code></td>
+<td>—</td>
+<td>Snap to the nearest screen edge after drag</td>
+</tr>
+<tr>
+<td><code>tooltip</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Hover tooltip text</td>
+</tr>
+<tr>
+<td><code>chromeless</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Strip the default container chrome (border, background, shadow, border-radius). The extension fully owns the visual presentation.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dock-panels-requires-ui_panels">Dock Panels (requires <code>ui_panels</code>)<a class="headerlink" href="#dock-panels-requires-ui_panels" title="Permanent link">&para;</a></h2>
+<p>Create an always-visible panel fixed to a screen edge. Max 1 per edge per extension, 2 per edge global.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">panel</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">requestDockPanel</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">edge</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;right&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;My Panel&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">size</span><span class="o">:</span><span class="w"> </span><span class="kt">300</span><span class="p">,</span><span class="w">            </span><span class="c1">// width in px (for left/right edges)</span>
+<span class="w">  </span><span class="nx">minSize</span><span class="o">:</span><span class="w"> </span><span class="kt">200</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">maxSize</span><span class="o">:</span><span class="w"> </span><span class="kt">600</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">resizable</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">startCollapsed</span><span class="o">:</span><span class="w"> </span><span class="kt">false</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1">// Render into the panel</span>
+<span class="nx">panel</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;div&gt;Panel content&lt;/div&gt;&#39;</span>
+
+<span class="c1">// Collapse / expand</span>
+<span class="nx">panel</span><span class="p">.</span><span class="nx">collapse</span><span class="p">()</span>
+<span class="nx">panel</span><span class="p">.</span><span class="nx">expand</span><span class="p">()</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">panel</span><span class="p">.</span><span class="nx">isCollapsed</span><span class="p">())</span>
+
+<span class="c1">// Listen for visibility changes</span>
+<span class="nx">panel</span><span class="p">.</span><span class="nx">onVisibilityChange</span><span class="p">((</span><span class="nx">visible</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Panel is now&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">visible</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="s1">&#39;visible&#39;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;collapsed&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">panel</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+</code></pre></div>
+<p>On mobile, left/right dock panels become full-width bottom sheets.</p>
+<h2 id="app-mounts-requires-app_manipulation">App Mounts (requires <code>app_manipulation</code>)<a class="headerlink" href="#app-mounts-requires-app_manipulation" title="Permanent link">&para;</a></h2>
+<p>Mount an unrestricted portal into <code>document.body</code> that persists across route changes. Max 1 per extension, 4 global.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">mount</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">mountApp</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">className</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;my-ext-overlay&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;end&#39;</span><span class="p">,</span><span class="w">     </span><span class="c1">// &#39;start&#39; | &#39;end&#39; (body) | &#39;app-overlay&#39;</span>
+<span class="p">})</span>
+
+<span class="c1">// Full control over the mount</span>
+<span class="nx">mount</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;div class=&quot;my-fullscreen-overlay&quot;&gt;...&lt;/div&gt;&#39;</span>
+
+<span class="c1">// Show/hide</span>
+<span class="nx">mount</span><span class="p">.</span><span class="nx">setVisible</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+
+<span class="nx">mount</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+</code></pre></div>
+<p><code>'app-overlay'</code> mounts inside the app shell, layered below the sidebar drawer and modals. <code>position: fixed</code> children still anchor to the viewport, but app chrome covers the overlay through normal stacking instead of you hiding it manually.</p>
+<h2 id="input-bar-actions-free-no-permission-needed">Input Bar Actions (free — no permission needed)<a class="headerlink" href="#input-bar-actions-free-no-permission-needed" title="Permanent link">&para;</a></h2>
+<p>Register action buttons inside the <strong>Extras</strong> popover on the chat input bar. Extension actions are visually grouped under a teal-badged header with the extension name. Max 4 per extension, 12 global.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">registerInputBarAction</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;quick-translate&#39;</span><span class="p">,</span><span class="w">        </span><span class="c1">// unique within your extension</span>
+<span class="w">  </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Translate Last Reply&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">iconSvg</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&lt;svg&gt;...&lt;/svg&gt;&#39;</span><span class="p">,</span><span class="w">    </span><span class="c1">// optional 14x14 inline SVG</span>
+<span class="w">  </span><span class="c1">// iconUrl: &#39;/icon.png&#39;,      // alternative: URL to an icon image</span>
+<span class="w">  </span><span class="nx">enabled</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w">                </span><span class="c1">// default true — disabled actions are hidden</span>
+<span class="p">})</span>
+
+<span class="c1">// React to clicks</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">unsub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">action</span><span class="p">.</span><span class="nx">onClick</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;User clicked my action!&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// Update label dynamically</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setLabel</span><span class="p">(</span><span class="s1">&#39;Translate to Spanish&#39;</span><span class="p">)</span>
+
+<span class="c1">// Temporarily disable (hides from popover)</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setEnabled</span><span class="p">(</span><span class="kc">false</span><span class="p">)</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">setEnabled</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+
+<span class="c1">// Remove click listener</span>
+<span class="nx">unsub</span><span class="p">()</span>
+
+<span class="c1">// Cleanup — removes the action from the popover entirely</span>
+<span class="nx">action</span><span class="p">.</span><span class="nx">destroy</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="spindleinputbaractionoptions">SpindleInputBarActionOptions<a class="headerlink" href="#spindleinputbaractionoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Unique identifier within your extension</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Display label shown in the popover row</td>
+</tr>
+<tr>
+<td><code>iconSvg</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>Inline SVG string (sanitized via DOMPurify). Rendered at 14x14.</td>
+</tr>
+<tr>
+<td><code>iconUrl</code></td>
+<td><code>string</code></td>
+<td>—</td>
+<td>URL to an icon image. Takes precedence over <code>iconSvg</code> if both are set.</td>
+</tr>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>When <code>false</code>, the action is hidden from the popover.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindleinputbaractionhandle">SpindleInputBarActionHandle<a class="headerlink" href="#spindleinputbaractionhandle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>actionId</code></td>
+<td><code>string</code></td>
+<td>The scoped ID assigned to this action</td>
+</tr>
+<tr>
+<td><code>setLabel(label)</code></td>
+<td><code>void</code></td>
+<td>Update the display label</td>
+</tr>
+<tr>
+<td><code>setEnabled(enabled)</code></td>
+<td><code>void</code></td>
+<td>Show/hide the action in the popover</td>
+</tr>
+<tr>
+<td><code>onClick(handler)</code></td>
+<td><code>() =&gt; void</code></td>
+<td>Register a click handler. Returns an unsubscribe function. Multiple handlers are supported.</td>
+</tr>
+<tr>
+<td><code>destroy()</code></td>
+<td><code>void</code></td>
+<td>Remove the action and all handlers</td>
+</tr>
+</tbody>
+</table>
+<p>Clicking an extension action in the Extras popover fires all registered <code>onClick</code> handlers and automatically closes the popover.</p>
+<h2 id="context-menu-free-no-permission-needed">Context Menu (free — no permission needed)<a class="headerlink" href="#context-menu-free-no-permission-needed" title="Permanent link">&para;</a></h2>
+<p>Show a themed context menu at any screen position and wait for the user's selection. The menu is rendered by Lumiverse using the system theme — it automatically matches the user's accent color, glass mode, and dark/light preference. On mobile, pair this with a long-press gesture to replace right-click.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">selectedKey</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">showContextMenu</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">event.clientX</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">event.clientY</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">items</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;small&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Small&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kt">currentSize</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;small&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;medium&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Medium&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kt">currentSize</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;medium&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;large&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Large&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">active</span><span class="o">:</span><span class="w"> </span><span class="kt">currentSize</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;large&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;div&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">,</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;divider&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;reset&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Reset Position&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;delete&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">label</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Delete Widget&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">danger</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">})</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">selectedKey</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;small&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// handle selection</span>
+<span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">selectedKey</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="kc">null</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// user dismissed the menu without selecting</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The method returns a Promise that resolves when the user selects an item or dismisses the menu.</p>
+<h3 id="spindlecontextmenuoptions">SpindleContextMenuOptions<a class="headerlink" href="#spindlecontextmenuoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>position</code></td>
+<td><code>{ x: number, y: number }</code></td>
+<td>Screen coordinates to anchor the menu</td>
+</tr>
+<tr>
+<td><code>items</code></td>
+<td><code>SpindleContextMenuItemDef[]</code></td>
+<td>Menu entries (see below)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindlecontextmenuitemdef">SpindleContextMenuItemDef<a class="headerlink" href="#spindlecontextmenuitemdef" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>key</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Unique key returned when this item is selected</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Display text (ignored for dividers)</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>'item' \| 'divider'</code></td>
+<td><code>'item'</code></td>
+<td>Set to <code>'divider'</code> for a visual separator</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Greyed out and not clickable</td>
+</tr>
+<tr>
+<td><code>danger</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Rendered in red/danger style</td>
+</tr>
+<tr>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>Highlighted to indicate current selection</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindlecontextmenuresult">SpindleContextMenuResult<a class="headerlink" href="#spindlecontextmenuresult" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>selectedKey</code></td>
+<td><code>string \| null</code></td>
+<td>The <code>key</code> of the chosen item, or <code>null</code> if the menu was dismissed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="mobile-support">Mobile Support<a class="headerlink" href="#mobile-support" title="Permanent link">&para;</a></h3>
+<p>The context menu is triggered by <code>contextmenu</code> events (right-click on desktop), but mobile browsers don't reliably fire this event. To support mobile users, add a long-press (touch-and-hold) gesture:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">longPressTimer</span><span class="o">:</span><span class="w"> </span><span class="kt">ReturnType</span><span class="o">&lt;</span><span class="ow">typeof</span><span class="w"> </span><span class="nx">setTimeout</span><span class="o">&gt;</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">longPressFired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">longPressStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">0</span><span class="w"> </span><span class="p">}</span>
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchstart&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">longPressFired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">touch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+<span class="w">  </span><span class="nx">longPressStart</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="kt">touch.clientX</span><span class="p">,</span><span class="w"> </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="kt">touch.clientY</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">longPressTimer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">longPressFired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">    </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">vibrate</span><span class="o">?</span><span class="p">.(</span><span class="mf">50</span><span class="p">)</span><span class="w"> </span><span class="c1">// haptic feedback</span>
+<span class="w">    </span><span class="nx">showContextMenu</span><span class="p">(</span><span class="nx">touch</span><span class="p">.</span><span class="nx">clientX</span><span class="p">,</span><span class="w"> </span><span class="nx">touch</span><span class="p">.</span><span class="nx">clientY</span><span class="p">)</span>
+<span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="mf">500</span><span class="p">)</span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">passive</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">})</span>
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchmove&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">longPressTimer</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">touch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">touches</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">touch</span><span class="p">.</span><span class="nx">clientX</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">longPressStart</span><span class="p">.</span><span class="nx">x</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">dy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">abs</span><span class="p">(</span><span class="nx">touch</span><span class="p">.</span><span class="nx">clientY</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nx">longPressStart</span><span class="p">.</span><span class="nx">y</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">dx</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">dy</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mf">10</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">longPressTimer</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">longPressTimer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">},</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">passive</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="w"> </span><span class="p">})</span>
+
+<span class="nx">element</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;touchend&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">longPressTimer</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">longPressTimer</span><span class="p">);</span><span class="w"> </span><span class="nx">longPressTimer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">null</span><span class="w"> </span><span class="p">}</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">longPressFired</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">e</span><span class="p">.</span><span class="nx">preventDefault</span><span class="p">();</span><span class="w"> </span><span class="nx">longPressFired</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Why use the system context menu?</p>
+<ul>
+<li><strong>Themed automatically</strong> — matches the user's accent color, glass blur, dark/light mode</li>
+<li><strong>Viewport-clamped</strong> — the menu repositions itself to stay on screen</li>
+<li><strong>Keyboard accessible</strong> — dismisses on Escape</li>
+<li><strong>Consistent UX</strong> — users get the same look and feel across all extensions</li>
+<li><strong>No CSS to maintain</strong> — no need to ship your own menu styles</li>
+</ul>
+</div>
+<h2 id="modal-free-no-permission-needed">Modal (free — no permission needed)<a class="headerlink" href="#modal-free-no-permission-needed" title="Permanent link">&para;</a></h2>
+<p>Open a system-themed modal overlay. Lumiverse renders the chrome — backdrop, header with title and close button, animations, Escape key handling — and the extension fully owns the body content via the returned handle's <code>root</code> element.</p>
+<p>Modals automatically inherit the user's theme, accent color, glass mode, and dark/light preference. No CSS is required from the extension for the modal chrome itself.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">modal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">showModal</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Nudge History&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1">// Build content into the modal body</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">list</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;ul&#39;</span><span class="p">)</span>
+<span class="nx">list</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;li&gt;First nudge&lt;/li&gt;&lt;li&gt;Second nudge&lt;/li&gt;&#39;</span>
+<span class="nx">modal</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">list</span><span class="p">)</span>
+
+<span class="c1">// Update title dynamically</span>
+<span class="nx">modal</span><span class="p">.</span><span class="nx">setTitle</span><span class="p">(</span><span class="s1">&#39;Nudge History (2 items)&#39;</span><span class="p">)</span>
+
+<span class="c1">// Listen for dismissal</span>
+<span class="nx">modal</span><span class="p">.</span><span class="nx">onDismiss</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Modal was closed&#39;</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// Close programmatically</span>
+<span class="nx">modal</span><span class="p">.</span><span class="nx">dismiss</span><span class="p">()</span>
+</code></pre></div>
+<h3 id="spindlemodaloptions">SpindleModalOptions<a class="headerlink" href="#spindlemodaloptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Title displayed in the modal header</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>number</code></td>
+<td><code>420</code></td>
+<td>Width in pixels. Clamped to viewport.</td>
+</tr>
+<tr>
+<td><code>maxHeight</code></td>
+<td><code>number</code></td>
+<td><code>520</code></td>
+<td>Maximum height in pixels. Clamped to viewport.</td>
+</tr>
+<tr>
+<td><code>persistent</code></td>
+<td><code>boolean</code></td>
+<td><code>false</code></td>
+<td>When <code>true</code>, clicking the backdrop does not dismiss the modal. The user must use the close button or the extension must call <code>dismiss()</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindlemodalhandle">SpindleModalHandle<a class="headerlink" href="#spindlemodalhandle" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Method / Property</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>root</code></td>
+<td><code>HTMLElement</code></td>
+<td>The body container element. The extension fully owns this element's contents.</td>
+</tr>
+<tr>
+<td><code>modalId</code></td>
+<td><code>string</code></td>
+<td>Unique modal ID assigned by the host</td>
+</tr>
+<tr>
+<td><code>dismiss()</code></td>
+<td><code>void</code></td>
+<td>Programmatically close the modal</td>
+</tr>
+<tr>
+<td><code>setTitle(title)</code></td>
+<td><code>void</code></td>
+<td>Update the header title</td>
+</tr>
+<tr>
+<td><code>onDismiss(handler)</code></td>
+<td><code>() =&gt; void</code></td>
+<td>Register a callback invoked when the modal is dismissed (by the user, by <code>dismiss()</code>, or by extension cleanup). Returns an unsubscribe function.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="stack-limit">Stack Limit<a class="headerlink" href="#stack-limit" title="Permanent link">&para;</a></h3>
+<p>Extensions may have at most <strong>2 stacked modals</strong> open simultaneously — for example, one primary modal and one nested text editor or confirmation prompt. Attempting to open a third modal throws an error.</p>
+<p>This limit is enforced per extension. Different extensions can each have their own modals open independently.</p>
+<h3 id="backend-initiated-modals">Backend-Initiated Modals<a class="headerlink" href="#backend-initiated-modals" title="Permanent link">&para;</a></h3>
+<p>Backend extensions can also open modals via <code>spindle.modal.open()</code>. Since the backend can't inject DOM, it provides structured content items that the host renders into the modal body. See <a href="../../backend-api/modal/">Modal</a> in the Backend API docs.</p>
+<h3 id="example-history-viewer">Example: History Viewer<a class="headerlink" href="#example-history-viewer" title="Permanent link">&para;</a></h3>
+<div class="language-ts highlight"><pre><span></span><code><span class="c1">// Fetch data from backend, then present in a modal</span>
+<span class="nx">ctx</span><span class="p">.</span><span class="nx">onBackendMessage</span><span class="p">((</span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;history_loaded&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">modal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">showModal</span><span class="p">({</span><span class="w"> </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Recent Activity&#39;</span><span class="w"> </span><span class="p">})</span>
+
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">entries</span><span class="p">.</span><span class="nx">length</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="mf">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">modal</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&lt;p style=&quot;text-align:center;color:var(--lumiverse-text-dim)&quot;&gt;No activity yet.&lt;/p&gt;&#39;</span>
+<span class="w">      </span><span class="k">return</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">entry</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">payload</span><span class="p">.</span><span class="nx">entries</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kd">const</span><span class="w"> </span><span class="nx">card</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+<span class="w">      </span><span class="nx">card</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">        padding: 10px 12px;</span>
+<span class="sb">        margin-bottom: 8px;</span>
+<span class="sb">        background: var(--lumiverse-fill-subtle);</span>
+<span class="sb">        border: 1px solid var(--lumiverse-border);</span>
+<span class="sb">        border-radius: var(--lumiverse-radius);</span>
+<span class="sb">      `</span>
+<span class="w">      </span><span class="nx">card</span><span class="p">.</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span>
+<span class="sb">        &lt;div style=&quot;font-size:12.5px;color:var(--lumiverse-text)&quot;&gt;</span><span class="si">${</span><span class="nx">entry</span><span class="p">.</span><span class="nx">text</span><span class="si">}</span><span class="sb">&lt;/div&gt;</span>
+<span class="sb">        &lt;div style=&quot;margin-top:6px;font-size:11px;color:var(--lumiverse-text-dim)&quot;&gt;</span><span class="si">${</span><span class="nx">entry</span><span class="p">.</span><span class="nx">time</span><span class="si">}</span><span class="sb">&lt;/div&gt;</span>
+<span class="sb">      `</span>
+<span class="w">      </span><span class="nx">modal</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">card</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">When to use a modal vs. a drawer tab</p>
+<ul>
+<li><strong>Modal</strong> — transient content the user views and dismisses: history, previews, confirmations, detail views. The user's attention is focused on the modal content.</li>
+<li><strong>Drawer tab</strong> — persistent UI the user returns to repeatedly: configuration panels, dashboards, settings. The tab stays available in the sidebar.</li>
+</ul>
+</div>
+<h2 id="confirmation-modal-free-no-permission-needed">Confirmation Modal (free — no permission needed)<a class="headerlink" href="#confirmation-modal-free-no-permission-needed" title="Permanent link">&para;</a></h2>
+<p>Show a system-themed confirmation dialog and wait for the user's response. The host renders a modal with a message, a variant-colored confirm button, and a cancel button. Useful for gating destructive actions, confirming settings changes, or requiring explicit user consent.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">confirmed</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">showConfirm</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Delete History&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;This will permanently erase all nudge history for this character. This action cannot be undone.&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">variant</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;danger&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">confirmLabel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Delete&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">confirmed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;delete_history&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">characterId</span><span class="w"> </span><span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>The method returns a Promise that resolves when the user clicks confirm, clicks cancel, or dismisses the modal. Counts toward the <strong>2 stacked modals</strong> limit per extension.</p>
+<h3 id="variants">Variants<a class="headerlink" href="#variants" title="Permanent link">&para;</a></h3>
+<p>The <code>variant</code> option controls the visual style of the confirm button to signal intent:</p>
+<table>
+<thead>
+<tr>
+<th>Variant</th>
+<th>Button Color</th>
+<th>Use For</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>'info'</code></td>
+<td>Neutral / blue (default)</td>
+<td>General confirmations, informational prompts</td>
+</tr>
+<tr>
+<td><code>'warning'</code></td>
+<td>Yellow / amber</td>
+<td>Actions with side effects the user should be aware of</td>
+</tr>
+<tr>
+<td><code>'danger'</code></td>
+<td>Red</td>
+<td>Destructive or irreversible actions (delete, clear, reset)</td>
+</tr>
+<tr>
+<td><code>'success'</code></td>
+<td>Green</td>
+<td>Positive confirmations (enable, activate, approve)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindleconfirmoptions">SpindleConfirmOptions<a class="headerlink" href="#spindleconfirmoptions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>title</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Title displayed in the modal header</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td><em>required</em></td>
+<td>Body text explaining what the user is confirming</td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>'info' \| 'warning' \| 'danger' \| 'success'</code></td>
+<td><code>'info'</code></td>
+<td>Visual style for the confirm button</td>
+</tr>
+<tr>
+<td><code>confirmLabel</code></td>
+<td><code>string</code></td>
+<td><code>"Confirm"</code></td>
+<td>Label for the primary action button</td>
+</tr>
+<tr>
+<td><code>cancelLabel</code></td>
+<td><code>string</code></td>
+<td><code>"Cancel"</code></td>
+<td>Label for the secondary dismiss button</td>
+</tr>
+</tbody>
+</table>
+<h3 id="spindleconfirmresult">SpindleConfirmResult<a class="headerlink" href="#spindleconfirmresult" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confirmed</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code> if the user clicked confirm, <code>false</code> if they cancelled or dismissed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="backend-initiated-confirmations">Backend-Initiated Confirmations<a class="headerlink" href="#backend-initiated-confirmations" title="Permanent link">&para;</a></h3>
+<p>Backend extensions can also show confirmations via <code>spindle.modal.confirm()</code>. See <a href="../../backend-api/modal/#confirmation">Modal</a> in the Backend API docs.</p>
+<h3 id="example-guarding-a-destructive-action">Example: Guarding a Destructive Action<a class="headerlink" href="#example-guarding-a-destructive-action" title="Permanent link">&para;</a></h3>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">resetBtn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s1">&#39;button&#39;</span><span class="p">)</span>
+<span class="nx">resetBtn</span><span class="p">.</span><span class="nx">textContent</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;Reset All Settings&#39;</span>
+<span class="nx">resetBtn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">confirmed</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">showConfirm</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">title</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Reset Settings&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;All per-character configurations will be reset to defaults. Global defaults will not be affected.&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">variant</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;warning&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">confirmLabel</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Reset&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">confirmed</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">sendToBackend</span><span class="p">({</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;reset_all_configs&#39;</span><span class="w"> </span><span class="p">})</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<h2 id="capacity-limits">Capacity Limits<a class="headerlink" href="#capacity-limits" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Placement</th>
+<th>Per Extension</th>
+<th>Global</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Drawer Tab</td>
+<td>4</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Float Widget</td>
+<td>2</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Dock Panel</td>
+<td>1 per edge</td>
+<td>2 per edge</td>
+</tr>
+<tr>
+<td>App Mount</td>
+<td>1</td>
+<td>4</td>
+</tr>
+<tr>
+<td>Input Bar Action</td>
+<td>4</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Modal</td>
+<td>2 stacked</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<p>Exceeding limits throws an error. All placements are automatically cleaned up when an extension is disabled or removed.</p>
+<h2 id="user-control">User Control<a class="headerlink" href="#user-control" title="Permanent link">&para;</a></h2>
+<p>Users can show/hide individual extension UI elements from the <strong>Extension UI</strong> control panel in the Extensions drawer tab. Right-clicking a float widget also provides hide and reset-position options.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../events/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Events">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Events
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../shared-components/" class="md-footer__link md-footer__link--next" aria-label="Next: Shared Components">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Shared Components
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Lumiverse
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3810 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build extensions for Lumiverse using Spindle">
+      
+      
+        <meta name="author" content="Lumiverse">
+      
+      
+      
+        <link rel="prev" href="../frontend-and-extensions/">
+      
+      
+        <link rel="next" href="../settings-to-css-map/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.45">
+    
+    
+      
+        <title>Installed Extension Inventory - Lumiverse Developer Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#installed-extension-inventory" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="Lumiverse Developer Docs" class="md-header__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumiverse Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Installed Extension Inventory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../frontend-and-extensions/" class="md-tabs__link">
+          
+  
+  Developer Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backend-api/" class="md-tabs__link">
+          
+  
+  Backend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../frontend-api/" class="md-tabs__link">
+          
+  
+  Frontend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lifecycle/" class="md-tabs__link">
+        
+  
+  Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rest-api/" class="md-tabs__link">
+        
+  
+  REST API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Lumiverse Developer Docs" class="md-nav__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Lumiverse Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer Maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer Maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-and-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend and Extensions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inventory-caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inventory Caveats
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-build-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Extension Build Matrix
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto_retry-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        auto_retry Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        canvas Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creator_notes_html_renderer-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        creator_notes_html_renderer Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumiagent-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumiagent Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumirealm-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumirealm Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumiscript-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumiscript Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumi_books-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumi_books Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt_viewer-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        prompt_viewer Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutter-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        shutter Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silly_sim_tracker-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        silly_sim_tracker Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vishrun-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        vishrun Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pattern Selection
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings-to-css-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings to CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-productivity-overhaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-modification-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Modification Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Getting Started
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quick Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manifest
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Capabilities
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime Modes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/typescript-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  TypeScript Setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../backend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Backend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Macros
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/interceptors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interceptors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/context-handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Context Handlers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/llm-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LLM Tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/image-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Image Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/shared-rpc-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared RPC Pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/ephemeral-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ephemeral Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tokens
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Characters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/chats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Presets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/world-books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Books
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/regex-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regex Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/databanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Databanks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/memories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Memories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Personas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/council/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Council
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/chat-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat Mutation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/event-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/secure-enclave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Secure Enclave
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/cors-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CORS Proxy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAuth
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Toast Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/text-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Text Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/push-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Push Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/web-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/user-presence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  User Context
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/frontend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/frontend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/backend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/ui-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Automation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../frontend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Frontend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/dom-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM Helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/ui-events-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Event Helpers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/ui-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/shared-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/backend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/message-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/file-uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Uploads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/minimal-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Minimal Backend
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/prompt-interceptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prompt Interceptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/frontend-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/full-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Full Stack
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/frontend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/backend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  REST API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inventory-caveats" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inventory Caveats
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extension-build-matrix" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Extension Build Matrix
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auto_retry-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        auto_retry Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#canvas-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        canvas Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creator_notes_html_renderer-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        creator_notes_html_renderer Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumiagent-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumiagent Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumirealm-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumirealm Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumiscript-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumiscript Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lumi_books-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        lumi_books Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prompt_viewer-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        prompt_viewer Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shutter-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        shutter Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#silly_sim_tracker-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        silly_sim_tracker Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vishrun-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        vishrun Extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pattern-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Pattern Selection
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="./.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../frontend-and-extensions/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Developer Maps
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="installed-extension-inventory">Installed Extension Inventory<a class="headerlink" href="#installed-extension-inventory" title="Permanent link">&para;</a></h1>
+<p>This inventory describes the installed extension repositories under
+<code>data/extensions/*/repo</code>. Use it to choose the right pattern before editing or
+creating an extension.</p>
+<h2 id="inventory-caveats">Inventory Caveats<a class="headerlink" href="#inventory-caveats" title="Permanent link">&para;</a></h2>
+<ul>
+<li><code>spindle.json</code> uses <code>minimum_lumiverse_version</code>; do not read only a
+  <code>min_lumiverse_version</code> property.</li>
+<li>Missing <code>entry_backend</code> or <code>entry_frontend</code> means the manager defaults to
+  <code>dist/backend.js</code> and <code>dist/frontend.js</code>.</li>
+<li>Some repositories ship tracked <code>dist</code>. The manager can skip building tracked
+  dist, but local development should still run the package scripts.</li>
+<li><code>dev_mode</code> is a local manifest field, not a known UI toggle. Normal update
+  runs Git checkout/clean/pull; <code>dev_mode: true</code> skips those steps but still
+  rebuilds. Branch switching always cleans.</li>
+<li>The manager installs dependencies, skips build when <code>dist</code> is tracked, and
+  otherwise generic-builds only <code>src/backend.ts</code> and <code>src/frontend.ts</code>. It does
+  not run package build scripts.</li>
+<li>Extension storage is usually per-user Spindle storage, not host settings.
+  Browser <code>localStorage</code> is local to one browser profile.</li>
+</ul>
+<h2 id="extension-build-matrix">Extension Build Matrix<a class="headerlink" href="#extension-build-matrix" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Manifest entries</th>
+<th>Build/typecheck/test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>auto_retry</code></td>
+<td>frontend <code>dist/frontend.js</code>, no backend</td>
+<td>no package scripts; source is <code>src/frontend.ts</code></td>
+</tr>
+<tr>
+<td><code>canvas</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>creator_notes_html_renderer</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>lumiagent</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>lumirealm</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code> plus regex runner build</td>
+<td><code>bun run build</code>, <code>bun run typecheck</code>, <code>bun run test:fast</code> or broader tests</td>
+</tr>
+<tr>
+<td><code>lumiscript</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>lumi_books</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>prompt_viewer</code></td>
+<td>manifest omits entries; defaults apply</td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>shutter</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>silly_sim_tracker</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun run typecheck</code></td>
+</tr>
+<tr>
+<td><code>vishrun</code></td>
+<td><code>dist/backend.js</code>, <code>dist/frontend.js</code></td>
+<td><code>bun run build</code>, <code>bun test</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="auto_retry-extension">auto_retry Extension<a class="headerlink" href="#auto_retry-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: retries failed, stalled, empty, short, or structurally truncated
+  generations with backoff and jitter.</li>
+<li>Edit first: <code>data/extensions/auto_retry/repo/src/frontend.ts</code>.</li>
+<li>UI: chat input Extras action, settings modal, and fixed status toast.</li>
+<li>Persistence: browser <code>localStorage</code> key <code>lv-auto-retry:settings:v1</code>; retry
+  state and watchdog timers are memory-only.</li>
+<li>Events: <code>GENERATION_STARTED</code>, <code>STREAM_TOKEN_RECEIVED</code>, <code>GENERATION_ENDED</code>,
+  <code>GENERATION_STOPPED</code>.</li>
+<li>Permissions: <code>generation</code>.</li>
+<li>Risk: DOM selectors drive stop/regenerate/swipe behavior; selector changes
+  must be tested against the live chat UI.</li>
+</ul>
+<h2 id="canvas-extension">canvas Extension<a class="headerlink" href="#canvas-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: adds an opposite-side drawer, tab reassignment, resizing, chat
+  reflow, layout persistence, and slash-command extension points.</li>
+<li>Edit first: <code>src/setup.ts</code>, <code>src/sidebar/secondary.tsx</code>,
+  <code>src/tabs/assignment.ts</code>, <code>src/layout/persist.ts</code>, <code>src/backend.ts</code>.</li>
+<li>UI: second drawer, tab context menus, drag/resize handles, slash suggestions,
+  toasts, and settings panel.</li>
+<li>Persistence: backend <code>layout.json</code> stores layout, widths, open state,
+  detached tabs, and preferences.</li>
+<li>Messages/events: <code>SET_DEBUG</code>, <code>SAVE_LAYOUT</code>, <code>LOAD_LAYOUT</code>, <code>LAYOUT_DATA</code>;
+  browser events <code>canvas:slash-register</code>, <code>canvas:slash-unregister</code>,
+  <code>canvas:slash-toast</code>.</li>
+<li>Permissions: none declared.</li>
+<li>Risk: moves host DOM nodes. Keep teardown, MutationObserver, ResizeObserver,
+  and guarded DOM operations intact.</li>
+</ul>
+<h2 id="creator_notes_html_renderer-extension">creator_notes_html_renderer Extension<a class="headerlink" href="#creator_notes_html_renderer-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: renders character <code>creator_notes</code> HTML/CSS inside a sandboxed
+  preview.</li>
+<li>Edit first: <code>src/frontend.ts</code>, <code>src/sanitizer.ts</code>, <code>src/backend.ts</code>.</li>
+<li>UI: <code>HTML Preview</code> drawer tab with placeholder/error states.</li>
+<li>Persistence: none.</li>
+<li>Events: tab activation, <code>CHAT_SWITCHED</code>, <code>CHARACTER_EDITED</code>.</li>
+<li>Messages: backend has <code>fetch_creator_notes</code> and <code>creator_notes_response</code>,
+  but current frontend reads characters directly; treat that backend path as
+  dormant unless you reconnect it.</li>
+<li>Permissions: <code>ui_panels</code>, <code>characters</code>.</li>
+<li>Risk: sanitizer and iframe sandbox are the safety boundary.</li>
+<li>Dormant code: <code>src/index.ts</code> and <code>src/widget.ts</code> implement an older float
+  widget/RPC path but are not package build entrypoints.</li>
+</ul>
+<h2 id="lumiagent-extension">lumiagent Extension<a class="headerlink" href="#lumiagent-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: agentic editor/workbench for cards, lorebooks, regex, chats,
+  personas, databanks, presets, and files.</li>
+<li>Edit first: <code>src/backend.ts</code>, <code>src/agent/loop.ts</code>, <code>src/agent/tools</code>,
+  <code>src/ui/drawer.ts</code>, <code>src/types.ts</code>, <code>src/state</code>.</li>
+<li>UI: <code>lumiagent</code> drawer with composer, sessions, diffs, workspace, settings,
+  permission, version, and bridge surfaces.</li>
+<li>Persistence: <code>settings.json</code>, <code>ui-prefs.json</code>, <code>sessions/index.json</code>,
+  <code>sessions/&lt;id&gt;.json</code>, workspace files, ledgers, temporary outputs, and custom
+  tools.</li>
+<li>Frontend localStorage also stores the custom icon, sitting image, and display
+  name under <code>lumiagent.customIcon.v1</code>, <code>lumiagent.customMousey.v1</code>, and
+  <code>lumiagent.displayName.v1</code>.</li>
+<li>Messages/events: large typed frontend/backend protocol; LumiRealm bridge via
+  <code>lumirealm.phoneline</code>.</li>
+<li>Permissions: broad generation/data/UI/app/storage permissions plus privileged
+  capabilities such as dynamic code execution and base64 decoding.</li>
+<li>Risk: reversible edit ledger and recent-read gates are intentional; do not
+  bypass them when changing editing tools.</li>
+</ul>
+<h2 id="lumirealm-extension">lumirealm Extension<a class="headerlink" href="#lumirealm-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: RisuAI compatibility runtime for <code>.charx</code>, <code>.risum</code>, macros, regex,
+  Lua/trigger actions, variables, display HTML, assets, BGM, and auxiliary LLM
+  calls.</li>
+<li>Edit first: <code>src/backend.ts</code>, <code>src/frontend.ts</code>, <code>src/handlers</code>,
+  <code>src/interpreter</code>, <code>src/state</code>, <code>src/ui</code>, <code>src/types/messages.ts</code>.</li>
+<li>UI: <code>lumirealm</code> drawer with Import, Viewer, State, Settings, Realm browser,
+  translation, display, BGM, picker, permission, bridge, and version overlays.</li>
+<li>Persistence: <code>lumirealm/settings.json</code>, <code>lumirealm/modules</code>, character
+  extension payloads, chat metadata variables, journals, migration state, and
+  frontend logging localStorage.</li>
+<li>Events: settings, chat, message, generation, character, world-book, and
+  display lifecycle events.</li>
+<li>Permissions: broad data, interceptor, macro, UI, storage, app, image, regex,
+  web, and base64 capabilities.</li>
+<li>Risk: compatibility adapters and migrations are coupled; prefer adding a
+  handler/module over expanding a monolithic entrypoint.</li>
+</ul>
+<h2 id="lumiscript-extension">lumiscript Extension<a class="headerlink" href="#lumiscript-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: user-authored JavaScript scripts and reusable libraries bound to
+  characters or chats.</li>
+<li>Edit first: <code>src/frontend.tsx</code>, <code>src/backend.ts</code>, <code>src/engine/executor.ts</code>,
+  <code>src/storage</code>, <code>src/types/messages.ts</code>.</li>
+<li>UI: React right dock panel and Extensions settings mount.</li>
+<li>Persistence: <code>scripts.json</code>, <code>settings.json</code>, and variable files under
+  <code>variables/global.json</code>, <code>variables/chats</code>, and <code>variables/characters</code>.</li>
+<li>Messages: <code>get_scripts</code>, <code>get_settings</code>, <code>get_active_context</code>,
+  <code>create_script</code>, <code>update_script</code>, <code>delete_script</code>, <code>duplicate_script</code>,
+  <code>update_settings</code>, and <code>run_script</code>. Events include <code>CHAT_CHANGED</code>,
+  <code>CHARACTER_EDITED</code>, and <code>PERSONA_CHANGED</code>.</li>
+<li>Permissions: <code>chat_mutation</code>, <code>generation</code>, <code>interceptor</code>, <code>cors_proxy</code>,
+  <code>ui_panels</code>.</li>
+<li>Risk: <code>script.on()</code> trigger auto-execution is currently a no-op, and some
+  APIs are stubs. Do not document trigger automation as complete until wired.</li>
+</ul>
+<h2 id="lumi_books-extension">lumi_books Extension<a class="headerlink" href="#lumi_books-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: compresses old chat into chapter and arc summaries stored as
+  chat-bound world-book entries, then injects coverage in place of history.</li>
+<li>Source build entry: <code>src/backend.ts</code>, which imports <code>src/backend/index.ts</code>.
+  Edit core behavior first in <code>src/backend/index.ts</code>, <code>src/backend/pipeline.ts</code>,
+  <code>src/backend/injection.ts</code>, <code>src/backend/storage.ts</code>, <code>src/ui/app.ts</code>.</li>
+<li>UI: drawer with Books, Make, Profile, Prompts, and Stuff views.</li>
+<li>Persistence: versioned <code>settings.json</code>; summaries and coverage metadata live
+  in world books and chat metadata.</li>
+<li>Events: <code>MESSAGE_SENT</code>, <code>GENERATION_ENDED</code>, <code>CHAT_SWITCHED</code>,
+  <code>MESSAGE_DELETED</code>, <code>WORLD_BOOK_ENTRY_DELETED</code>, <code>WORLD_BOOK_DELETED</code>,
+  <code>REGEX_SCRIPT_CHANGED</code>, <code>REGEX_SCRIPT_DELETED</code>,
+  <code>CONNECTION_PROFILE_LOADED</code>, and <code>MAIN_API_CHANGED</code>.</li>
+<li>Messages cover ready/refresh, settings/profile CRUD, chapter/arc operations,
+  dry runs/previews, visibility resync, book ensure/detach/rebase/rebuild,
+  preset operations, and busy abort.</li>
+<li>Permissions: <code>world_books</code>, <code>chats</code>, <code>chat_mutation</code>, <code>interceptor</code>,
+  <code>generation</code>, <code>memories</code>, <code>characters</code>, <code>regex_scripts</code>.</li>
+<li>Risk: prompt and world-info interceptors must avoid duplicate summary
+  injection.</li>
+</ul>
+<h2 id="prompt_viewer-extension">prompt_viewer Extension<a class="headerlink" href="#prompt_viewer-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: captures the final assembled LLM message array through a
+  late-priority interceptor.</li>
+<li>Edit first: <code>src/backend.ts</code>, <code>src/frontend.ts</code>, <code>src/storage/prompt-store.ts</code>.</li>
+<li>Manifest entries: omitted; manager defaults to <code>dist/backend.js</code> and
+  <code>dist/frontend.js</code>.</li>
+<li>UI: Prompt Viewer drawer and settings panel with formatted, raw JSON, and
+  rendered-text modes.</li>
+<li>Persistence: display preferences and history limit in <code>settings.json</code>;
+  prompt snapshots are memory-only and lost on worker restart.</li>
+<li>Events: generation start/end/stop, chat switches, swipes, deletion, and
+  permission changes.</li>
+<li>Messages: <code>get_latest</code>, <code>get_history</code>, <code>get_by_id</code>, <code>clear_history</code>,
+  <code>get_settings</code>, <code>save_settings</code>; backend responses include prompt data,
+  history, clear/settings state, capture/update notifications, and chat change.</li>
+<li>Permissions: <code>chats</code>, <code>chat_mutation</code>, <code>generation</code>, <code>interceptor</code>.</li>
+<li>Risk: history is intentionally bounded and volatile; do not treat it as an
+  audit log.</li>
+</ul>
+<h2 id="shutter-extension">shutter Extension<a class="headerlink" href="#shutter-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: quick ImageGen controls and generated-image Markdown insertion into
+  chat messages.</li>
+<li>Edit first: <code>src/frontend.ts</code>, <code>src/backend.ts</code>, and
+  <code>defaults/settings.json</code>; the manifest seeds it into per-user storage as
+  <code>settings.json</code>.</li>
+<li>UI: settings panel, optional floating button, input-bar action, context menu,
+  prompt editor, destination modal, and lightbox.</li>
+<li>Persistence: <code>settings.json</code> controls widget, insertion, prompt preview,
+  automatic generation, replacement, and confirmation behavior.</li>
+<li>Events: <code>CHAT_SWITCHED</code>, <code>GENERATION_ENDED</code>.</li>
+<li>Messages: <code>request_settings</code>, <code>update_settings</code>,
+  <code>resolve_last_message_id</code>, <code>insert_into_message</code>, <code>delete_image</code>,
+  <code>delete_all_images</code>, with settings/last-message replies and chat mutation.</li>
+<li>Permissions: <code>chat_mutation</code>, <code>ui_panels</code>.</li>
+<li>Risk: backend mutates chat messages; verify append, replace, remove-last, and
+  remove-all paths.</li>
+</ul>
+<h2 id="silly_sim_tracker-extension">silly_sim_tracker Extension<a class="headerlink" href="#silly_sim_tracker-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: parses tracker tags/code blocks into Handlebars cards, retains
+  tracker history in prompts, and can use a secondary LLM for state.</li>
+<li>Edit first: <code>src/backend.ts</code>, <code>src/frontend.ts</code>, templates and build script.</li>
+<li>UI: settings plus cards in messages, app panels, or legacy sidebar mounts.</li>
+<li>Persistence: <code>preferences.json</code>, seeded templates, ephemeral imports, and
+  local event-tracking records.</li>
+<li>Events: message sent/edited/swiped/deleted, tag interception, generation,
+  chat switching. Macros include <code>sim_format</code>, <code>sim_tracker</code>,
+  <code>last_sim_stats</code>.</li>
+<li>Frontend also listens to <code>SWIPE_EDITED</code>, <code>CHARACTER_MESSAGE_RENDERED</code>, and
+  <code>PERMISSION_CHANGED</code>; backend also tracks <code>GENERATION_STARTED</code> and
+  <code>MESSAGE_TAG_INTERCEPTED</code>.</li>
+<li>Permissions: <code>interceptor</code>, <code>ephemeral_storage</code>, <code>chat_mutation</code>, <code>chats</code>,
+  <code>event_tracking</code>, <code>generation</code>, <code>generation_parameters</code>, <code>app_manipulation</code>.</li>
+<li>Risk: template rendering, tracker history, and secondary generation touch both
+  prompt content and visible message DOM.</li>
+</ul>
+<h2 id="vishrun-extension">vishrun Extension<a class="headerlink" href="#vishrun-extension" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Purpose: SillyTavern compatibility runtime that expands character
+  <code>regex_scripts</code> into interactive message widgets.</li>
+<li>Edit first: <code>src/frontend.ts</code>, <code>src/backend/index.ts</code>, <code>src/render</code>,
+  <code>src/backend</code>.</li>
+<li>UI: no drawer/settings panel; widgets render in message bubbles as sandboxed
+  iframes with host auto-resize disabled and Vishrun's own resize reporter.</li>
+<li>Persistence: no extension settings; state is reconstructed from character
+  cards, chat messages, and Lumiverse variables.</li>
+<li>Events: chat changes, edits, swipes, generation completion, and active-chat
+  hydration.</li>
+<li>Permissions: <code>cors_proxy</code>, <code>chat_mutation</code>, <code>chats</code>, <code>characters</code>,
+  <code>unsafe_eval</code>.</li>
+<li>Risk: iframe shims and external fetch bridges are compatibility boundaries;
+  keep request IDs and idempotent DOM markers.</li>
+</ul>
+<h2 id="pattern-selection">Pattern Selection<a class="headerlink" href="#pattern-selection" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Use this pattern</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Persistent inspector</td>
+<td><code>prompt_viewer</code>, <code>lumi_books</code></td>
+</tr>
+<tr>
+<td>Dense editor</td>
+<td><code>lumiscript</code> for React, <code>lumiagent</code> for vanilla DOM</td>
+</tr>
+<tr>
+<td>Message rendering</td>
+<td><code>vishrun</code>, <code>silly_sim_tracker</code></td>
+</tr>
+<tr>
+<td>Input-bar action</td>
+<td><code>auto_retry</code>, <code>shutter</code></td>
+</tr>
+<tr>
+<td>Full compatibility runtime</td>
+<td><code>lumirealm</code></td>
+</tr>
+<tr>
+<td>Host layout manipulation</td>
+<td><code>canvas</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../frontend-and-extensions/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frontend and Extensions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Frontend and Extensions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../settings-to-css-map/" class="md-footer__link md-footer__link--next" aria-label="Next: Settings to CSS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Settings to CSS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Lumiverse
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

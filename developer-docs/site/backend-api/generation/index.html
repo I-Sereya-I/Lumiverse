@@ -1,0 +1,5573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build extensions for Lumiverse using Spindle">
+      
+      
+        <meta name="author" content="Lumiverse">
+      
+      
+      
+        <link rel="prev" href="../llm-tools/">
+      
+      
+        <link rel="next" href="../image-generation/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.45">
+    
+    
+      
+        <title>Generation - Lumiverse Developer Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#generation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-header__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumiverse Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Generation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend-and-extensions/" class="md-tabs__link">
+          
+  
+  Developer Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Backend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend-api/" class="md-tabs__link">
+          
+  
+  Frontend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lifecycle/" class="md-tabs__link">
+        
+  
+  Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rest-api/" class="md-tabs__link">
+        
+  
+  REST API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-nav__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Lumiverse Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer Maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer Maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-and-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend and Extensions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings-to-css-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings to CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-productivity-overhaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-modification-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Modification Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Getting Started
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quick Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manifest
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Capabilities
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime Modes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/typescript-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  TypeScript Setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Backend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Macros
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interceptors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interceptors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Context Handlers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LLM Tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spindlegeneraterawinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.raw(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlegeneratequietinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.quiet(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlegeneratebatchinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.batch(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generationrequestdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationRequestDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tool calling
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool calling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolschemadto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ToolSchemaDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolcalldto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ToolCallDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reasoning-extended-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reasoning / extended thinking
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reasoning &#x2f; extended thinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-request-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Per-request override
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationreasoningoverridedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationReasoningOverrideDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Precedence
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Provider mapping
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cancellation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Streaming
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Streaming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlegeneraterawstreaminput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.rawStream(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlegeneratequietstreaminput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.quietStream(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelling-a-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cancelling a stream
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamchunkdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        StreamChunkDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dry-run-prompt-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dry Run (Prompt Assembly)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dry Run (Prompt Assembly)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlegeneratedryruninput-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.dryRun(input, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dryrunrequestdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DryRunRequestDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dryrunresultdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DryRunResultDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemblybreakdownentrydto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        AssemblyBreakdownEntryDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activationstatsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ActivationStatsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memorystatsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        MemoryStatsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structured Output
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Google Gemini
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-compatible" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        OpenAI-compatible
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anthropic" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Anthropic
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stream Observation
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stream Observation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlegenerateobservechatid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.observe(chatId)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationobserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationObserver
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationstartedpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationStartedPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamtokenpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        StreamTokenPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationendedpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationEndedPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationstoppedpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationStoppedPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-event-subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Raw event subscription
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection Profiles
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindleconnectionslistuserid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.connections.list(userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleconnectionsgetconnectionid-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.connections.get(connectionId, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionprofiledto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ConnectionProfileDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionreasoningbindingsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ConnectionReasoningBindingsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasoningsettingsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ReasoningSettingsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Image Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shared-rpc-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared RPC Pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ephemeral-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ephemeral Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tokens
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Characters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Presets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Books
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regex-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regex Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../databanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Databanks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Memories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Personas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../council/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Council
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat Mutation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secure-enclave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Secure Enclave
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cors-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CORS Proxy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAuth
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Toast Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Text Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../push-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Push Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-presence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  User Context
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Automation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../frontend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Frontend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/dom-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM Helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/ui-events-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Event Helpers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/ui-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/shared-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/backend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/message-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/file-uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Uploads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/minimal-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Minimal Backend
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/prompt-interceptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prompt Interceptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/full-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Full Stack
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/backend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  REST API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spindlegeneraterawinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.raw(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlegeneratequietinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.quiet(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlegeneratebatchinput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.batch(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generationrequestdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationRequestDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tool-calling" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tool calling
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tool calling">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parts
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolschemadto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ToolSchemaDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toolcalldto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ToolCallDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reasoning-extended-thinking" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reasoning / extended thinking
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Reasoning &#x2f; extended thinking">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#per-request-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Per-request override
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationreasoningoverridedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationReasoningOverrideDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precedence" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Precedence
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#provider-mapping" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Provider mapping
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cancellation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#streaming" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Streaming
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Streaming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlegeneraterawstreaminput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.rawStream(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindlegeneratequietstreaminput" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.quietStream(input)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancelling-a-stream" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cancelling a stream
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamchunkdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        StreamChunkDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dry-run-prompt-assembly" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dry Run (Prompt Assembly)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dry Run (Prompt Assembly)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlegeneratedryruninput-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.dryRun(input, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dryrunrequestdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DryRunRequestDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dryrunresultdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        DryRunResultDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assemblybreakdownentrydto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        AssemblyBreakdownEntryDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#activationstatsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ActivationStatsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#memorystatsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        MemoryStatsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#structured-output" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Structured Output
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Structured Output">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#google-gemini" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Google Gemini
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-compatible" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        OpenAI-compatible
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#anthropic" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Anthropic
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stream-observation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stream Observation
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Stream Observation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindlegenerateobservechatid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.generate.observe(chatId)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationobserver" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationObserver
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationstartedpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationStartedPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#streamtokenpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        StreamTokenPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationendedpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationEndedPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#generationstoppedpayloaddto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        GenerationStoppedPayloadDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#raw-event-subscription" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Raw event subscription
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#connection-profiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Connection Profiles
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Connection Profiles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#spindleconnectionslistuserid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.connections.list(userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#spindleconnectionsgetconnectionid-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.connections.get(connectionId, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionprofiledto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ConnectionProfileDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionreasoningbindingsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ConnectionReasoningBindingsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reasoningsettingsdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ReasoningSettingsDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Backend API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="generation">Generation<a class="headerlink" href="#generation" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Permission required: <code>generation</code></p>
+</div>
+<p>Fire LLM generations programmatically.</p>
+<h2 id="spindlegeneraterawinput"><code>spindle.generate.raw(input)</code><a class="headerlink" href="#spindlegeneraterawinput" title="Permanent link">&para;</a></h2>
+<p>Direct generation — you specify the provider, model, and messages.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Summarize this text: ...&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">temperature</span><span class="o">:</span><span class="w"> </span><span class="kt">0.3</span><span class="p">,</span><span class="w"> </span><span class="nx">max_tokens</span><span class="o">:</span><span class="w"> </span><span class="kt">200</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;optional-connection-id&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="c1">// result: { content: string, finish_reason: string, usage: { ... } }</span>
+</code></pre></div>
+<h2 id="spindlegeneratequietinput"><code>spindle.generate.quiet(input)</code><a class="headerlink" href="#spindlegeneratequietinput" title="Permanent link">&para;</a></h2>
+<p>Uses the user's active connection profile and preset parameters.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">quiet</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;system&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;You are a helpful assistant.&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello!&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="p">})</span>
+</code></pre></div>
+<h2 id="spindlegeneratebatchinput"><code>spindle.generate.batch(input)</code><a class="headerlink" href="#spindlegeneratebatchinput" title="Permanent link">&para;</a></h2>
+<p>Run multiple generation requests.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">results</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">batch</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">requests</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[...],</span><span class="w"> </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;openai&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gpt-4o&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[...],</span><span class="w"> </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;openai&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gpt-4o&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">concurrent</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="c1">// results: Array&lt;{ index, success, content?, error? }&gt;</span>
+</code></pre></div>
+<h2 id="generationrequestdto">GenerationRequestDTO<a class="headerlink" href="#generationrequestdto" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>messages</code></td>
+<td><code>LlmMessageDTO[]</code></td>
+<td>The message array to send</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td><code>Record&lt;string, unknown&gt;</code></td>
+<td>Optional LLM parameters (temperature, max_tokens, etc.)</td>
+</tr>
+<tr>
+<td><code>connection_id</code></td>
+<td><code>string</code></td>
+<td>Optional. Use a specific connection profile (see Connection Profiles below)</td>
+</tr>
+<tr>
+<td><code>tools</code></td>
+<td><code>ToolSchemaDTO[]</code></td>
+<td>Optional. Function/tool schemas exposed to the model (raw / quiet only). See Tool calling below</td>
+</tr>
+<tr>
+<td><code>reasoning</code></td>
+<td><code>GenerationReasoningOverrideDTO</code></td>
+<td>Optional. Per-request override for extended-thinking settings — see Reasoning below</td>
+</tr>
+<tr>
+<td><code>signal</code></td>
+<td><code>AbortSignal</code></td>
+<td>Optional. Cancel the in-flight LLM request when the signal fires (see Cancellation below)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="tool-calling">Tool calling<a class="headerlink" href="#tool-calling" title="Permanent link">&para;</a></h2>
+<p>Pass tool schemas via <code>tools</code> and the model can call them. Tool calls land in <code>response.tool_calls</code> (non-stream) or the terminal <code>done</code> chunk (stream) as <code>ToolCallDTO[]</code>. You execute the tool, then send the result back as a <code>tool_result</code> part on the next user message.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;What is the weather in SF?&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">  </span><span class="nx">tools</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;get_weather&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Look up current weather for a city.&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">properties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;city&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">}],</span>
+<span class="p">})</span>
+
+<span class="c1">// result.tool_calls?.[0] = { name: &#39;get_weather&#39;, args: { city: &#39;SF&#39; }, call_id: &#39;toolu_…&#39; }</span>
+</code></pre></div>
+<p>Round-trip the call by appending two messages: an <code>assistant</code> with a <code>tool_use</code> part carrying the same <code>call_id</code>, then a <code>user</code> with a <code>tool_result</code> part keyed back to it.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">followup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;raw&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;What is the weather in SF?&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;assistant&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tool_use&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;toolu_abc&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;get_weather&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">input</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">city</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;SF&#39;</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tool_result&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">tool_use_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;toolu_abc&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;72F, clear&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">],</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">tools</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="cm">/* same schema */</span><span class="p">],</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="parts">Parts<a class="headerlink" href="#parts" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Fields</th>
+<th>Used by</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>text: string</code></td>
+<td>Any role</td>
+</tr>
+<tr>
+<td><code>image</code></td>
+<td><code>data: string</code> (base64), <code>mime_type: string</code></td>
+<td><code>user</code></td>
+</tr>
+<tr>
+<td><code>audio</code></td>
+<td><code>data: string</code> (base64), <code>mime_type: string</code></td>
+<td><code>user</code></td>
+</tr>
+<tr>
+<td><code>tool_use</code></td>
+<td><code>id</code>, <code>name</code>, <code>input: Record&lt;string, unknown&gt;</code></td>
+<td><code>assistant</code></td>
+</tr>
+<tr>
+<td><code>tool_result</code></td>
+<td><code>tool_use_id</code>, <code>content: string</code>, <code>is_error?: boolean</code></td>
+<td><code>user</code></td>
+</tr>
+</tbody>
+</table>
+<p>Use the same <code>call_id</code> returned in <code>ToolCallDTO</code> as <code>tool_use.id</code> and <code>tool_result.tool_use_id</code>. Provider adapters translate to each upstream's native shape (Anthropic content blocks, OpenAI <code>tool_calls</code> / <code>role:"tool"</code>, Gemini <code>functionCall</code> / <code>functionResponse</code>, OpenAI Responses API <code>function_call</code> / <code>function_call_output</code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Tool result formatting</p>
+<p>Anthropic requires the <code>tool_result</code> parts to come first in the content array of the user message that follows an assistant <code>tool_use</code>. The host enforces this; you just need to put them in a dedicated user message that immediately follows.</p>
+</div>
+<h3 id="toolschemadto">ToolSchemaDTO<a class="headerlink" href="#toolschemadto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Function name the model uses to invoke the tool</td>
+</tr>
+<tr>
+<td><code>description</code></td>
+<td><code>string</code></td>
+<td>Natural-language description shown to the model</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td><code>JSONSchema</code></td>
+<td>JSON Schema for the call arguments</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toolcalldto">ToolCallDTO<a class="headerlink" href="#toolcalldto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Tool name matching one of your <code>ToolSchemaDTO</code> entries</td>
+</tr>
+<tr>
+<td><code>args</code></td>
+<td><code>Record&lt;string, unknown&gt;</code></td>
+<td>Parsed JSON arguments</td>
+</tr>
+<tr>
+<td><code>call_id</code></td>
+<td><code>string</code></td>
+<td>Provider call id (Anthropic <code>id</code>, OpenAI <code>id</code>, synthetic UUID for Gemini). Pass back as <code>tool_use.id</code> / <code>tool_result.tool_use_id</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="reasoning-extended-thinking">Reasoning / extended thinking<a class="headerlink" href="#reasoning-extended-thinking" title="Permanent link">&para;</a></h2>
+<p>Most modern frontier models expose a "thinking" knob — Anthropic's <code>thinking</code> block, Google's <code>thinkingConfig</code>, DeepSeek's <code>reasoning_effort</code>, the OpenAI-compatible <code>reasoning.effort</code>, and so on. Lumiverse wraps that surface in a single high-level shape so extensions don't have to encode each provider's quirks.</p>
+<p>By default, every generation request inherits the <strong>resolved user reasoning settings</strong>:</p>
+<ol>
+<li>If the request resolves a connection (<code>connection_id</code>, or <code>quiet</code> resolving the user's active connection) and that connection has a binding (<code>metadata.reasoningBindings</code>), the binding wins.</li>
+<li>Otherwise the user's global <code>reasoningSettings</code> is applied.</li>
+<li>The host translates the resolved <code>{ apiReasoning, reasoningEffort, thinkingDisplay }</code> into the provider-specific parameters before dispatching the request.</li>
+</ol>
+<p>You can inspect what a connection is bound to via <a href="#connection-profiles"><code>spindle.connections.get()</code></a> — the <code>reasoning_bindings</code> field is the parsed, typed view.</p>
+<h3 id="per-request-override">Per-request override<a class="headerlink" href="#per-request-override" title="Permanent link">&para;</a></h3>
+<p>Pass <code>reasoning</code> on any <code>generate.*</code> call to bypass the inherited settings for that single request:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="c1">// Force thinking off — cheaper one-shot summarization on a connection</span>
+<span class="c1">// that normally has high-effort reasoning enabled.</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;TL;DR this paragraph.&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">  </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="kt">connId</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">reasoning</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;off&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">})</span>
+
+<span class="c1">// Crank the effort up just for this one call.</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">quiet</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">reasoning</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;custom&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">apiReasoning</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">effort</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;max&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="p">})</span>
+
+<span class="c1">// Anthropic — opt into summarised thinking blocks for this call.</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="kt">anthropicConnId</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">reasoning</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;custom&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">apiReasoning</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">effort</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;high&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">thinkingDisplay</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;summarized&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">})</span>
+
+<span class="c1">// Echo the connection&#39;s bound settings back, then dial effort up one tier.</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">connId</span><span class="p">)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">bound</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">conn</span><span class="o">?</span><span class="p">.</span><span class="nx">reasoning_bindings</span><span class="o">?</span><span class="p">.</span><span class="nx">settings</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">bound</span><span class="o">?</span><span class="p">.</span><span class="nx">apiReasoning</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">rawStream</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">messages</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="kt">connId</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">reasoning</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">source</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;custom&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">apiReasoning</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span><span class="w"> </span><span class="nx">effort</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;max&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="generationreasoningoverridedto">GenerationReasoningOverrideDTO<a class="headerlink" href="#generationreasoningoverridedto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td><code>"inherit" \| "off" \| "custom"</code></td>
+<td>Default <code>"inherit"</code> — apply the connection binding then fall back to the user setting. <code>"off"</code> strips every provider reasoning field and applies the off-switch unconditionally. <code>"custom"</code> uses the explicit fields below.</td>
+</tr>
+<tr>
+<td><code>apiReasoning</code></td>
+<td><code>boolean</code></td>
+<td>Used when <code>source === "custom"</code>. Defaults to <code>true</code>. Set <code>false</code> to mean the same thing as <code>source: "off"</code>.</td>
+</tr>
+<tr>
+<td><code>effort</code></td>
+<td><code>ReasoningEffortDTO</code></td>
+<td>Used when <code>source === "custom"</code>. One of <code>"auto" \| "none" \| "minimal" \| "low" \| "medium" \| "high" \| "max" \| "xhigh"</code>. Defaults to <code>"auto"</code>.</td>
+</tr>
+<tr>
+<td><code>thinkingDisplay</code></td>
+<td><code>ThinkingDisplayDTO</code></td>
+<td>Anthropic-only. One of <code>"auto" \| "summarized" \| "omitted"</code>. Maps to <code>thinking.display</code>. Defaults to <code>"auto"</code> (model-specific default).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="precedence">Precedence<a class="headerlink" href="#precedence" title="Permanent link">&para;</a></h3>
+<p>Raw values supplied in <code>parameters</code> still take precedence at the field level. The override only fills in fields that aren't already set on the request — the same behaviour as the inherited settings. The single exception is <code>source: "off"</code> (or <code>source: "custom", apiReasoning: false</code>), which unconditionally strips <code>thinking</code> / <code>thinkingConfig</code> / <code>reasoning</code> / <code>reasoning_effort</code> and applies the provider's documented off-switch.</p>
+<p>That means an extension can opt out of host translation entirely by writing the provider-specific shape into <code>parameters</code> directly — <code>reasoning</code> is only a convenience layer.</p>
+<h3 id="provider-mapping">Provider mapping<a class="headerlink" href="#provider-mapping" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Provider</th>
+<th><code>apiReasoning: true</code> produces</th>
+<th>Effort handling</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anthropic (Claude 4.6+ adaptive)</td>
+<td><code>thinking: { type: "adaptive" }</code> + <code>output_config.effort</code></td>
+<td><code>low \| medium \| high \| max</code> (+ <code>xhigh</code> on Opus 4.7)</td>
+</tr>
+<tr>
+<td>Anthropic (legacy)</td>
+<td><code>thinking: { type: "enabled", budget_tokens: N }</code></td>
+<td><code>low=2048, medium=8192, high=16384, max=32768</code></td>
+</tr>
+<tr>
+<td>Google (Gemini / Vertex)</td>
+<td><code>thinkingConfig: { thinkingLevel, includeThoughts: true }</code></td>
+<td><code>minimal \| low \| medium \| high</code></td>
+</tr>
+<tr>
+<td>DeepSeek</td>
+<td><code>thinking: { type: "enabled" }</code> + <code>reasoning_effort</code></td>
+<td><code>low/medium/high → "high"</code>, <code>max/xhigh → "max"</code></td>
+</tr>
+<tr>
+<td>OpenRouter</td>
+<td><code>reasoning: { effort }</code></td>
+<td><code>none \| minimal \| low \| medium \| high \| xhigh</code></td>
+</tr>
+<tr>
+<td>NanoGPT</td>
+<td><code>reasoning: { effort }</code> (object form preserves <code>exclude</code> / <code>delta_field</code>)</td>
+<td><code>none \| minimal \| low \| medium \| high</code></td>
+</tr>
+<tr>
+<td>Moonshot, Z.AI</td>
+<td><code>thinking: { type: "enabled" }</code> (toggle-only)</td>
+<td>Effort ignored — <code>apiReasoning</code> alone gates it</td>
+</tr>
+<tr>
+<td>Generic OpenAI-compatible</td>
+<td><code>reasoning: { effort }</code></td>
+<td>Passed verbatim</td>
+</tr>
+</tbody>
+</table>
+<p>When <code>apiReasoning: false</code> the host writes the provider's documented "no extended thinking" shape — <code>thinking: { type: "disabled" }</code> for Anthropic and DeepSeek, <code>reasoning: { exclude: true }</code> for NanoGPT, omission for everyone else.</p>
+<hr />
+<h2 id="cancellation">Cancellation<a class="headerlink" href="#cancellation" title="Permanent link">&para;</a></h2>
+<p>Every generation method (<code>raw</code>, <code>quiet</code>, <code>batch</code>, <code>rawStream</code>, <code>quietStream</code>) accepts an optional <code>AbortSignal</code>. When the signal fires, the upstream LLM HTTP request is torn down and the call rejects with a standard <code>DOMException</code> whose <code>.name === "AbortError"</code>.</p>
+<p>The signal is consumed inside the extension worker and never crosses the wire. When abort fires, the worker posts an internal <code>cancel_generation</code> message to the host, which calls <code>controller.abort()</code> on the <code>AbortController</code> it created for the upstream provider call.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AbortController</span><span class="p">()</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">timer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">controller</span><span class="p">.</span><span class="nx">abort</span><span class="p">(),</span><span class="w"> </span><span class="mf">5</span><span class="nx">_000</span><span class="p">)</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Write a long essay…&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">    </span><span class="nx">signal</span><span class="o">:</span><span class="w"> </span><span class="kt">controller.signal</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="c1">// result: { content, finish_reason, usage }</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;AbortError&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;Generation cancelled&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">clearTimeout</span><span class="p">(</span><span class="nx">timer</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Compose with <code>AbortSignal.timeout()</code> and <code>AbortSignal.any()</code> for richer cancellation semantics:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">userController</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AbortController</span><span class="p">()</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">signal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">AbortSignal</span><span class="p">.</span><span class="nx">any</span><span class="p">([</span>
+<span class="w">  </span><span class="nx">userController</span><span class="p">.</span><span class="nx">signal</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">AbortSignal</span><span class="p">.</span><span class="nx">timeout</span><span class="p">(</span><span class="mf">30</span><span class="nx">_000</span><span class="p">),</span>
+<span class="p">])</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">quiet</span><span class="p">({</span><span class="w"> </span><span class="nx">messages</span><span class="p">,</span><span class="w"> </span><span class="nx">signal</span><span class="w"> </span><span class="p">})</span>
+</code></pre></div>
+<p>For <code>batch</code>, the same signal is threaded into every sub-request. Aborting mid-flight cancels the in-flight call and prevents any not-yet-started sequential calls from beginning. With <code>concurrent: true</code>, every parallel call sees the abort.</p>
+<hr />
+<h2 id="streaming">Streaming<a class="headerlink" href="#streaming" title="Permanent link">&para;</a></h2>
+<p>Stream tokens incrementally as the LLM emits them, instead of waiting for the full response. <code>rawStream</code> and <code>quietStream</code> mirror their non-streaming counterparts but return an <code>AsyncGenerator&lt;StreamChunkDTO&gt;</code> that you can iterate with <code>for await</code>.</p>
+<p>The generator yields one or more <code>token</code> / <code>reasoning</code> chunks and exactly one terminal <code>done</code> chunk carrying the aggregated response. If the call fails or is aborted, the generator throws instead of yielding <code>done</code>.</p>
+<h3 id="spindlegeneraterawstreaminput"><code>spindle.generate.rawStream(input)</code><a class="headerlink" href="#spindlegeneraterawstreaminput" title="Permanent link">&para;</a></h3>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">acc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span>
+<span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">chunk</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">rawStream</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">provider</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;openai&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">model</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;gpt-4o&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Tell me a story.&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="p">}))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">acc</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="nx">chunk</span><span class="p">.</span><span class="nx">token</span>
+<span class="w">    </span><span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;reasoning&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`[thinking] </span><span class="si">${</span><span class="nx">chunk</span><span class="p">.</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;done&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Final usage: </span><span class="si">${</span><span class="nx">chunk</span><span class="p">.</span><span class="nx">usage</span><span class="o">?</span><span class="p">.</span><span class="nx">total_tokens</span><span class="si">}</span><span class="sb"> tokens`</span><span class="p">)</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`finish_reason: </span><span class="si">${</span><span class="nx">chunk</span><span class="p">.</span><span class="nx">finish_reason</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="spindlegeneratequietstreaminput"><code>spindle.generate.quietStream(input)</code><a class="headerlink" href="#spindlegeneratequietstreaminput" title="Permanent link">&para;</a></h3>
+<p>Same semantics as <code>rawStream</code>, but uses the user's active connection profile and preset parameters (no <code>provider</code>/<code>model</code> required).</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">chunk</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">quietStream</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello!&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="p">}))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="cancelling-a-stream">Cancelling a stream<a class="headerlink" href="#cancelling-a-stream" title="Permanent link">&para;</a></h3>
+<p><code>rawStream</code> / <code>quietStream</code> accept the same <code>AbortSignal</code> as the non-streaming methods. The generator throws <code>AbortError</code> on abort. You can also break out of the <code>for await</code> loop early — the generator's cleanup posts a cancel message to tear down the upstream request.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">controller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">AbortController</span><span class="p">()</span>
+<span class="nx">setTimeout</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">controller</span><span class="p">.</span><span class="nx">abort</span><span class="p">(),</span><span class="w"> </span><span class="mf">2</span><span class="nx">_000</span><span class="p">)</span>
+
+<span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">chunk</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">rawStream</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Long answer…&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">    </span><span class="nx">signal</span><span class="o">:</span><span class="w"> </span><span class="kt">controller.signal</span><span class="p">,</span>
+<span class="w">  </span><span class="p">}))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="p">)</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">stdout</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">.</span><span class="nx">name</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;AbortError&#39;</span><span class="p">)</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="s1">&#39;Stream cancelled&#39;</span><span class="p">)</span>
+<span class="w">  </span><span class="k">else</span><span class="w"> </span><span class="k">throw</span><span class="w"> </span><span class="nx">err</span>
+<span class="p">}</span>
+
+<span class="c1">// Or break early — same effect, no AbortController needed:</span>
+<span class="k">for</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">chunk</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">quietStream</span><span class="p">({</span><span class="w"> </span><span class="nx">messages</span><span class="w"> </span><span class="p">}))</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chunk</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;token&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">shouldStop</span><span class="p">())</span><span class="w"> </span><span class="k">break</span><span class="w"> </span><span class="c1">// host receives cancel</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="streamchunkdto">StreamChunkDTO<a class="headerlink" href="#streamchunkdto" title="Permanent link">&para;</a></h3>
+<p>A discriminated union with three variants:</p>
+<table>
+<thead>
+<tr>
+<th><code>type</code></th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"token"</code></td>
+<td><code>token: string</code></td>
+<td>Incremental content token.</td>
+</tr>
+<tr>
+<td><code>"reasoning"</code></td>
+<td><code>token: string</code></td>
+<td>Incremental chain-of-thought token (provider-dependent).</td>
+</tr>
+<tr>
+<td><code>"done"</code></td>
+<td><code>content: string</code>, <code>reasoning?: string</code>, <code>finish_reason: string</code>, <code>tool_calls?: ToolCallDTO[]</code>, <code>usage?: { prompt_tokens, completion_tokens, total_tokens }</code></td>
+<td>Terminal chunk — emitted exactly once on success. Carries the aggregated response so you don't need to accumulate manually if you don't want to.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">No <code>batchStream</code></p>
+<p>Batch is just a wrapper around N raw calls. If you want parallel streamed responses, run <code>Promise.all([rawStream(a), rawStream(b)])</code> and consume each iterator however you like.</p>
+</div>
+<hr />
+<h2 id="dry-run-prompt-assembly">Dry Run (Prompt Assembly)<a class="headerlink" href="#dry-run-prompt-assembly" title="Permanent link">&para;</a></h2>
+<p>Run the full prompt assembly pipeline — macros, world info, context filters, memory retrieval, token counting — without actually calling the LLM. Useful for prompt debugging, token budget analysis, and previewing what the model will see.</p>
+<h3 id="spindlegeneratedryruninput-userid"><code>spindle.generate.dryRun(input, userId?)</code><a class="headerlink" href="#spindlegeneratedryruninput-userid" title="Permanent link">&para;</a></h3>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">dryRun</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">chatId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;chat-id&#39;</span><span class="p">,</span>
+<span class="p">},</span><span class="w"> </span><span class="nx">userId</span><span class="p">)</span><span class="w"> </span><span class="c1">// userId required for operator-scoped extensions</span>
+
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Provider: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">provider</span><span class="si">}</span><span class="sb">, Model: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">model</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Assembled </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">messages</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> messages`</span><span class="p">)</span>
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Breakdown: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">breakdown</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> blocks`</span><span class="p">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">tokenCount</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Total tokens: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">tokenCount</span><span class="p">.</span><span class="nx">total_tokens</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">worldInfoStats</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`WI entries activated: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">worldInfoStats</span><span class="p">.</span><span class="nx">activatedAfterBudget</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">memoryStats</span><span class="o">?</span><span class="p">.</span><span class="nx">enabled</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Memory chunks retrieved: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">memoryStats</span><span class="p">.</span><span class="nx">chunksRetrieved</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>You can optionally override the connection, persona, preset, or generation type:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">dryRun</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">chatId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;chat-id&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">connectionId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;specific-connection&#39;</span><span class="p">,</span><span class="w">   </span><span class="c1">// default: user&#39;s default connection</span>
+<span class="w">  </span><span class="nx">personaId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;specific-persona&#39;</span><span class="p">,</span><span class="w">         </span><span class="c1">// default: user&#39;s active/default persona</span>
+<span class="w">  </span><span class="nx">presetId</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;specific-preset&#39;</span><span class="p">,</span><span class="w">           </span><span class="c1">// default: connection&#39;s linked preset</span>
+<span class="w">  </span><span class="nx">generationType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;continue&#39;</span><span class="p">,</span><span class="w">            </span><span class="c1">// default: &#39;normal&#39;</span>
+<span class="w">  </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">temperature</span><span class="o">:</span><span class="w"> </span><span class="kt">0.8</span><span class="w"> </span><span class="p">},</span><span class="w">      </span><span class="c1">// override sampler params</span>
+<span class="p">},</span><span class="w"> </span><span class="nx">userId</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="dryrunrequestdto">DryRunRequestDTO<a class="headerlink" href="#dryrunrequestdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>chatId</code></td>
+<td><code>string</code></td>
+<td><strong>Required.</strong> The chat to assemble the prompt for.</td>
+</tr>
+<tr>
+<td><code>connectionId</code></td>
+<td><code>string</code></td>
+<td>Optional. Use a specific connection profile.</td>
+</tr>
+<tr>
+<td><code>personaId</code></td>
+<td><code>string</code></td>
+<td>Optional. Use a specific persona.</td>
+</tr>
+<tr>
+<td><code>presetId</code></td>
+<td><code>string</code></td>
+<td>Optional. Use a specific preset.</td>
+</tr>
+<tr>
+<td><code>generationType</code></td>
+<td><code>string</code></td>
+<td>Optional. One of <code>"normal"</code>, <code>"continue"</code>, <code>"regenerate"</code>, <code>"swipe"</code>, <code>"impersonate"</code>.</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td><code>Record&lt;string, unknown&gt;</code></td>
+<td>Optional. Override sampler parameters.</td>
+</tr>
+</tbody>
+</table>
+<p><code>dryRun</code> also accepts a second argument:</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>userId</code></td>
+<td><code>string</code></td>
+<td><strong>Required for operator-scoped extensions.</strong> The user ID to scope the dry run to. For user-scoped extensions, this is inferred automatically and can be omitted.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="dryrunresultdto">DryRunResultDTO<a class="headerlink" href="#dryrunresultdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>messages</code></td>
+<td><code>LlmMessageDTO[]</code></td>
+<td>The fully assembled message array that would be sent to the LLM.</td>
+</tr>
+<tr>
+<td><code>breakdown</code></td>
+<td><code>AssemblyBreakdownEntryDTO[]</code></td>
+<td>Ordered list of prompt blocks showing how the prompt was built.</td>
+</tr>
+<tr>
+<td><code>parameters</code></td>
+<td><code>Record&lt;string, unknown&gt;</code></td>
+<td>Final merged sampler parameters.</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>The model that would be used.</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td><code>string</code></td>
+<td>The provider that would be used.</td>
+</tr>
+<tr>
+<td><code>tokenCount</code></td>
+<td><code>DryRunTokenCountDTO</code></td>
+<td>Optional. Per-block token counts (if a tokenizer is available).</td>
+</tr>
+<tr>
+<td><code>worldInfoStats</code></td>
+<td><code>ActivationStatsDTO</code></td>
+<td>Optional. World info activation statistics.</td>
+</tr>
+<tr>
+<td><code>memoryStats</code></td>
+<td><code>MemoryStatsDTO</code></td>
+<td>Optional. Long-term memory retrieval statistics.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="assemblybreakdownentrydto">AssemblyBreakdownEntryDTO<a class="headerlink" href="#assemblybreakdownentrydto" title="Permanent link">&para;</a></h3>
+<p>Each entry represents one block in the assembled prompt:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>type</code></td>
+<td><code>string</code></td>
+<td>Block type: <code>"block"</code>, <code>"chat_history"</code>, <code>"world_info"</code>, <code>"authors_note"</code>, <code>"utility"</code>, <code>"long_term_memory"</code>, <code>"separator"</code>, <code>"append"</code>, <code>"sidecar"</code>, <code>"extension"</code>.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Human-readable block name.</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td><code>string</code></td>
+<td>Message role (<code>"system"</code>, <code>"user"</code>, <code>"assistant"</code>).</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>The resolved text content.</td>
+</tr>
+<tr>
+<td><code>blockId</code></td>
+<td><code>string</code></td>
+<td>Preset block ID (if from a preset block).</td>
+</tr>
+<tr>
+<td><code>extensionId</code></td>
+<td><code>string</code></td>
+<td>Present for interceptor-injected breakdown blocks. Resolved from the installed extension manifest.</td>
+</tr>
+<tr>
+<td><code>extensionName</code></td>
+<td><code>string</code></td>
+<td>Human-readable extension attribution for interceptor-injected breakdown blocks.</td>
+</tr>
+</tbody>
+</table>
+<p>When an interceptor returns <code>breakdown: [{ messageIndex, name? }]</code>, the host turns those referenced messages into <code>type: "extension"</code> breakdown entries. This means retrieval or prompt-engineering extensions can expose their injected context in both dry-run results and persisted prompt breakdown snapshots without having to parse or diff the final prompt themselves.</p>
+<h3 id="activationstatsdto">ActivationStatsDTO<a class="headerlink" href="#activationstatsdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>totalCandidates</code></td>
+<td><code>number</code></td>
+<td>Total WI entries considered.</td>
+</tr>
+<tr>
+<td><code>activatedBeforeBudget</code></td>
+<td><code>number</code></td>
+<td>Entries that matched before budget enforcement.</td>
+</tr>
+<tr>
+<td><code>activatedAfterBudget</code></td>
+<td><code>number</code></td>
+<td>Entries included after budget enforcement.</td>
+</tr>
+<tr>
+<td><code>evictedByBudget</code></td>
+<td><code>number</code></td>
+<td>Entries dropped due to budget limits.</td>
+</tr>
+<tr>
+<td><code>evictedByMinPriority</code></td>
+<td><code>number</code></td>
+<td>Entries dropped due to minimum priority threshold.</td>
+</tr>
+<tr>
+<td><code>estimatedTokens</code></td>
+<td><code>number</code></td>
+<td>Approximate total WI tokens (chars/4).</td>
+</tr>
+<tr>
+<td><code>recursionPassesUsed</code></td>
+<td><code>number</code></td>
+<td>Number of keyword-chaining recursion passes.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="memorystatsdto">MemoryStatsDTO<a class="headerlink" href="#memorystatsdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td><code>boolean</code></td>
+<td>Whether long-term memory is active.</td>
+</tr>
+<tr>
+<td><code>chunksRetrieved</code></td>
+<td><code>number</code></td>
+<td>Number of memory chunks included.</td>
+</tr>
+<tr>
+<td><code>chunksAvailable</code></td>
+<td><code>number</code></td>
+<td>Total chunks in the vector store.</td>
+</tr>
+<tr>
+<td><code>chunksPending</code></td>
+<td><code>number</code></td>
+<td>Chunks awaiting vectorization.</td>
+</tr>
+<tr>
+<td><code>injectionMethod</code></td>
+<td><code>string</code></td>
+<td>How memories were injected: <code>"macro"</code>, <code>"fallback"</code>, or <code>"disabled"</code>.</td>
+</tr>
+<tr>
+<td><code>retrievalMode</code></td>
+<td><code>string?</code></td>
+<td>How chunks were retrieved: <code>"vector"</code> (real vector/hybrid search) or <code>"recency"</code> (fallback, e.g. the query embedding failed). <code>retrievedChunks[].score</code> is <code>null</code> for recency/keyword-only hits.</td>
+</tr>
+<tr>
+<td><code>queryPreview</code></td>
+<td><code>string</code></td>
+<td>Truncated query text used for vector search.</td>
+</tr>
+<tr>
+<td><code>settingsSource</code></td>
+<td><code>string</code></td>
+<td>Whether settings came from <code>"global"</code> or <code>"per_chat"</code> overrides.</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Dry run mirrors the exact assembly pipeline used during real generation (macros, world info, context filters, memory) but skips the council execution and LLM call. It's the fastest way to debug prompt construction.</p>
+</div>
+<hr />
+<h2 id="structured-output">Structured Output<a class="headerlink" href="#structured-output" title="Permanent link">&para;</a></h2>
+<p>Some providers support native structured output, ensuring the LLM response conforms to a JSON schema. Pass provider-specific parameters via the <code>parameters</code> field.</p>
+<h3 id="google-gemini">Google Gemini<a class="headerlink" href="#google-gemini" title="Permanent link">&para;</a></h3>
+<p>Use <code>responseMimeType</code> and <code>responseSchema</code> to request structured JSON output:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Extract the character name and age from: &quot;Alice is 25 years old.&quot;&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">responseMimeType</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">responseSchema</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">properties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;integer&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;age&#39;</span><span class="p">],</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;my-gemini-connection&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="c1">// result.content: &#39;{&quot;name&quot;: &quot;Alice&quot;, &quot;age&quot;: 25}&#39;</span>
+</code></pre></div>
+<p><code>responseJsonSchema</code> is accepted as an alias for <code>responseSchema</code>.</p>
+<h3 id="openai-compatible">OpenAI-compatible<a class="headerlink" href="#openai-compatible" title="Permanent link">&para;</a></h3>
+<p>Use the standard <code>response_format</code> parameter:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Extract the character name and age.&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">response_format</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;json_schema&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">json_schema</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;character_info&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">schema</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">properties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;integer&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="p">},</span>
+<span class="w">          </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;age&#39;</span><span class="p">],</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;my-openai-connection&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="anthropic">Anthropic<a class="headerlink" href="#anthropic" title="Permanent link">&para;</a></h3>
+<p>Anthropic uses tool definitions for structured output. Define a tool with the desired output schema and set <code>tool_choice</code> to force it:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">raw</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Extract the character name and age.&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nx">parameters</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">tools</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span>
+<span class="w">      </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;extract_info&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">description</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Extract structured character information&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">input_schema</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;object&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">properties</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;string&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">          </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;integer&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">required</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;age&#39;</span><span class="p">],</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">}],</span>
+<span class="w">    </span><span class="nx">tool_choice</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="kr">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;tool&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;extract_info&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;my-anthropic-connection&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Provider-specific parameters are passed through to the underlying API. Any parameter not explicitly handled by Lumiverse is forwarded directly, so you can use provider-specific features even if they aren't documented here.</p>
+</div>
+<hr />
+<h2 id="stream-observation">Stream Observation<a class="headerlink" href="#stream-observation" title="Permanent link">&para;</a></h2>
+<p>Observe an in-flight LLM generation in real time. <code>observe()</code> subscribes to all generation lifecycle events for a specific chat, accumulates streamed content and reasoning tokens automatically, and exposes them through a simple callback API.</p>
+<h3 id="spindlegenerateobservechatid"><code>spindle.generate.observe(chatId)</code><a class="headerlink" href="#spindlegenerateobservechatid" title="Permanent link">&para;</a></h3>
+<p>Returns a <code>GenerationObserver</code> that filters events to the given chat.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">observer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="s1">&#39;chat-uuid&#39;</span><span class="p">)</span>
+
+<span class="nx">observer</span><span class="p">.</span><span class="nx">onStart</span><span class="p">((</span><span class="nx">info</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Generation started: </span><span class="si">${</span><span class="nx">info</span><span class="p">.</span><span class="nx">model</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="nx">observer</span><span class="p">.</span><span class="nx">onToken</span><span class="p">((</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// Called for every streamed token (content and reasoning)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">token</span><span class="p">.</span><span class="kr">type</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;reasoning&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`[thinking] </span><span class="si">${</span><span class="nx">token</span><span class="p">.</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+
+<span class="nx">observer</span><span class="p">.</span><span class="nx">onEnd</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="sb">`Generation failed: </span><span class="si">${</span><span class="nx">result</span><span class="p">.</span><span class="nx">error</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Done — </span><span class="si">${</span><span class="nx">observer</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> chars`</span><span class="p">)</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="w">  </span><span class="nx">observer</span><span class="p">.</span><span class="nx">dispose</span><span class="p">()</span>
+<span class="p">})</span>
+
+<span class="nx">observer</span><span class="p">.</span><span class="nx">onStop</span><span class="p">((</span><span class="nx">result</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Stopped early — partial: </span><span class="si">${</span><span class="nx">observer</span><span class="p">.</span><span class="nx">content</span><span class="p">.</span><span class="nx">length</span><span class="si">}</span><span class="sb"> chars`</span><span class="p">)</span>
+<span class="w">  </span><span class="nx">observer</span><span class="p">.</span><span class="nx">dispose</span><span class="p">()</span>
+<span class="p">})</span>
+</code></pre></div>
+<p>At any point during streaming you can read the accumulated state:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="nx">observer</span><span class="p">.</span><span class="nx">content</span><span class="w">    </span><span class="c1">// all content tokens concatenated</span>
+<span class="nx">observer</span><span class="p">.</span><span class="nx">reasoning</span><span class="w">  </span><span class="c1">// all reasoning tokens concatenated</span>
+<span class="nx">observer</span><span class="p">.</span><span class="nx">generationId</span><span class="w">  </span><span class="c1">// active generation ID, or null if idle</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Always call <code>dispose()</code></p>
+<p>The observer subscribes to four event channels internally. Call <code>observer.dispose()</code> when you no longer need it to unsubscribe and free resources.</p>
+</div>
+<h3 id="generationobserver">GenerationObserver<a class="headerlink" href="#generationobserver" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Property / Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onStart(handler)</code></td>
+<td><code>(info: GenerationStartedPayloadDTO) =&gt; void</code></td>
+<td>Called when a generation begins on this chat</td>
+</tr>
+<tr>
+<td><code>onToken(handler)</code></td>
+<td><code>(token: StreamTokenPayloadDTO) =&gt; void</code></td>
+<td>Called for each streamed token</td>
+</tr>
+<tr>
+<td><code>onEnd(handler)</code></td>
+<td><code>(result: GenerationEndedPayloadDTO) =&gt; void</code></td>
+<td>Called when the generation completes or errors</td>
+</tr>
+<tr>
+<td><code>onStop(handler)</code></td>
+<td><code>(result: GenerationStoppedPayloadDTO) =&gt; void</code></td>
+<td>Called when the user stops the generation</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code> (readonly)</td>
+<td>Accumulated content tokens</td>
+</tr>
+<tr>
+<td><code>reasoning</code></td>
+<td><code>string</code> (readonly)</td>
+<td>Accumulated reasoning/CoT tokens</td>
+</tr>
+<tr>
+<td><code>generationId</code></td>
+<td><code>string \| null</code> (readonly)</td>
+<td>Active generation ID</td>
+</tr>
+<tr>
+<td><code>dispose()</code></td>
+<td><code>() =&gt; void</code></td>
+<td>Unsubscribe from all events</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generationstartedpayloaddto">GenerationStartedPayloadDTO<a class="headerlink" href="#generationstartedpayloaddto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generationId</code></td>
+<td><code>string</code></td>
+<td>Unique generation ID</td>
+</tr>
+<tr>
+<td><code>chatId</code></td>
+<td><code>string</code></td>
+<td>Chat this generation belongs to</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>Model being used</td>
+</tr>
+<tr>
+<td><code>targetMessageId</code></td>
+<td><code>string</code></td>
+<td>Optional. ID of the message being generated/regenerated</td>
+</tr>
+<tr>
+<td><code>characterId</code></td>
+<td><code>string</code></td>
+<td>Optional. Target character ID</td>
+</tr>
+<tr>
+<td><code>characterName</code></td>
+<td><code>string</code></td>
+<td>Optional. Target character name</td>
+</tr>
+</tbody>
+</table>
+<h3 id="streamtokenpayloaddto">StreamTokenPayloadDTO<a class="headerlink" href="#streamtokenpayloaddto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generationId</code></td>
+<td><code>string</code></td>
+<td>Generation this token belongs to</td>
+</tr>
+<tr>
+<td><code>chatId</code></td>
+<td><code>string</code></td>
+<td>Chat ID</td>
+</tr>
+<tr>
+<td><code>token</code></td>
+<td><code>string</code></td>
+<td>The text chunk</td>
+</tr>
+<tr>
+<td><code>seq</code></td>
+<td><code>number</code></td>
+<td>Monotonic sequence number (for deduplication)</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>"reasoning"</code></td>
+<td>Optional. Present for chain-of-thought tokens</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generationendedpayloaddto">GenerationEndedPayloadDTO<a class="headerlink" href="#generationendedpayloaddto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generationId</code></td>
+<td><code>string</code></td>
+<td>Generation ID</td>
+</tr>
+<tr>
+<td><code>chatId</code></td>
+<td><code>string</code></td>
+<td>Chat ID</td>
+</tr>
+<tr>
+<td><code>messageId</code></td>
+<td><code>string</code></td>
+<td>ID of the saved message (absent on error)</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>Final generated content (absent on error)</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>string</code></td>
+<td>Error message (absent on success)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="generationstoppedpayloaddto">GenerationStoppedPayloadDTO<a class="headerlink" href="#generationstoppedpayloaddto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>generationId</code></td>
+<td><code>string</code></td>
+<td>Generation ID</td>
+</tr>
+<tr>
+<td><code>chatId</code></td>
+<td><code>string</code></td>
+<td>Chat ID</td>
+</tr>
+<tr>
+<td><code>content</code></td>
+<td><code>string</code></td>
+<td>Partial content accumulated before the stop</td>
+</tr>
+</tbody>
+</table>
+<h3 id="raw-event-subscription">Raw event subscription<a class="headerlink" href="#raw-event-subscription" title="Permanent link">&para;</a></h3>
+<p>If you need lower-level control (e.g. observing multiple chats, or only specific events), you can subscribe to the generation events directly. These are fully typed when using <code>lumiverse-spindle-types</code>:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">unsub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;STREAM_TOKEN_RECEIVED&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="c1">// payload is typed as StreamTokenPayloadDTO</span>
+<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">token</span><span class="p">,</span><span class="w"> </span><span class="nx">payload</span><span class="p">.</span><span class="nx">seq</span><span class="p">)</span>
+<span class="p">})</span>
+
+<span class="c1">// Clean up when done</span>
+<span class="nx">unsub</span><span class="p">()</span>
+</code></pre></div>
+<p>Available generation events: <code>GENERATION_STARTED</code>, <code>STREAM_TOKEN_RECEIVED</code>, <code>GENERATION_ENDED</code>, <code>GENERATION_STOPPED</code>.</p>
+<hr />
+<h2 id="connection-profiles">Connection Profiles<a class="headerlink" href="#connection-profiles" title="Permanent link">&para;</a></h2>
+<p>Extensions with the <code>generation</code> permission can discover and inspect the user's connection profiles. This lets you present a UI for selecting which LLM provider/model to use, or programmatically pick the right connection for your use case.</p>
+<p>Connection profiles are returned as safe <code>ConnectionProfileDTO</code> objects — <strong>API keys are never exposed</strong> (only a <code>has_api_key</code> boolean).</p>
+<h3 id="spindleconnectionslistuserid"><code>spindle.connections.list(userId?)</code><a class="headerlink" href="#spindleconnectionslistuserid" title="Permanent link">&para;</a></h3>
+<p>List all connection profiles available to the user.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">connections</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">list</span><span class="p">()</span>
+<span class="c1">// connections: Array&lt;{ id, name, provider, model, is_default, has_api_key, ... }&gt;</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">defaultConn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">connections</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="nx">c</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">c</span><span class="p">.</span><span class="nx">is_default</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">defaultConn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">generate</span><span class="p">.</span><span class="nx">quiet</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">messages</span><span class="o">:</span><span class="w"> </span><span class="p">[{</span><span class="w"> </span><span class="nx">role</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;user&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Hello&#39;</span><span class="w"> </span><span class="p">}],</span>
+<span class="w">    </span><span class="nx">connection_id</span><span class="o">:</span><span class="w"> </span><span class="kt">defaultConn.id</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="spindleconnectionsgetconnectionid-userid"><code>spindle.connections.get(connectionId, userId?)</code><a class="headerlink" href="#spindleconnectionsgetconnectionid-userid" title="Permanent link">&para;</a></h3>
+<p>Get a single connection profile by ID. Returns <code>null</code> if not found.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;some-connection-id&#39;</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">conn</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Using </span><span class="si">${</span><span class="nx">conn</span><span class="p">.</span><span class="nx">provider</span><span class="si">}</span><span class="sb"> / </span><span class="si">${</span><span class="nx">conn</span><span class="p">.</span><span class="nx">model</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="connectionprofiledto">ConnectionProfileDTO<a class="headerlink" href="#connectionprofiledto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Unique connection profile ID</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Human-readable display name</td>
+</tr>
+<tr>
+<td><code>provider</code></td>
+<td><code>string</code></td>
+<td>LLM provider identifier (e.g. <code>"openai"</code>, <code>"anthropic"</code>)</td>
+</tr>
+<tr>
+<td><code>api_url</code></td>
+<td><code>string</code></td>
+<td>Custom API URL (empty string for default)</td>
+</tr>
+<tr>
+<td><code>model</code></td>
+<td><code>string</code></td>
+<td>Selected model identifier</td>
+</tr>
+<tr>
+<td><code>preset_id</code></td>
+<td><code>string \| null</code></td>
+<td>Associated generation preset</td>
+</tr>
+<tr>
+<td><code>is_default</code></td>
+<td><code>boolean</code></td>
+<td>Whether this is the user's default connection</td>
+</tr>
+<tr>
+<td><code>has_api_key</code></td>
+<td><code>boolean</code></td>
+<td>Whether an API key is configured (key itself is never exposed)</td>
+</tr>
+<tr>
+<td><code>metadata</code></td>
+<td><code>Record&lt;string, unknown&gt;</code></td>
+<td>Raw provider-specific metadata bag (Anthropic caching flags, Google thinking budget config, the unparsed <code>reasoningBindings</code> blob, etc.)</td>
+</tr>
+<tr>
+<td><code>reasoning_bindings</code></td>
+<td><code>ConnectionReasoningBindingsDTO \| null</code></td>
+<td>Typed view of the connection's bound reasoning settings, parsed from <code>metadata.reasoningBindings</code>. <code>null</code> when nothing is bound — generation falls back to the user's global <code>reasoningSettings</code> in that case.</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td><code>number</code></td>
+<td>Unix timestamp</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td><code>number</code></td>
+<td>Unix timestamp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="connectionreasoningbindingsdto">ConnectionReasoningBindingsDTO<a class="headerlink" href="#connectionreasoningbindingsdto" title="Permanent link">&para;</a></h3>
+<p>When a user binds reasoning settings to a connection from the Connection Manager UI, the snapshot is exposed here so extensions can inspect it without grovelling through <code>metadata</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td><code>ReasoningSettingsDTO</code></td>
+<td>The bound reasoning snapshot — see below.</td>
+</tr>
+<tr>
+<td><code>promptBias</code></td>
+<td><code>string</code></td>
+<td>Optional. Bound "Start Reply With" assistant prefill captured alongside the reasoning snapshot. Overrides the user's global <code>promptBias</code> for this connection.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="reasoningsettingsdto">ReasoningSettingsDTO<a class="headerlink" href="#reasoningsettingsdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>apiReasoning</code></td>
+<td><code>boolean</code></td>
+<td>Master switch — whether the provider should produce thinking output.</td>
+</tr>
+<tr>
+<td><code>reasoningEffort</code></td>
+<td><code>ReasoningEffortDTO</code></td>
+<td>One of <code>"auto" \| "none" \| "minimal" \| "low" \| "medium" \| "high" \| "max" \| "xhigh"</code>. See the <a href="#provider-mapping">provider mapping table</a>.</td>
+</tr>
+<tr>
+<td><code>thinkingDisplay</code></td>
+<td><code>ThinkingDisplayDTO</code></td>
+<td>Anthropic-only. <code>"auto" \| "summarized" \| "omitted"</code>.</td>
+</tr>
+<tr>
+<td><code>prefix</code></td>
+<td><code>string</code></td>
+<td>Opening delimiter for the delimited-reasoning parser (e.g. <code>"&lt;think&gt;\n"</code>). Only affects parsing, not the outgoing request.</td>
+</tr>
+<tr>
+<td><code>suffix</code></td>
+<td><code>string</code></td>
+<td>Closing delimiter for the delimited-reasoning parser.</td>
+</tr>
+<tr>
+<td><code>autoParse</code></td>
+<td><code>boolean</code></td>
+<td>Whether to auto-parse delimited reasoning out of the assistant content stream.</td>
+</tr>
+<tr>
+<td><code>keepInHistory</code></td>
+<td><code>number</code></td>
+<td>How many recent reasoning blocks to retain in assembled prompt history. <code>0</code> strips all, <code>-1</code> keeps everything, <code>N</code> keeps the last N.</td>
+</tr>
+</tbody>
+</table>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">connections</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">connId</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">conn</span><span class="o">?</span><span class="p">.</span><span class="nx">reasoning_bindings</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">apiReasoning</span><span class="p">,</span><span class="w"> </span><span class="nx">reasoningEffort</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">conn</span><span class="p">.</span><span class="nx">reasoning_bindings</span><span class="p">.</span><span class="nx">settings</span>
+<span class="w">  </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span>
+<span class="w">    </span><span class="sb">`Bound: thinking=</span><span class="si">${</span><span class="nx">apiReasoning</span><span class="si">}</span><span class="sb">, effort=</span><span class="si">${</span><span class="nx">reasoningEffort</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span>
+<span class="w">  </span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For user-scoped extensions, the <code>userId</code> parameter is automatically inferred from the extension owner. For operator-scoped extensions, pass <code>userId</code> to scope the query to a specific user.</p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../llm-tools/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LLM Tools">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                LLM Tools
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../image-generation/" class="md-footer__link md-footer__link--next" aria-label="Next: Image Generation">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Image Generation
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Lumiverse
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,16 @@
+# Graphify should model project source and docs, not local agent/runtime state.
+.codex/
+.omx/
+graphify-out/
+node_modules/
+frontend/node_modules/
+frontend/dist/
+data/*
+!data/extensions/
+!data/extensions/**
+data/extensions/**/.git/
+data/extensions/**/node_modules/
+data/extensions/**/dist/
+Desktop.ini
+foldericon*.ico
+*.tsbuildinfo

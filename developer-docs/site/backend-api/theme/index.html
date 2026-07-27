@@ -1,0 +1,4368 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build extensions for Lumiverse using Spindle">
+      
+      
+        <meta name="author" content="Lumiverse">
+      
+      
+      
+        <link rel="prev" href="../images/">
+      
+      
+        <link rel="next" href="../storage/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.45">
+    
+    
+      
+        <title>Theme - Lumiverse Developer Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#theme" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-header__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumiverse Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Theme
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend-and-extensions/" class="md-tabs__link">
+          
+  
+  Developer Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  Backend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../frontend-api/" class="md-tabs__link">
+          
+  
+  Frontend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../lifecycle/" class="md-tabs__link">
+        
+  
+  Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../examples/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../rest-api/" class="md-tabs__link">
+        
+  
+  REST API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Lumiverse Developer Docs" class="md-nav__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Lumiverse Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer Maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer Maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-and-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend and Extensions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extension-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../settings-to-css-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings to CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ui-productivity-overhaul/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../backend-modification-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Modification Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Getting Started
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quick Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manifest
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Capabilities
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime Modes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/typescript-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  TypeScript Setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Backend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Macros
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interceptors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interceptors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../context-handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Context Handlers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../llm-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LLM Tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../image-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Image Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeapplyoverrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.apply(overrides)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.apply(overrides)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mode-aware-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mode-Aware Overrides
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themeoverridedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemeOverrideDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeapplypalettepalette-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.applyPalette(palette, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.applyPalette(palette, userId?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#themepaletteconfigdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemePaletteConfigDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Notes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-css-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Available CSS Variables
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeclearuserid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.clear(userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemegetcurrentuserid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.getCurrent(userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.getCurrent(userId?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#themeinfodto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemeInfoDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeextractcolorsimageid-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.extractColors(imageId, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.extractColors(imageId, userId?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colorextractionresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ColorExtractionResult
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorrgb-colorhsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ColorRGB / ColorHSL
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flatness-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flatness Scores
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemegeneratevariablesconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.generateVariables(config)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.generateVariables(config)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combining-with-extractcolors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Combining with <code>extractColors</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themevariablesconfigdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemeVariablesConfigDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basecolors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>baseColors</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Visibility
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-character-derived-theme-with-mode-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: Character-Derived Theme with Mode Support
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Character-Derived Theme with Mode Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-approach-partial-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Manual approach (partial overrides)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-time-based-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: Time-Based Theme
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shared-rpc-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared RPC Pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ephemeral-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ephemeral Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tokens
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Characters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Presets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../world-books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Books
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../regex-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regex Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../databanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Databanks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../memories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Memories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Personas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../council/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Council
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat Mutation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../event-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../secure-enclave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Secure Enclave
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cors-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CORS Proxy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAuth
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Toast Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../text-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Text Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../push-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Push Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../web-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user-presence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  User Context
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Automation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../frontend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Frontend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/dom-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM Helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/ui-events-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Event Helpers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/ui-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/shared-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/backend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/message-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../frontend-api/file-uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Uploads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/minimal-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Minimal Backend
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/prompt-interceptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prompt Interceptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/full-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Full Stack
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/frontend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/backend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  REST API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeapplyoverrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.apply(overrides)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.apply(overrides)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mode-aware-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mode-Aware Overrides
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themeoverridedto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemeOverrideDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeapplypalettepalette-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.applyPalette(palette, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.applyPalette(palette, userId?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#themepaletteconfigdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemePaletteConfigDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Notes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#available-css-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Available CSS Variables
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeclearuserid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.clear(userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemegetcurrentuserid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.getCurrent(userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.getCurrent(userId?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#themeinfodto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemeInfoDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemeextractcolorsimageid-userid" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.extractColors(imageId, userId?)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.extractColors(imageId, userId?)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#colorextractionresult" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ColorExtractionResult
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#colorrgb-colorhsl" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ColorRGB / ColorHSL
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flatness-scores" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Flatness Scores
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#spindlethemegeneratevariablesconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>spindle.theme.generateVariables(config)</code>
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="spindle.theme.generateVariables(config)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#combining-with-extractcolors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Combining with <code>extractColors</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#themevariablesconfigdto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        ThemeVariablesConfigDTO
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#basecolors" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>baseColors</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-visibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        User Visibility
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-character-derived-theme-with-mode-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: Character-Derived Theme with Mode Support
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example: Character-Derived Theme with Mode Support">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#manual-approach-partial-overrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Manual approach (partial overrides)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-time-based-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: Time-Based Theme
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Backend API
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="theme">Theme<a class="headerlink" href="#theme" title="Permanent link">&para;</a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Permission required: <code>app_manipulation</code></p>
+</div>
+<p>Apply CSS variable overrides on top of the user's current theme. Overrides are scoped to your extension and automatically removed when the extension is disabled or unloaded. Active extension themes appear in the user's Theme panel with attribution.</p>
+<h2 id="spindlethemeapplyoverrides"><code>spindle.theme.apply(overrides)</code><a class="headerlink" href="#spindlethemeapplyoverrides" title="Permanent link">&para;</a></h2>
+<p>Push CSS variable overrides to the frontend. Small partial updates merge with any previously applied overrides from your extension — new keys are added, existing keys are overwritten. Full theme-sized payloads are treated as replacements for their scope (<code>variables</code>, <code>variablesByMode.dark</code>, <code>variablesByMode.light</code>) so stale alpha/glass/fill tokens do not accumulate across repeated theme regeneration. The UI updates immediately via WebSocket.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-primary&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 80%, 60%)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-prose-dialogue&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 70%, 75%)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="mode-aware-overrides">Mode-Aware Overrides<a class="headerlink" href="#mode-aware-overrides" title="Permanent link">&para;</a></h3>
+<p>Use <code>variablesByMode</code> to specify different values for light and dark mode. When the user switches modes, the frontend automatically selects the matching set. Mode-specific values take precedence over flat <code>variables</code> for the same key.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">  </span><span class="c1">// Flat variables apply in both modes</span>
+<span class="w">  </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-primary&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 80%, 60%)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-prose-dialogue&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 70%, 75%)&#39;</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="c1">// Mode-specific variables override flat values when active</span>
+<span class="w">  </span><span class="nx">variablesByMode</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dark</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 12%, 11%)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 12%, 14%)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lcs-glass-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsla(210, 12%, 6%, 0.55)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">light</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 20%, 96%)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(210, 20%, 100%)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lcs-glass-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsla(210, 20%, 92%, 0.55)&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="themeoverridedto">ThemeOverrideDTO<a class="headerlink" href="#themeoverridedto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>variables</code></td>
+<td><code>Record&lt;string, string&gt;</code></td>
+<td>CSS custom property overrides applied regardless of mode. Keys must start with <code>--</code>. Max 200 per extension.</td>
+</tr>
+<tr>
+<td><code>variablesByMode</code></td>
+<td><code>{ dark?: Record&lt;string, string&gt;; light?: Record&lt;string, string&gt; }</code></td>
+<td>Mode-specific CSS overrides. Selected based on the user's resolved mode. Override flat <code>variables</code> for the same key.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="spindlethemeapplypalettepalette-userid"><code>spindle.theme.applyPalette(palette, userId?)</code><a class="headerlink" href="#spindlethemeapplypalettepalette-userid" title="Permanent link">&para;</a></h2>
+<p>Apply a safe palette-driven theme without letting the extension push raw CSS variables. Lumiverse preserves the user's current glass, radius, font, and UI-scale settings, generates both light and dark variable maps internally, and owns alpha-heavy presentation tokens like fills, glass backgrounds, shadows, and scrims.</p>
+<p>This is the preferred API for live theming from avatars, album art, or other frequently changing color sources.</p>
+<p>Pass <code>null</code> when no valid color data is available. Lumiverse treats that as a clear operation for your extension's active palette override and immediately falls back to the user's currently selected base theme.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">applyPalette</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="kt">210</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">60</span><span class="p">,</span><span class="w"> </span><span class="nx">l</span><span class="o">:</span><span class="w"> </span><span class="kt">58</span><span class="w"> </span><span class="p">},</span>
+<span class="p">},</span><span class="w"> </span><span class="nx">userId</span><span class="p">)</span>
+</code></pre></div>
+<div class="language-ts highlight"><pre><span></span><code><span class="c1">// No usable palette right now? Clear the extension-owned palette override.</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">applyPalette</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="nx">userId</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="themepaletteconfigdto">ThemePaletteConfigDTO<a class="headerlink" href="#themepaletteconfigdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accent</code></td>
+<td><code>{ h, s, l }</code></td>
+<td>Primary accent color in HSL. Lumiverse derives the final full palette and mode-aware CSS vars from this.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>applyPalette()</code> never mutates the user's saved theme selection. It only layers an extension-scoped override on top.</li>
+<li><code>applyPalette(null, userId?)</code> is equivalent to clearing that extension-scoped palette override.</li>
+<li>After a clear, the UI reverts to the user's current base theme and preferences (accent, glass, radius, font scale, UI scale, resolved mode).</li>
+</ul>
+<h3 id="available-css-variables">Available CSS Variables<a class="headerlink" href="#available-css-variables" title="Permanent link">&para;</a></h3>
+<p>Lumiverse generates 100+ CSS custom properties from the active theme. All are overridable:</p>
+<table>
+<thead>
+<tr>
+<th>Group</th>
+<th>Variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Primary accent</strong></td>
+<td><code>--lumiverse-primary</code>, <code>-hover</code>, <code>-light</code>, <code>-muted</code>, <code>-text</code>, <code>-010</code>, <code>-015</code>, <code>-020</code>, <code>-050</code>, <code>-contrast</code></td>
+</tr>
+<tr>
+<td><strong>Backgrounds</strong></td>
+<td><code>--lumiverse-bg</code>, <code>-elevated</code>, <code>-hover</code>, <code>-dark</code>, <code>-darker</code>, <code>-deep</code>, <code>-040</code>, <code>-050</code>, <code>-070</code>, <code>-elevated-040</code>, <code>-deep-080</code>, <code>-scene-text-scrim</code></td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td><code>--lumiverse-text</code>, <code>-muted</code>, <code>-dim</code>, <code>-hint</code></td>
+</tr>
+<tr>
+<td><strong>Borders</strong></td>
+<td><code>--lumiverse-border</code>, <code>-hover</code>, <code>-light</code>, <code>-neutral</code>, <code>-neutral-hover</code></td>
+</tr>
+<tr>
+<td><strong>Status</strong></td>
+<td><code>--lumiverse-danger</code>, <code>--lumiverse-success</code>, <code>--lumiverse-warning</code> (each with <code>-015</code>, <code>-020</code>, <code>-050</code> variants)</td>
+</tr>
+<tr>
+<td><strong>Glass</strong></td>
+<td><code>--lcs-glass-bg</code>, <code>-bg-hover</code>, <code>-border</code>, <code>-border-hover</code>, <code>-blur</code>, <code>-soft-blur</code>, <code>-strong-blur</code></td>
+</tr>
+<tr>
+<td><strong>Prose</strong></td>
+<td><code>--lumiverse-prose-italic</code>, <code>-bold</code>, <code>-dialogue</code>, <code>-blockquote</code>, <code>-link</code></td>
+</tr>
+<tr>
+<td><strong>Shadows</strong></td>
+<td><code>--lumiverse-shadow</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code></td>
+</tr>
+<tr>
+<td><strong>Radii</strong></td>
+<td><code>--lumiverse-radius</code>, <code>-sm</code>, <code>-md</code>, <code>-lg</code>, <code>-xl</code>, <code>--lcs-radius</code>, <code>-sm</code>, <code>-xs</code></td>
+</tr>
+<tr>
+<td><strong>Fills</strong></td>
+<td><code>--lumiverse-fill</code>, <code>-subtle</code>, <code>-hover</code>, <code>-medium</code>, <code>-strong</code>, <code>-heavy</code>, <code>-deepest</code></td>
+</tr>
+<tr>
+<td><strong>Cards</strong></td>
+<td><code>--lumiverse-card-bg</code>, <code>--lumiverse-card-image-bg</code></td>
+</tr>
+<tr>
+<td><strong>Icons</strong></td>
+<td><code>--lumiverse-icon</code>, <code>-muted</code>, <code>-dim</code></td>
+</tr>
+<tr>
+<td><strong>Modals</strong></td>
+<td><code>--lumiverse-modal-backdrop</code>, <code>--lumiverse-gradient-modal</code>, <code>--lumiverse-swatch-border</code></td>
+</tr>
+<tr>
+<td><strong>Typography</strong></td>
+<td><code>--lumiverse-font-family</code>, <code>--lumiverse-font-mono</code>, <code>--lumiverse-font-scale</code></td>
+</tr>
+<tr>
+<td><strong>Transitions</strong></td>
+<td><code>--lumiverse-transition</code>, <code>--lumiverse-transition-fast</code>, <code>--lcs-transition</code>, <code>--lcs-transition-fast</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="spindlethemeclearuserid"><code>spindle.theme.clear(userId?)</code><a class="headerlink" href="#spindlethemeclearuserid" title="Permanent link">&para;</a></h2>
+<p>Remove all CSS variable overrides from your extension. The UI reverts to the user's base theme immediately.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">clear</span><span class="p">(</span><span class="nx">userId</span><span class="p">)</span>
+</code></pre></div>
+<hr />
+<h2 id="spindlethemegetcurrentuserid"><code>spindle.theme.getCurrent(userId?)</code><a class="headerlink" href="#spindlethemegetcurrentuserid" title="Permanent link">&para;</a></h2>
+<p>Get a read-only snapshot of the user's current theme configuration. Returns the base theme info without any extension overrides applied.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">()</span>
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Mode: </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">mode</span><span class="si">}</span><span class="sb">, Accent: hsl(</span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">accent</span><span class="p">.</span><span class="nx">h</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">accent</span><span class="p">.</span><span class="nx">s</span><span class="si">}</span><span class="sb">%, </span><span class="si">${</span><span class="nx">theme</span><span class="p">.</span><span class="nx">accent</span><span class="p">.</span><span class="nx">l</span><span class="si">}</span><span class="sb">%)`</span><span class="p">)</span>
+
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">theme</span><span class="p">.</span><span class="nx">mode</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;dark&#39;</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(220, 15%, 8%)&#39;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+</code></pre></div>
+<h3 id="themeinfodto">ThemeInfoDTO<a class="headerlink" href="#themeinfodto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td><code>string</code></td>
+<td>Theme preset ID (e.g. <code>"lumiverse-purple"</code>, <code>"character-aware"</code>, <code>"custom"</code>).</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>Display name of the theme.</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><code>"light" \| "dark"</code></td>
+<td>Resolved mode — always concrete, never <code>"system"</code>.</td>
+</tr>
+<tr>
+<td><code>accent</code></td>
+<td><code>{ h, s, l }</code></td>
+<td>Primary accent color in HSL (hue 0–360, saturation 0–100, lightness 0–100).</td>
+</tr>
+<tr>
+<td><code>enableGlass</code></td>
+<td><code>boolean</code></td>
+<td>Whether glassmorphic backdrop-filter effects are enabled.</td>
+</tr>
+<tr>
+<td><code>radiusScale</code></td>
+<td><code>number</code></td>
+<td>Border radius multiplier (1.0 = default).</td>
+</tr>
+<tr>
+<td><code>fontScale</code></td>
+<td><code>number</code></td>
+<td>Font size multiplier (1.0 = default).</td>
+</tr>
+<tr>
+<td><code>characterAware</code></td>
+<td><code>boolean</code></td>
+<td>Whether the theme dynamically adapts to the active character's avatar.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="spindlethemeextractcolorsimageid-userid"><code>spindle.theme.extractColors(imageId, userId?)</code><a class="headerlink" href="#spindlethemeextractcolorsimageid-userid" title="Permanent link">&para;</a></h2>
+<p>Extract a color palette from an image stored in Lumiverse's image system. The image is sampled across five regions (top, center, bottom, left, right) plus a full-image dominant and average. This is the same algorithm Lumiverse uses internally for Character Aware theming.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="c1">// Extract colors from a character&#39;s avatar</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">character</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">characters</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">characterId</span><span class="p">)</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">character</span><span class="o">?</span><span class="p">.</span><span class="nx">image_id</span><span class="p">)</span><span class="w"> </span><span class="k">return</span>
+
+<span class="kd">const</span><span class="w"> </span><span class="nx">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">extractColors</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">image_id</span><span class="p">)</span>
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Dominant: hsl(</span><span class="si">${</span><span class="nx">palette</span><span class="p">.</span><span class="nx">dominantHsl</span><span class="p">.</span><span class="nx">h</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">palette</span><span class="p">.</span><span class="nx">dominantHsl</span><span class="p">.</span><span class="nx">s</span><span class="si">}</span><span class="sb">%, </span><span class="si">${</span><span class="nx">palette</span><span class="p">.</span><span class="nx">dominantHsl</span><span class="p">.</span><span class="nx">l</span><span class="si">}</span><span class="sb">%)`</span><span class="p">)</span>
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">log</span><span class="p">.</span><span class="nx">info</span><span class="p">(</span><span class="sb">`Light image: </span><span class="si">${</span><span class="nx">palette</span><span class="p">.</span><span class="nx">isLight</span><span class="si">}</span><span class="sb">`</span><span class="p">)</span>
+</code></pre></div>
+<h3 id="colorextractionresult">ColorExtractionResult<a class="headerlink" href="#colorextractionresult" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dominant</code></td>
+<td><code>ColorRGB</code></td>
+<td>Overall dominant color of the full image.</td>
+</tr>
+<tr>
+<td><code>regions</code></td>
+<td><code>{ top, center, bottom, left, right }</code></td>
+<td>Dominant color per sampled region (each <code>ColorRGB</code>).</td>
+</tr>
+<tr>
+<td><code>flatness</code></td>
+<td><code>{ top, center, bottom, left, right, full }</code></td>
+<td>Per-region flatness score (0–1). High values indicate monotone/solid regions that should be deprioritized.</td>
+</tr>
+<tr>
+<td><code>average</code></td>
+<td><code>ColorRGB</code></td>
+<td>Simple average color across all sampled pixels.</td>
+</tr>
+<tr>
+<td><code>isLight</code></td>
+<td><code>boolean</code></td>
+<td>Whether the dominant color is perceived as light (luminance &gt; 152).</td>
+</tr>
+<tr>
+<td><code>dominantHsl</code></td>
+<td><code>ColorHSL</code></td>
+<td>HSL representation of the dominant color.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="colorrgb-colorhsl">ColorRGB / ColorHSL<a class="headerlink" href="#colorrgb-colorhsl" title="Permanent link">&para;</a></h3>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">interface</span><span class="w"> </span><span class="nx">ColorRGB</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">r</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="nx">g</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="nx">b</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">}</span><span class="w">  </span><span class="c1">// 0–255</span>
+<span class="kd">interface</span><span class="w"> </span><span class="nx">ColorHSL</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="p">;</span><span class="w"> </span><span class="nx">l</span><span class="o">:</span><span class="w"> </span><span class="kt">number</span><span class="w"> </span><span class="p">}</span><span class="w">   </span><span class="c1">// h: 0–360, s/l: 0–100</span>
+</code></pre></div>
+<h3 id="flatness-scores">Flatness Scores<a class="headerlink" href="#flatness-scores" title="Permanent link">&para;</a></h3>
+<p>The <code>flatness</code> field helps you avoid sampling background regions. A score above <code>0.5</code> indicates a monotone region (solid color fill, white/black background). When choosing which region to derive your accent from, prefer regions with lower flatness — they represent the "interesting" parts of the image (the character, not the background).</p>
+<hr />
+<h2 id="spindlethemegeneratevariablesconfig"><code>spindle.theme.generateVariables(config)</code><a class="headerlink" href="#spindlethemegeneratevariablesconfig" title="Permanent link">&para;</a></h2>
+<p>Generate the full set of Lumiverse CSS variables from a theme configuration. Returns a <code>Record&lt;string, string&gt;</code> containing every CSS variable the theme engine would produce — primary accent variants, backgrounds, borders, text, glass tokens, shadows, radii, prose tokens, and more (~80+ variables). The result can be passed directly to <code>apply()</code> for a complete, coherent theme override.</p>
+<p>This is the same engine that powers Lumiverse's built-in Character Aware theme. Instead of manually crafting individual CSS variables and risking gaps (e.g. forgetting <code>--lcs-glass-bg</code> while overriding <code>--lumiverse-bg</code>), you provide an accent color and mode and receive the entire variable map.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="c1">// Generate a complete blue theme for dark mode</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">generateVariables</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">h</span><span class="o">:</span><span class="w"> </span><span class="kt">210</span><span class="p">,</span><span class="w"> </span><span class="nx">s</span><span class="o">:</span><span class="w"> </span><span class="kt">60</span><span class="p">,</span><span class="w"> </span><span class="nx">l</span><span class="o">:</span><span class="w"> </span><span class="kt">58</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dark&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+
+<span class="c1">// Apply every variable at once — no gaps, fully coherent</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span><span class="w"> </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="kt">vars</span><span class="w"> </span><span class="p">})</span>
+</code></pre></div>
+<h3 id="combining-with-extractcolors">Combining with <code>extractColors</code><a class="headerlink" href="#combining-with-extractcolors" title="Permanent link">&para;</a></h3>
+<p>The most powerful pattern is extracting colors from an image and feeding the result directly into <code>generateVariables</code>:</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">extractColors</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">image_id</span><span class="p">)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">vars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">generateVariables</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="kt">palette.dominantHsl</span><span class="p">,</span>
+<span class="w">  </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dark&#39;</span><span class="p">,</span>
+<span class="p">})</span>
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span><span class="w"> </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="kt">vars</span><span class="w"> </span><span class="p">})</span>
+</code></pre></div>
+<p>This gives your extension the same full-palette theming that Character Aware provides, with zero manual variable mapping.</p>
+<h3 id="themevariablesconfigdto">ThemeVariablesConfigDTO<a class="headerlink" href="#themevariablesconfigdto" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>accent</code></td>
+<td><code>{ h, s, l }</code></td>
+<td><em>(required)</em></td>
+<td>Primary accent color in HSL.</td>
+</tr>
+<tr>
+<td><code>mode</code></td>
+<td><code>"dark" \| "light"</code></td>
+<td><em>(required)</em></td>
+<td>Target color mode.</td>
+</tr>
+<tr>
+<td><code>enableGlass</code></td>
+<td><code>boolean</code></td>
+<td><code>true</code></td>
+<td>Whether to generate glassmorphic backdrop-filter tokens.</td>
+</tr>
+<tr>
+<td><code>radiusScale</code></td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Border radius multiplier.</td>
+</tr>
+<tr>
+<td><code>fontScale</code></td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Font size multiplier.</td>
+</tr>
+<tr>
+<td><code>uiScale</code></td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Full UI zoom multiplier.</td>
+</tr>
+<tr>
+<td><code>baseColors</code></td>
+<td><code>object</code></td>
+<td>—</td>
+<td>Optional base color overrides (see below).</td>
+</tr>
+<tr>
+<td><code>statusColors</code></td>
+<td><code>object</code></td>
+<td>—</td>
+<td>Override danger/success/warning colors.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="basecolors"><code>baseColors</code><a class="headerlink" href="#basecolors" title="Permanent link">&para;</a></h3>
+<p>When provided, these hex/hsl color strings override the accent-derived defaults for specific variable groups. The engine automatically generates all related variants (hover, muted, opacity stops, etc.) from each base color.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Affects</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>primary</code></td>
+<td><code>--lumiverse-primary</code> and all <code>-hover</code>, <code>-light</code>, <code>-muted</code>, <code>-text</code>, <code>-010</code> through <code>-050</code>, <code>-contrast</code> variants</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td><code>--lumiverse-secondary</code>, <code>-hover</code>, <code>-border</code></td>
+</tr>
+<tr>
+<td><code>background</code></td>
+<td><code>--lumiverse-bg</code>, <code>-elevated</code>, <code>-hover</code>, <code>-deep</code></td>
+</tr>
+<tr>
+<td><code>text</code></td>
+<td><code>--lumiverse-text</code>, <code>-muted</code>, <code>-dim</code>, <code>-hint</code></td>
+</tr>
+<tr>
+<td><code>danger</code></td>
+<td><code>--lumiverse-danger</code> and all variants</td>
+</tr>
+<tr>
+<td><code>success</code></td>
+<td><code>--lumiverse-success</code> and all variants</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>--lumiverse-warning</code> and all variants</td>
+</tr>
+<tr>
+<td><code>speech</code></td>
+<td><code>--lumiverse-prose-dialogue</code></td>
+</tr>
+<tr>
+<td><code>thoughts</code></td>
+<td><code>--lumiverse-prose-italic</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="user-visibility">User Visibility<a class="headerlink" href="#user-visibility" title="Permanent link">&para;</a></h2>
+<p>When your extension applies theme overrides, users see an <strong>Extension Themes</strong> section in their Theme panel. Each entry shows your extension name, a color swatch strip, the number of overrides applied, and a dismiss button. This gives users full transparency into what's modifying their theme and the ability to remove overrides at any time.</p>
+<p>Overrides are automatically cleared when:</p>
+<ul>
+<li>Your extension calls <code>spindle.theme.clear()</code></li>
+<li>The extension is disabled or unloaded</li>
+<li>The extension worker crashes</li>
+<li>The user clicks the dismiss button in the Theme panel</li>
+</ul>
+<hr />
+<h2 id="example-character-derived-theme-with-mode-support">Example: Character-Derived Theme with Mode Support<a class="headerlink" href="#example-character-derived-theme-with-mode-support" title="Permanent link">&para;</a></h2>
+<p>This example extracts colors from the active character's avatar and applies a complete theme using <code>generateVariables</code>. Compare this to the manual approach — no need to guess variable names or worry about missing glass/border/shadow tokens.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kr">declare</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">spindle</span><span class="o">:</span><span class="w"> </span><span class="kt">import</span><span class="p">(</span><span class="s1">&#39;lumiverse-spindle-types&#39;</span><span class="p">).</span><span class="nx">SpindleAPI</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">applyCharacterTheme</span><span class="p">(</span><span class="nx">characterId</span><span class="o">:</span><span class="w"> </span><span class="kt">string</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">character</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">characters</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">characterId</span><span class="p">)</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">character</span><span class="o">?</span><span class="p">.</span><span class="nx">image_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+<span class="w">    </span><span class="k">return</span>
+<span class="w">  </span><span class="p">}</span>
+
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">extractColors</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">image_id</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">theme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">getCurrent</span><span class="p">()</span>
+
+<span class="w">  </span><span class="c1">// Generate a complete variable map for both modes</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">darkVars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">generateVariables</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="kt">palette.dominantHsl</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;dark&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">enableGlass</span><span class="o">:</span><span class="w"> </span><span class="kt">theme.enableGlass</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">radiusScale</span><span class="o">:</span><span class="w"> </span><span class="kt">theme.radiusScale</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lightVars</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">generateVariables</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">accent</span><span class="o">:</span><span class="w"> </span><span class="kt">palette.dominantHsl</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">mode</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;light&#39;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">enableGlass</span><span class="o">:</span><span class="w"> </span><span class="kt">theme.enableGlass</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">radiusScale</span><span class="o">:</span><span class="w"> </span><span class="kt">theme.radiusScale</span><span class="p">,</span>
+<span class="w">  </span><span class="p">})</span>
+
+<span class="w">  </span><span class="c1">// Apply with mode-awareness — every variable is covered</span>
+<span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">    </span><span class="nx">variablesByMode</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">dark</span><span class="o">:</span><span class="w"> </span><span class="kt">darkVars</span><span class="p">,</span><span class="w"> </span><span class="nx">light</span><span class="o">:</span><span class="w"> </span><span class="kt">lightVars</span><span class="w"> </span><span class="p">},</span>
+<span class="w">  </span><span class="p">})</span>
+<span class="p">}</span>
+
+<span class="c1">// React to chat switches</span>
+<span class="nx">spindle</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;SETTINGS_UPDATED&#39;</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="o">:</span><span class="w"> </span><span class="kt">any</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">key</span><span class="w"> </span><span class="o">===</span><span class="w"> </span><span class="s1">&#39;activeChatId&#39;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">payload</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">chat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">chats</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="nx">payload</span><span class="p">.</span><span class="nx">value</span><span class="p">)</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">chat</span><span class="o">?</span><span class="p">.</span><span class="nx">character_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="k">await</span><span class="w"> </span><span class="nx">applyCharacterTheme</span><span class="p">(</span><span class="nx">chat</span><span class="p">.</span><span class="nx">character_id</span><span class="p">)</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">})</span>
+</code></pre></div>
+<h3 id="manual-approach-partial-overrides">Manual approach (partial overrides)<a class="headerlink" href="#manual-approach-partial-overrides" title="Permanent link">&para;</a></h3>
+<p>If you only need to override a few specific variables rather than the full theme, you can still use <code>apply()</code> directly. This is lighter weight but requires you to cover all relevant variables yourself — see the <a href="#available-css-variables">Available CSS Variables</a> table.</p>
+<div class="language-ts highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">palette</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">extractColors</span><span class="p">(</span><span class="nx">character</span><span class="p">.</span><span class="nx">image_id</span><span class="p">)</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">hue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">palette</span><span class="p">.</span><span class="nx">dominantHsl</span><span class="p">.</span><span class="nx">h</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">sat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">(</span><span class="mf">35</span><span class="p">,</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="mf">70</span><span class="p">,</span><span class="w"> </span><span class="nx">palette</span><span class="p">.</span><span class="nx">dominantHsl</span><span class="p">.</span><span class="nx">s</span><span class="p">))</span>
+
+<span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">  </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-primary&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">sat</span><span class="si">}</span><span class="sb">%, 58%)`</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-primary-hover&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nx">sat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">5</span><span class="si">}</span><span class="sb">%, 52%)`</span><span class="p">,</span>
+<span class="w">    </span><span class="s1">&#39;--lumiverse-prose-dialogue&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, </span><span class="si">${</span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">(</span><span class="nx">sat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mf">10</span><span class="p">,</span><span class="w"> </span><span class="mf">80</span><span class="p">)</span><span class="si">}</span><span class="sb">%, 72%)`</span><span class="p">,</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">variablesByMode</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">dark</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, 12%, 10%)`</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, 12%, 13%)`</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lcs-glass-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsla(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, 12%, 6%, 0.55)`</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">light</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, 18%, 96%)`</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsl(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, 18%, 100%)`</span><span class="p">,</span>
+<span class="w">      </span><span class="s1">&#39;--lcs-glass-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="sb">`hsla(</span><span class="si">${</span><span class="nx">hue</span><span class="si">}</span><span class="sb">, 18%, 92%, 0.55)`</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="p">})</span>
+</code></pre></div>
+<h2 id="example-time-based-theme">Example: Time-Based Theme<a class="headerlink" href="#example-time-based-theme" title="Permanent link">&para;</a></h2>
+<div class="language-ts highlight"><pre><span></span><code><span class="kr">declare</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">spindle</span><span class="o">:</span><span class="w"> </span><span class="kt">import</span><span class="p">(</span><span class="s1">&#39;lumiverse-spindle-types&#39;</span><span class="p">).</span><span class="nx">SpindleAPI</span>
+
+<span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">applyTimeTheme</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nb">Date</span><span class="p">().</span><span class="nx">getHours</span><span class="p">()</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isNight</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">20</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">isDusk</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mf">17</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">hour</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mf">20</span>
+
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isNight</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s1">&#39;--lumiverse-primary&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(230, 50%, 55%)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">variablesByMode</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">dark</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(230, 15%, 8%)&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(230, 15%, 11%)&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="s1">&#39;--lcs-glass-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsla(230, 15%, 5%, 0.6)&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">light</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(230, 20%, 94%)&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(230, 20%, 98%)&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="s1">&#39;--lcs-glass-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsla(230, 20%, 90%, 0.6)&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">isDusk</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">apply</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">variables</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s1">&#39;--lumiverse-primary&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(25, 70%, 55%)&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">variablesByMode</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">dark</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(25, 10%, 12%)&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(25, 10%, 15%)&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="nx">light</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(25, 18%, 95%)&#39;</span><span class="p">,</span>
+<span class="w">          </span><span class="s1">&#39;--lumiverse-bg-elevated&#39;</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;hsl(25, 18%, 98%)&#39;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">spindle</span><span class="p">.</span><span class="nx">theme</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="c1">// Apply on start, then every 15 minutes</span>
+<span class="nx">applyTimeTheme</span><span class="p">()</span>
+<span class="nx">setInterval</span><span class="p">(</span><span class="nx">applyTimeTheme</span><span class="p">,</span><span class="w"> </span><span class="mf">15</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">1000</span><span class="p">)</span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../images/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Images">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Images
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../storage/" class="md-footer__link md-footer__link--next" aria-label="Next: Storage">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Storage
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Lumiverse
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

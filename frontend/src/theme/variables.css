@@ -1,0 +1,362 @@
+:root {
+  /* Primary purple accent */
+  --lumiverse-primary: rgba(147, 112, 219, 0.9);
+  --lumiverse-primary-hover: rgba(167, 132, 239, 0.95);
+  --lumiverse-primary-light: rgba(147, 112, 219, 0.1);
+  --lumiverse-primary-muted: rgba(147, 112, 219, 0.6);
+  --lumiverse-primary-text: rgba(186, 135, 255, 0.95);
+  /* Accent-alpha ladder. `-005/-008/-025/-030` were phantoms — read only as
+     `var(--lumiverse-primary-0NN, <literal>)` and defined nowhere, so they
+     rendered from a frozen Tailwind-violet literal in both modes. They are real
+     engine rungs now (engine.ts emits each one, and re-derives it from a
+     `baseColors.primary` override), so the alpha in the NAME is the alpha that
+     renders. Two call sites had a fallback that disagreed with their own name and
+     therefore change: SettingsModal `.lumihubPrimaryBtn:hover` fell back to 0.15
+     under a 0.2 resting state (the hover got *fainter*) and now correctly steps up
+     to 0.3, and ViewportDrawer `.panelHeader` fell back to a white 0.02 wash and
+     now takes an accent-tinted 0.08 one, matching the `--lumiverse-primary-015`
+     hairline directly beneath it. */
+  --lumiverse-primary-005: rgba(147, 112, 219, 0.05);
+  --lumiverse-primary-008: rgba(147, 112, 219, 0.08);
+  --lumiverse-primary-010: rgba(147, 112, 219, 0.1);
+  --lumiverse-primary-015: rgba(147, 112, 219, 0.15);
+  --lumiverse-primary-020: rgba(147, 112, 219, 0.2);
+  --lumiverse-primary-025: rgba(147, 112, 219, 0.25);
+  --lumiverse-primary-030: rgba(147, 112, 219, 0.3);
+  --lumiverse-primary-050: rgba(147, 112, 219, 0.5);
+  /* Bare `R, G, B` TRIPLE of the accent — no rgb()/rgba() wrapper — for the four
+     call sites that compose their own alpha as
+     `rgba(var(--lumiverse-primary-rgb), 0.05)`. Same contract as the tag palette
+     below. Was the phantom literal `139, 92, 246`, a cold Tailwind violet that had
+     nothing to do with this app's purple; engine.ts now re-derives the triple from
+     whatever `--lumiverse-primary` ends up being, including a user override. */
+  --lumiverse-primary-rgb: 147, 112, 219;
+  /* Foreground ON a --lumiverse-primary fill. engine.ts computes this with
+     contrastFor(): same hue, opposite lightness extreme, so a pale accent gets a
+     dark label instead of an unreadable white one. This static default is
+     contrastFor() applied to the default accent — it exists so the token is not
+     invalid-at-computed-value-time on first paint, before useThemeApplicator runs.
+     The three aliases under it were separate phantoms all meaning this, each
+     frozen at `#fff`: white on a light-mode accent is exactly the failure
+     contrastFor() exists to prevent. */
+  --lumiverse-primary-contrast: hsl(260, 30%, 95%);
+  --lumiverse-primary-fg: var(--lumiverse-primary-contrast);
+  --lumiverse-on-primary: var(--lumiverse-primary-contrast);
+  --lumiverse-accent-fg: var(--lumiverse-primary-contrast);
+  /* `-040` is NOT a rung the engine emits — it only ever existed as the literal
+     `var(--lumiverse-primary-040, rgba(140, 130, 255, 0.4))` at ~14 call sites,
+     all of them focus/selected `border-color` or a focus ring. Aliased to the
+     nearest emitted rung (0.5 instead of 0.4) so a custom accent reaches every
+     one of those rings; the old cold blue-violet was a Tailwind leftover, not a
+     derivative of --lumiverse-primary. */
+  --lumiverse-primary-040: var(--lumiverse-primary-050);
+  /* Same story: the old value was a fixed violet (139, 92, 246) at 0.18. -020 is
+     the nearest emitted rung, so selected chips/segments now tint with the
+     user's accent instead of staying violet inside e.g. a teal theme. */
+  --lumiverse-primary-soft: var(--lumiverse-primary-020);
+  /* Alias — tracks whatever the theme engine writes for --lumiverse-primary. */
+  --lumiverse-accent: var(--lumiverse-primary);
+
+  /* Secondary gray tones */
+  --lumiverse-secondary: rgba(128, 128, 128, 0.15);
+  --lumiverse-secondary-hover: rgba(128, 128, 128, 0.25);
+  --lumiverse-secondary-border: rgba(128, 128, 128, 0.25);
+
+  /* Status colors */
+  /* Same story as the accent ladder: `-010` and `-030` were phantoms on all three
+     status hues, so Badge's coloured borders and the MCP server rows rendered from
+     frozen literals — one of which (`rgba(16, 185, 129, …)`) was emerald, not the
+     `#22c55e` green this token family actually uses. Real engine rungs now, at the
+     alpha their name claims; Badge's 1px status borders step 0.18 → 0.3. */
+  --lumiverse-danger: #ef4444;
+  --lumiverse-danger-hover: #dc2626;
+  --lumiverse-danger-010: rgba(239, 68, 68, 0.1);
+  --lumiverse-danger-015: rgba(239, 68, 68, 0.15);
+  --lumiverse-danger-020: rgba(239, 68, 68, 0.2);
+  --lumiverse-danger-030: rgba(239, 68, 68, 0.3);
+  --lumiverse-danger-050: rgba(239, 68, 68, 0.5);
+  --lumiverse-success: #22c55e;
+  --lumiverse-success-010: rgba(34, 197, 94, 0.1);
+  --lumiverse-success-015: rgba(34, 197, 94, 0.15);
+  --lumiverse-success-020: rgba(34, 197, 94, 0.2);
+  --lumiverse-success-030: rgba(34, 197, 94, 0.3);
+  --lumiverse-success-050: rgba(34, 197, 94, 0.5);
+  --lumiverse-warning: #f59e0b;
+  --lumiverse-warning-015: rgba(245, 158, 11, 0.15);
+  --lumiverse-warning-020: rgba(245, 158, 11, 0.2);
+  --lumiverse-warning-030: rgba(245, 158, 11, 0.3);
+  --lumiverse-warning-050: rgba(245, 158, 11, 0.5);
+  --lumiverse-error: var(--lumiverse-danger);
+  /* Alias, matching --lumiverse-error above. The four readers (the MCP server
+     form + row) read it BARE, so until now the declaration was
+     invalid-at-computed-value-time and dropped entirely — those error rows had no
+     tint at all. */
+  --lumiverse-error-010: var(--lumiverse-danger-010);
+  /* The fourth status hue, and the single worst phantom in the tree: 32 reads
+     across seven stylesheets plus one inline style, every one of them frozen at a
+     literal. 28 said `#42a5f5`, 4 (RegexPanel / RegexEditorModal) said `#6366f1`;
+     the majority blue wins and those four shift from indigo to blue. engine.ts
+     emits it beside danger/success/warning and, unlike them, runs it through
+     ensureReadable() in light mode — `#42a5f5` is a 61%-lightness blue that only
+     reaches ~2.7:1 against a near-white L96 surface, and half these call sites use
+     it as `color:`. Light mode gets the same hue clamped to 35% lightness. */
+  --lumiverse-info: #42a5f5;
+
+  /* Dark purple-tinted backgrounds */
+  --lumiverse-bg: rgba(28, 24, 38, 0.95);
+  --lumiverse-bg-elevated: rgba(35, 30, 48, 0.9);
+  --lumiverse-bg-hover: rgba(45, 40, 58, 0.9);
+  --lumiverse-bg-dark: rgba(0, 0, 0, 0.15);
+  --lumiverse-bg-darker: rgba(0, 0, 0, 0.25);
+  --lumiverse-bg-040: rgba(28, 24, 38, 0.4);
+  --lumiverse-bg-050: rgba(28, 24, 38, 0.5);
+  --lumiverse-bg-070: rgba(28, 24, 38, 0.7);
+  --lumiverse-bg-elevated-040: rgba(35, 30, 48, 0.4);
+  --lumiverse-bg-deep-080: rgba(20, 17, 28, 0.8);
+  --lumiverse-scene-text-scrim: rgba(7, 9, 16, 0.46);
+  /* ── Surface family ──
+     These four were read across the app as `var(--lumiverse-surface…, <literal>)`
+     but defined nowhere, so every consumer rendered its own Tailwind-slate
+     fallback: an untouchable slate cast inside a purple app, frozen at a DARK
+     value even in light mode. They were first defined at those literals (a
+     deliberate no-op), and are now repointed onto the engine's three-rung
+     background ladder — the review pass that decision was waiting on.
+
+       bg (L12) → bg-elevated (L15) → bg-hover (L19)   [dark]
+       bg (L96) → bg-elevated (L100) → bg-hover (L93)  [light]
+
+     The mapping is rung-for-rung: `surface` is a base panel, `surface-raised` a
+     panel lifted off it, `surface-hover` the hover step above that. Every target
+     is emitted by theme/engine.ts in BOTH modes and re-derived from the user's
+     `baseColors.background` override, so these now track accent hue, light/dark
+     and custom backgrounds. Consequence to know about: hover states that used to
+     be a translucent slate wash (alpha 0.14) are now a solid-ish surface step.
+     Recorded in developer-docs/docs/settings-to-css-map.md. */
+  --lumiverse-surface: var(--lumiverse-bg);
+  --lumiverse-surface-raised: var(--lumiverse-bg-elevated);
+  --lumiverse-surface-hover: var(--lumiverse-bg-hover);
+  /* Fifth member of the family, and the one that is NOT a background rung: its two
+     readers (InputArea's @-mention avatar chips, inline) want a neutral disc that
+     reads against whatever sits behind it. The phantom literal was a white 6% wash,
+     which inverts wrongly in light mode — white-on-white. --lumiverse-secondary is
+     the engine's mode-agnostic neutral (gray 128 at 0.15): it lightens on a dark
+     surface and darkens on a light one, which is the behaviour the literal was
+     approximating for dark mode only. */
+  --lumiverse-surface-muted: var(--lumiverse-secondary);
+  /* Was the phantom literal #0d0d0d — a near-black floor that stayed near-black on
+     a near-white light-mode page. --lumiverse-bg-deep is the engine's existing
+     below-base rung (L5 dark, L90 light) and is exactly what the name asks for. */
+  --lumiverse-bg-deeper: var(--lumiverse-bg-deep);
+  /* Alias — unanimous fallback was `var(--lumiverse-bg)`, so this tracks the theme. */
+  --lumiverse-bg-panel: var(--lumiverse-bg);
+  /* Was the literal rgba(0, 0, 0, 0.2). --lumiverse-fill-hover is byte-identical
+     in dark mode and drops to rgba(0, 0, 0, 0.08) in light, where a flat 20%
+     black well was the wrong depth against a near-white surface. */
+  --lumiverse-input-bg: var(--lumiverse-fill-hover);
+
+  /* Subtle purple-tinted borders */
+  --lumiverse-border: rgba(147, 112, 219, 0.12);
+  --lumiverse-border-hover: rgba(147, 112, 219, 0.25);
+  --lumiverse-border-light: rgba(128, 128, 128, 0.12);
+  /* Previously the majority slate fallback of the four in the tree
+     (0.14 / 0.16 / 0.18 / 0.2). Now an alias so it takes the accent hue and the
+     engine's light-mode alpha bump (0.12 dark → 0.15 light). Net effect in dark
+     mode is a ~25% fainter hairline than the old slate 0.18; every consumer
+     pairs it with a fill or a shadow, so nothing is delineated by this alone. */
+  --lumiverse-border-subtle: var(--lumiverse-border);
+
+  /* Text colors */
+  --lumiverse-text: rgba(255, 255, 255, 0.9);
+  --lumiverse-text-muted: rgba(255, 255, 255, 0.65);
+  --lumiverse-text-dim: rgba(255, 255, 255, 0.4);
+  --lumiverse-text-hint: rgba(255, 255, 255, 0.3);
+  /* Alias — matches the fallback QuickToolbarCustomizeModal already declares and
+     that tests/quick-toolbar.test.ts pins. */
+  --lumiverse-text-secondary: var(--lumiverse-text-muted);
+  /* Alias — the phantom literal was `#ddd`, i.e. --lumiverse-text's dark-mode value
+     rounded off, frozen light-grey in light mode. `-primary` here means "the
+     primary text colour", the same thing --lumiverse-text means. */
+  --lumiverse-text-primary: var(--lumiverse-text);
+
+  /* Border radii */
+  --lumiverse-radius-sm: 5px;
+  --lumiverse-radius: 8px;
+  --lumiverse-radius-md: 10px;
+  --lumiverse-radius-lg: 12px;
+  --lumiverse-radius-xl: 16px;
+
+  /* Shadows */
+  --lumiverse-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --lumiverse-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
+  --lumiverse-shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
+  --lumiverse-shadow-lg: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 1px rgba(147, 112, 219, 0.3);
+  --lumiverse-shadow-xl: 0 20px 60px rgba(0, 0, 0, 0.5);
+
+  /* Highlight insets */
+  --lumiverse-highlight-inset: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  --lumiverse-highlight-inset-md: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  --lumiverse-highlight-inset-lg: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+  /* Modal & overlays */
+  --lumiverse-modal-backdrop: rgba(0, 0, 0, 0.6);
+  --lumiverse-swatch-border: rgba(255, 255, 255, 0.15);
+  --lumiverse-gradient-modal: linear-gradient(135deg, rgba(35, 30, 48, 0.98), rgba(20, 17, 28, 0.98));
+
+  /* Icon colors */
+  --lumiverse-icon: rgba(255, 255, 255, 0.9);
+  --lumiverse-icon-muted: rgba(255, 255, 255, 0.6);
+  --lumiverse-icon-dim: rgba(255, 255, 255, 0.4);
+
+  /* Fill colors.
+     The whole ladder is a BLACK scrim whose alpha the engine drops to 0.4× in light
+     mode, so every rung works in both. The two phantoms joining it here were the
+     odd ones out: `--lumiverse-fill-light` was read BARE at four call sites (custom
+     CSS panels + module browser), so those backgrounds simply never painted, and
+     `--lumiverse-fill-subtle-hover` fell back to a WHITE 5–6% wash sitting on a
+     `--lumiverse-fill-subtle` (black) resting state — a hover that lightened a
+     surface the rest of the ladder darkens. Both now sit on the ladder:
+     `-light` is its faintest rung, `-subtle-hover` the one step above `-subtle`. */
+  --lumiverse-fill-subtle: rgba(0, 0, 0, 0.1);
+  --lumiverse-fill-light: var(--lumiverse-fill-subtle);
+  --lumiverse-fill-subtle-hover: var(--lumiverse-fill);
+  --lumiverse-fill: rgba(0, 0, 0, 0.15);
+  --lumiverse-fill-hover: rgba(0, 0, 0, 0.2);
+  --lumiverse-fill-medium: rgba(0, 0, 0, 0.25);
+  --lumiverse-fill-strong: rgba(0, 0, 0, 0.3);
+  --lumiverse-fill-heavy: rgba(0, 0, 0, 0.5);
+  --lumiverse-fill-deepest: rgba(0, 0, 0, 0.7);
+
+  /* Card backgrounds */
+  --lumiverse-card-bg: linear-gradient(165deg, rgba(28, 24, 38, 1) 0%, rgba(24, 20, 34, 1) 50%, rgba(20, 17, 30, 1) 100%);
+  --lumiverse-card-image-bg: linear-gradient(135deg, rgba(20, 17, 28, 1) 0%, rgba(28, 22, 40, 1) 100%);
+
+  /* Neutral borders */
+  --lumiverse-border-neutral: rgba(128, 128, 128, 0.15);
+  --lumiverse-border-neutral-hover: rgba(128, 128, 128, 0.25);
+
+  /* Transitions */
+  --lumiverse-transition: 200ms ease;
+  --lumiverse-transition-fast: 150ms ease;
+
+  /* Button sizing */
+  --lumiverse-btn-icon: 32px;
+  --lumiverse-btn-icon-sm: 28px;
+  --lumiverse-btn-icon-xs: 22px;
+  --lumiverse-btn-tab: 32px;
+
+  /* Typography */
+  --lumiverse-font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+  --lumiverse-font-mono: "SF Mono", "Menlo", "Monaco", "Consolas", monospace;
+  /* Alias — the ten readers (RegexPanel and the two regex modals) all wrote
+     `var(--lumiverse-mono, monospace)`, i.e. the bare generic family, bypassing the
+     curated stack above. Mode-independent, so the alias is the whole fix. */
+  --lumiverse-mono: var(--lumiverse-font-mono);
+
+  /* Chat Sheld — glassmorphic tokens.
+     These are static first-paint defaults: theme/engine.ts overwrites all of
+     them inline on documentElement once useThemeApplicator runs. `-hover` pair
+     added because they were engine-only, and ConnectionsPicker.module.css reads
+     both bare — before the applicator ran those declarations were
+     invalid-at-computed-value-time, so the border and its inset shadow dropped
+     out entirely and the panel flashed borderless. Values mirror the engine's
+     dark + glass branch (engine.ts:355-358). */
+  --lcs-glass-bg: rgba(18, 16, 28, 0.55);
+  --lcs-glass-bg-hover: rgba(27, 24, 42, 0.65);
+  --lcs-glass-border: rgba(255, 255, 255, 0.06);
+  --lcs-glass-border-hover: rgba(255, 255, 255, 0.1);
+  --lcs-glass-blur: 8px;
+  --lcs-glass-soft-blur: 6px;
+  --lcs-glass-strong-blur: 12px;
+  --lcs-radius: 14px;
+  --lcs-radius-sm: 8px;
+  --lcs-radius-xs: 5px;
+  --lcs-transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+  --lcs-transition-fast: 120ms cubic-bezier(0.4, 0, 0.2, 1);
+  --lumiverse-bg-deep: rgba(10, 8, 18, 1);
+  --lumiverse-font-scale: 1;
+  --lumiverse-ui-scale: 1;
+
+  /* ── Stacking ladder ──
+     Only the surfaces these rounds touch are tokenised; every call site carries
+     a literal fallback so stylesheet order can never break rendering.
+     The rest of the app still uses literals, recorded here so a future round
+     has a landing zone (do not migrate them piecemeal):
+       ViewportDrawer 9992 · SettingsModal 10001 · ModalShell 10002 ·
+       LoreIndicator floating 10010 · CommandPalette 10020 · ConnectionLost 10100 ·
+       PortraitDock 10900 · ContextMenu/Spindle 11000.
+     Names are `--z-*`, not `--lumiverse-z-*`: the theme engine never emits them
+     and tests/quick-toolbar.test.ts asserts every bare `var(--lumiverse-…)` is
+     defined as a theme token.
+     `10012` is asserted forbidden by tests/lore-indicator.test.ts — never use it. */
+  --z-chat-top-dock: 8;
+  --z-chat-lore-dock: 33;
+  /* Page-level pinned panel on the homepage. Must clear the chat docks but stay
+     UNDER ViewportDrawer (9992) and everything above it, so it can never cover a
+     drawer the user opened on top of it. */
+  --z-homepage-preview-panel: 9990;
+  /* Draggable floating utility panel. Sits ABOVE ordinary page content and the
+     ViewportDrawer (9992) — the picker is routinely used with the drawer open —
+     but BELOW SettingsModal (10001), ModalShell (10002) and the command palette
+     (10020), which own the screen while they are up. 9995 leaves 9993–9994 free
+     for a sibling that must dock between the drawer and this panel. */
+  --z-connections-picker: 9995;
+  --z-quick-toolbar-floating: 10005;
+  /* ≤900px full-bleed half editor. Must clear --z-quick-toolbar-floating (10005):
+     at this size the host owns the whole viewport, and the toolbar is portaled to
+     document.body where its activeModal guard cannot see this surface — the half
+     editor lives in `lorebookHalfEditor` state, not `activeModal`. Stays under
+     LoreIndicator floating (10010), the customizer popover (10014) and
+     CommandPalette (10020). 10007–10009 stay free for a sibling that must dock
+     between this host and LoreIndicator.
+     Consequence, accepted deliberately: no value can be both above 10005 and
+     below ModalShell (10002), so on a narrow viewport this host now paints OVER
+     a modal opened while it is up. That case needs a TSX-side hide, not a rung. */
+  --z-lorebook-half-editor-fullbleed: 10006;
+  --z-quick-toolbar-popover: 10014;
+
+  /* Chat Sheld — prose tokens */
+  --lumiverse-prose-italic: var(--lumiverse-text-muted);
+  --lumiverse-prose-bold: inherit;
+  --lumiverse-prose-dialogue: var(--lumiverse-primary-text);
+  --lumiverse-prose-blockquote: var(--lumiverse-text-muted);
+
+  /* Chat column width cap.
+     ChatView.tsx overrides this INLINE on `.chatColumnInner` for the
+     comfortable / compact / custom width modes; the default ("full") mode sets
+     nothing, which is why the only reader writes `var(--…, none)`. `none` here
+     reproduces that default exactly — replacing it with a length would silently
+     cap full-width chat. */
+  --lumiverse-chat-content-width: none;
+
+  /* ── Tag palette ──
+     Twelve stable hues for character tags. Each is a bare `R, G, B` TRIPLE with
+     no rgb()/rgba() wrapper, so a consumer composes its own alpha:
+       background: rgba(var(--lumiverse-tag-1), 0.15);
+       border-color: rgba(var(--lumiverse-tag-1), 0.3);
+       color: rgb(var(--lumiverse-tag-1));
+     Values are the hues previously hard-coded in the PALETTE array of
+     frontend/src/lib/tagColors.ts, which now resolves slots to these tokens
+     instead. The hash → slot mapping is frozen there; only the colour lives
+     here, so re-tinting tags is a theme edit and never reshuffles them. */
+  --lumiverse-tag-1: 147, 112, 219;
+  --lumiverse-tag-2: 72, 160, 220;
+  --lumiverse-tag-3: 80, 200, 160;
+  --lumiverse-tag-4: 240, 180, 80;
+  --lumiverse-tag-5: 220, 100, 120;
+  --lumiverse-tag-6: 100, 180, 240;
+  --lumiverse-tag-7: 200, 140, 220;
+  --lumiverse-tag-8: 120, 210, 200;
+  --lumiverse-tag-9: 240, 150, 100;
+  --lumiverse-tag-10: 160, 200, 100;
+  --lumiverse-tag-11: 220, 160, 180;
+  --lumiverse-tag-12: 140, 170, 220;
+}
+
+@media (max-width: 600px) {
+  :root {
+    --lumiverse-btn-icon: 40px;
+    --lumiverse-btn-icon-sm: 34px;
+    --lumiverse-btn-icon-xs: 28px;
+    --lumiverse-btn-tab: 38px;
+  }
+}

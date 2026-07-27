@@ -1,0 +1,4250 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Build extensions for Lumiverse using Spindle">
+      
+      
+        <meta name="author" content="Lumiverse">
+      
+      
+      
+        <link rel="prev" href="../settings-to-css-map/">
+      
+      
+        <link rel="next" href="../backend-modification-map/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.45">
+    
+    
+      
+        <title>UI Productivity Overhaul - Lumiverse Developer Docs</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.fba56155.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ui-productivity-overhaul" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="Lumiverse Developer Docs" class="md-header__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Lumiverse Developer Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              UI Productivity Overhaul
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./.." class="md-tabs__link">
+        
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../frontend-and-extensions/" class="md-tabs__link">
+          
+  
+  Developer Maps
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../getting-started/quick-start/" class="md-tabs__link">
+          
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../backend-api/" class="md-tabs__link">
+          
+  
+  Backend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../frontend-api/" class="md-tabs__link">
+          
+  
+  Frontend API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../lifecycle/" class="md-tabs__link">
+        
+  
+  Lifecycle
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+      
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-tabs__item">
+        <a href="../examples/" class="md-tabs__link">
+          
+  
+  Examples
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../rest-api/" class="md-tabs__link">
+        
+  
+  REST API
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="Lumiverse Developer Docs" class="md-nav__button md-logo" aria-label="Lumiverse Developer Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    Lumiverse Developer Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Home
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Developer Maps
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Developer Maps
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-and-extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend and Extensions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extension-inventory/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Extension Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../settings-to-css-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Settings to CSS
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Productivity Overhaul
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mandatory-ui-change-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mandatory UI Change Gate
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-integration-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Host Integration Boundaries
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistence-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Persistence Contract
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Persistence Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-rectangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shared Rectangle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persisted-settings-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Persisted Settings Reference
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Persisted Settings Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quicktoolbarsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>quickToolbarSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionspickersettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>connectionsPickerSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loreindicatorsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>loreIndicatorSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-display-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Character display settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portraitdocksettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>portraitDockSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lorebookeditorsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>lorebookEditorSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reset And Troubleshooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-and-rebase-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Upgrade And Rebase Maintenance
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Known Limitations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Verification
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-modification-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Modification Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting Started
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Getting Started
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/quick-start/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quick Start
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/manifest/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manifest
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/permissions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Permissions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/capabilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Capabilities
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/runtime/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Runtime Modes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/typescript-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  TypeScript Setup
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../backend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Backend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/macros/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Macros
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/interceptors/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interceptors
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/context-handlers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Context Handlers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/llm-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  LLM Tools
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/image-generation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Image Generation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/images/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Images
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/theme/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Theme
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/shared-rpc-pool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared RPC Pool
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/ephemeral-storage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ephemeral Storage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Variables
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/tokens/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Tokens
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/characters/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Characters
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/chats/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chats
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/presets/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Presets
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/world-books/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  World Books
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/regex-scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Regex Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/databanks/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Databanks
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/memories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Memories
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/personas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Personas
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/council/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Council
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/chat-mutation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat Mutation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/event-tracking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Event Tracking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/secure-enclave/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Secure Enclave
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/cors-proxy/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  CORS Proxy
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/oauth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  OAuth
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/logging/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Logging
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/toast/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Toast Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/text-editor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Text Editor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Modal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/push-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Push Notifications
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/web-search/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Web Search
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/user-presence/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  User Context
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/frontend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/frontend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/backend-processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commands
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/ui-automation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Automation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend-api/version/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Version
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../frontend-api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend API
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Frontend API
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/dom-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  DOM Helper
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/ui-events-helper/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Event Helpers
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/ui-placement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  UI Placement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/shared-components/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shared Components
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/backend-communication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Communication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/processes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/message-tags/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Message Tags
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend-api/file-uploads/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  File Uploads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lifecycle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Lifecycle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../examples/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Examples
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+  Examples
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/minimal-backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Minimal Backend
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/prompt-interceptor/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prompt Interceptor
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/frontend-only/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Only
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/full-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Full Stack
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/frontend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frontend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../examples/backend-process-watchdog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Backend Process Watchdog
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rest-api/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  REST API
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mandatory-ui-change-gate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Mandatory UI Change Gate
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#host-integration-boundaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Host Integration Boundaries
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persistence-contract" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Persistence Contract
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Persistence Contract">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#shared-rectangle" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shared Rectangle
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#persisted-settings-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Persisted Settings Reference
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Persisted Settings Reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quicktoolbarsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>quickToolbarSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connectionspickersettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>connectionsPickerSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loreindicatorsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>loreIndicatorSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#character-display-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Character display settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#portraitdocksettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>portraitDockSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lorebookeditorsettings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>lorebookEditorSettings</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reset-and-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reset And Troubleshooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#upgrade-and-rebase-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Upgrade And Rebase Maintenance
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Known Limitations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Verification
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="./.." class="md-path__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+    
+      <li class="md-path__item">
+        <a href="../frontend-and-extensions/" class="md-path__link">
+          
+  
+  <span class="md-ellipsis">
+    Developer Maps
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+<h1 id="ui-productivity-overhaul">UI Productivity Overhaul<a class="headerlink" href="#ui-productivity-overhaul" title="Permanent link">&para;</a></h1>
+<p>This page is the maintenance manual for Lumiverse's host-integrated productivity
+surfaces. The overhaul is a narrow patch stack over the existing frontend, not
+a separate frontend fork and not a pure Spindle extension.</p>
+<h2 id="mandatory-ui-change-gate">Mandatory UI Change Gate<a class="headerlink" href="#mandatory-ui-change-gate" title="Permanent link">&para;</a></h2>
+<p>Before modifying any overhaul UI:</p>
+<ol>
+<li>Inspect the matching PNG under
+   <code>design-outputs/confirmed-designs/&lt;subsystem&gt;/</code>.</li>
+<li>Read that subsystem's <code>DESIGN-DECISIONS.md</code>.</li>
+<li>Keep both references available while editing.</li>
+<li>Compare the result at the desktop and narrow viewports in the test spec.</li>
+</ol>
+<p>Do not implement or correct these surfaces from memory or from the current UI
+alone.</p>
+<h2 id="host-integration-boundaries">Host Integration Boundaries<a class="headerlink" href="#host-integration-boundaries" title="Permanent link">&para;</a></h2>
+<p>These features are host-owned because they depend on internal routes, stores,
+layout reservation, editor state, or backend event payloads:</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Host dependency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quick Toolbar</td>
+<td>Drawer registry, settings hydration, and chat layout</td>
+</tr>
+<tr>
+<td>Connections Picker</td>
+<td>Active profile/model ownership and profile metadata</td>
+</tr>
+<tr>
+<td>Lore Indicator</td>
+<td><code>WORLD_INFO_ACTIVATED</code> data and exact lorebook navigation</td>
+</tr>
+<tr>
+<td>Portrait Dock</td>
+<td>Character-image launch surfaces and desktop chat reflow</td>
+</tr>
+<tr>
+<td>Homepage Character Library</td>
+<td>Homepage route, summary API, and character editor</td>
+</tr>
+<tr>
+<td>Character Tab display</td>
+<td>Existing browser state, management actions, and pagination</td>
+</tr>
+<tr>
+<td>Lorebook Editor variants</td>
+<td>Existing editor state, tokenization, bulk APIs, and conflict handling</td>
+</tr>
+</tbody>
+</table>
+<p>Spindle extensions can add drawer tabs, input actions, float widgets, and dock
+panels, but cannot replace these host contracts without brittle DOM
+manipulation. Keep extension placements working beside the overhaul.</p>
+<h2 id="persistence-contract">Persistence Contract<a class="headerlink" href="#persistence-contract" title="Permanent link">&para;</a></h2>
+<p>The settings types, defaults, persistence keys, and merge behavior live in:</p>
+<ul>
+<li><code>frontend/src/types/store.ts</code></li>
+<li><code>frontend/src/lib/uiProductivityDefaults.ts</code></li>
+<li><code>frontend/src/store/slices/settings.ts</code></li>
+</ul>
+<p>All seven keys are server-backed user settings in <code>DATA_KEYS</code>:</p>
+<ul>
+<li><code>quickToolbarSettings</code></li>
+<li><code>connectionsPickerSettings</code></li>
+<li><code>loreIndicatorSettings</code></li>
+<li><code>homepageCharacterLibrarySettings</code></li>
+<li><code>characterTabDisplaySettings</code></li>
+<li><code>portraitDockSettings</code></li>
+<li><code>lorebookEditorSettings</code></li>
+</ul>
+<p><code>mergeStoredSetting()</code> recursively merges plain objects with defaults. Arrays
+replace the default array wholesale, so writers must persist complete arrays
+for action order, visible metadata, profile tags, and lore-strip items.
+Transient open, hover, search, drag, and resize-preview state must remain local.</p>
+<h3 id="shared-rectangle">Shared Rectangle<a class="headerlink" href="#shared-rectangle" title="Permanent link">&para;</a></h3>
+<p><code>SurfaceRectPrefs</code> contains <code>x</code>, <code>y</code>, <code>width</code>, and <code>height</code>. Free-position
+surfaces use <code>usePersistentRect</code> and <code>ResizablePanelFrame</code> to clamp saved
+geometry to the viewport and commit geometry at the end of a drag or resize.</p>
+<p>Reset only the relevant <code>rect</code> or <code>halfRect</code> when preserving all other settings
+is desirable.</p>
+<h2 id="persisted-settings-reference">Persisted Settings Reference<a class="headerlink" href="#persisted-settings-reference" title="Permanent link">&para;</a></h2>
+<h3 id="quicktoolbarsettings"><code>quickToolbarSettings</code><a class="headerlink" href="#quicktoolbarsettings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>Shows the toolbar</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>v1-free</code>, <code>v2-settings-adjacent</code>, or <code>v3-adaptive</code></td>
+<td><code>v1-free</code></td>
+</tr>
+<tr>
+<td><code>visibleTabIds</code></td>
+<td>Drawer/system action IDs shown by the toolbar</td>
+<td>profile, connections, council, lorebook, presets, settings</td>
+</tr>
+<tr>
+<td><code>iconOrder</code></td>
+<td>Complete deterministic action ordering</td>
+<td>same as <code>visibleTabIds</code></td>
+</tr>
+<tr>
+<td><code>iconSize</code></td>
+<td>V1/V3 icon size</td>
+<td><code>20</code></td>
+</tr>
+<tr>
+<td><code>labelVisible</code></td>
+<td>Shows action labels where supported</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>labelTextSize</code></td>
+<td>V1/V3 label size</td>
+<td><code>11</code></td>
+</tr>
+<tr>
+<td><code>scale</code></td>
+<td>Overall free-toolbar scale</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>orientation</code></td>
+<td><code>horizontal</code> or <code>vertical</code></td>
+<td><code>horizontal</code></td>
+</tr>
+<tr>
+<td><code>rotationDeg</code></td>
+<td>Free-toolbar rotation</td>
+<td><code>0</code></td>
+</tr>
+<tr>
+<td><code>opacity</code></td>
+<td>Free-toolbar opacity</td>
+<td><code>0.96</code></td>
+</tr>
+<tr>
+<td><code>snapToEdge</code></td>
+<td>Snaps free placement to a viewport edge</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>rect</code></td>
+<td>Saved V1/V3 position and size</td>
+<td><code>328,18,368,54</code></td>
+</tr>
+<tr>
+<td><code>v2IconSize</code></td>
+<td>Anchored V2 icon size</td>
+<td><code>28</code></td>
+</tr>
+<tr>
+<td><code>v2LabelTextSize</code></td>
+<td>Anchored V2 label size</td>
+<td><code>11</code></td>
+</tr>
+</tbody>
+</table>
+<p>Action IDs must come from the same registry as the drawer. If upstream removes
+all saved IDs, fall back to visible registry defaults and expose a reset path.
+V2 stays adjacent to host settings/drawer controls and does not use arbitrary
+free placement.</p>
+<h3 id="connectionspickersettings"><code>connectionsPickerSettings</code><a class="headerlink" href="#connectionspickersettings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>Enables the picker feature</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>provider-tags</code>, <code>split</code>, or <code>full</code></td>
+<td><code>provider-tags</code></td>
+</tr>
+<tr>
+<td><code>launcherEnabled</code></td>
+<td>Shows the compact composer launcher</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>launcherIconSize</code></td>
+<td>Composer launcher size</td>
+<td><code>28</code></td>
+</tr>
+<tr>
+<td><code>rect</code></td>
+<td>Picker position and dimensions</td>
+<td><code>24,96,420,520</code></td>
+</tr>
+<tr>
+<td><code>thumbnailSize</code></td>
+<td>Profile/model thumbnail size</td>
+<td><code>28</code></td>
+</tr>
+<tr>
+<td><code>density</code></td>
+<td><code>compact</code>, <code>balanced</code>, <code>spacious</code>, or <code>custom</code></td>
+<td><code>compact</code></td>
+</tr>
+<tr>
+<td><code>showFavorites</code></td>
+<td>Shows favorites section</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>showRecent</code></td>
+<td>Shows recent section</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>showSearch</code></td>
+<td>Shows picker search</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>showModelMetadata</code></td>
+<td>Shows model/provider detail</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>profileTags</code></td>
+<td>Complete tag catalog with stable ID, name, color, and order</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>visibleTagIds</code></td>
+<td>Currently selected provider/profile tag filters</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>favoriteProfileIds</code></td>
+<td>Stable profile IDs shown in Favorites</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>recentProfileIds</code></td>
+<td>Stable profile IDs ordered for Recent</td>
+<td><code>[]</code></td>
+</tr>
+<tr>
+<td><code>sectionSpacing</code></td>
+<td>Spacing between picker sections</td>
+<td><code>10</code></td>
+</tr>
+<tr>
+<td><code>columnWidths</code></td>
+<td>Named split/full column widths</td>
+<td>profiles <code>180</code>, models <code>220</code></td>
+</tr>
+</tbody>
+</table>
+<p>The tag catalog is settings-owned. Profile associations are separately stored
+in <code>ConnectionProfile.metadata.tagIds</code>; updates must merge existing metadata.
+Legacy <code>metadata.tags</code> values normalize into stable catalog IDs. Active profile
+selection remains owned by <code>activeProfileId</code>, while the main model remains
+owned by <code>ConnectionProfile.model</code>. Do not overwrite sidecar, expression, or
+Weaver model bindings.</p>
+<h3 id="loreindicatorsettings"><code>loreIndicatorSettings</code><a class="headerlink" href="#loreindicatorsettings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>Shows lore activation UI</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>variant</code></td>
+<td><code>v2-compact</code>, <code>v4-bottom-strip</code>, or <code>v5-command-palette</code></td>
+<td><code>v2-compact</code></td>
+</tr>
+<tr>
+<td><code>v2ActivationMode</code></td>
+<td>Opens V2 details on <code>hover</code> or <code>click</code></td>
+<td><code>click</code></td>
+</tr>
+<tr>
+<td><code>v5Keybind</code></td>
+<td>Editable/removable V5 shortcut string</td>
+<td><code>Ctrl+Shift+L</code></td>
+</tr>
+<tr>
+<td><code>visibleMetadata</code></td>
+<td>Complete metadata field list</td>
+<td>book, type, tokens, trigger</td>
+</tr>
+<tr>
+<td><code>iconSize</code></td>
+<td>Lore icon size</td>
+<td><code>16</code></td>
+</tr>
+<tr>
+<td><code>textSize</code></td>
+<td>Lore text size</td>
+<td><code>12</code></td>
+</tr>
+<tr>
+<td><code>entryTypeAppearance</code></td>
+<td>Color/icon for constant, keyword, and vector entries</td>
+<td>amber pin, blue key, violet search</td>
+</tr>
+<tr>
+<td><code>v4Items</code></td>
+<td>Complete bottom-strip item visibility, removal, display mode, and order</td>
+<td>six standard items</td>
+</tr>
+<tr>
+<td><code>v4Spacing</code></td>
+<td>Bottom-strip item spacing</td>
+<td><code>8</code></td>
+</tr>
+</tbody>
+</table>
+<p>The UI consumes the latest <code>WORLD_INFO_ACTIVATED</code> payload. Preserve legacy
+<code>source</code>, use <code>activationType</code> for Constant/Keyword/Vector, and display
+<code>bookName</code> when available. First-trigger labels are valid only when backend
+trace instrumentation supplies them; never infer them from final sorted order.
+Entry navigation must reuse pending world-book/editor state.</p>
+<h3 id="character-display-settings">Character display settings<a class="headerlink" href="#character-display-settings" title="Permanent link">&para;</a></h3>
+<p>The homepage and Character Tab share this base:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>thumbnailWidth</code></td>
+<td>Independent image/card width</td>
+<td><code>170</code></td>
+</tr>
+<tr>
+<td><code>thumbnailHeight</code></td>
+<td>Independent image height</td>
+<td><code>226</code></td>
+</tr>
+<tr>
+<td><code>density</code></td>
+<td><code>compact</code>, <code>balanced</code>, <code>large</code>, or <code>custom</code></td>
+<td><code>compact</code></td>
+</tr>
+<tr>
+<td><code>footerMode</code></td>
+<td><code>compact</code>, <code>balanced</code>, or <code>spacious</code></td>
+<td><code>balanced</code></td>
+</tr>
+<tr>
+<td><code>visibleMetadata</code></td>
+<td>Complete footer metadata list</td>
+<td>creator, tags</td>
+</tr>
+<tr>
+<td><code>tagRows</code></td>
+<td>Visible tag rows before <code>+N</code> overflow</td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td><code>viewMode</code></td>
+<td><code>grid</code>, <code>single</code>, or <code>list</code></td>
+<td><code>grid</code></td>
+</tr>
+<tr>
+<td><code>defaultSort</code></td>
+<td>name, recent, created, or shuffle</td>
+<td><code>recent</code></td>
+</tr>
+<tr>
+<td><code>defaultFilter</code></td>
+<td>characters, favorites, or groups</td>
+<td>characters</td>
+</tr>
+</tbody>
+</table>
+<p><code>characterDisplaySettings.ts</code> clamps dimensions, normalizes invalid values, and
+coerces the unsupported groups-plus-shuffle combination to recent sorting.</p>
+<p><code>homepageCharacterLibrarySettings</code> adds:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>Shows the homepage library</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>panelWidth</code></td>
+<td>Selected-character panel width</td>
+<td><code>360</code></td>
+</tr>
+<tr>
+<td><code>panelPinned</code></td>
+<td>Keeps the preview panel open</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>lastSelectedCharacterId</code></td>
+<td>Restores the previous selection</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>The homepage uses the lightweight summary hook and requests full preview data
+only for the selected character. The internal library scope <code>mine</code> must never
+render as <code>Mine</code>, <code>My Characters</code>, a tag, or a creator fallback.</p>
+<p><code>characterTabDisplaySettings</code> adds <code>useHomepageSettings</code>, default <code>true</code>. When
+false, the Character Tab uses its own copy of the base display fields while
+preserving search, tags, favorites, sorting, pagination, import, create, edit,
+duplicate, and delete behavior.</p>
+<h3 id="portraitdocksettings"><code>portraitDockSettings</code><a class="headerlink" href="#portraitdocksettings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enabled</code></td>
+<td>Enables character-image docking</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>openAtOriginalSize</code></td>
+<td>Starts at natural dimensions when space permits</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>rememberSizePosition</code></td>
+<td>Reuses saved geometry</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>defaultDockSide</code></td>
+<td>Initial <code>left</code> or <code>right</code> edge</td>
+<td><code>right</code></td>
+</tr>
+<tr>
+<td><code>snapToEdge</code></td>
+<td>Snaps floating geometry to an edge</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>hoverControls</code></td>
+<td>Shows fit/close controls on hover</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>hoverControlSize</code></td>
+<td>Hover control size</td>
+<td><code>28</code></td>
+</tr>
+<tr>
+<td><code>defaultAspectRatioLock</code></td>
+<td>Locks aspect ratio on initial open</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>minWidth</code>, <code>minHeight</code></td>
+<td>Resize lower bounds</td>
+<td><code>180</code>, <code>180</code></td>
+</tr>
+<tr>
+<td><code>maxWidth</code>, <code>maxHeight</code></td>
+<td>Resize upper bounds</td>
+<td><code>720</code>, <code>860</code></td>
+</tr>
+<tr>
+<td><code>rect</code></td>
+<td>Saved floating/dock dimensions</td>
+<td><code>0,0,360,520</code></td>
+</tr>
+<tr>
+<td><code>pinned</code></td>
+<td>Keeps the dock open across eligible navigation</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>aspectRatioLocked</code></td>
+<td>Current aspect-ratio lock state</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>dockSide</code></td>
+<td>Current <code>left</code>, <code>right</code>, or <code>floating</code> state</td>
+<td><code>right</code></td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td>Restores whether the portrait dock is open</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>lastPortrait</code></td>
+<td>Last portrait image URL and display name</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p>Desktop docking reserves layout space so chat and composer remain usable.
+Narrow layouts use drawer/backdrop behavior and must not reserve desktop width.
+Character-image launch surfaces open the dock by default; legacy floating
+avatar behavior, if retained, must be an explicit action.</p>
+<h3 id="lorebookeditorsettings"><code>lorebookEditorSettings</code><a class="headerlink" href="#lorebookeditorsettings" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>defaultVariant</code></td>
+<td>Opens <code>full</code> or <code>half</code> editor by default</td>
+<td><code>full</code></td>
+</tr>
+<tr>
+<td><code>triggerDisplay</code></td>
+<td>Shows trigger types as <code>words</code> or <code>icons</code></td>
+<td><code>words</code></td>
+</tr>
+<tr>
+<td><code>halfButtonEnabled</code></td>
+<td>Shows the independent half-screen launch action</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>loreIndicatorActionEnabled</code></td>
+<td>Allows launch from the Lore Indicator</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>allowSimultaneousEditors</code></td>
+<td>Permits full and half editors together</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>halfRect</code></td>
+<td>Half-screen editor geometry</td>
+<td><code>24,24,720,640</code></td>
+</tr>
+<tr>
+<td><code>booksPaneWidth</code></td>
+<td>Lorebook list pane width</td>
+<td><code>220</code></td>
+</tr>
+<tr>
+<td><code>entriesPaneWidth</code></td>
+<td>Entry list pane width</td>
+<td><code>320</code></td>
+</tr>
+<tr>
+<td><code>inspectorPaneWidth</code></td>
+<td>Entry inspector pane width</td>
+<td><code>520</code></td>
+</tr>
+<tr>
+<td><code>rowDensity</code></td>
+<td><code>compact</code>, <code>balanced</code>, or <code>spacious</code> rows</td>
+<td><code>compact</code></td>
+</tr>
+<tr>
+<td><code>visibleEntryMetadata</code></td>
+<td>Complete entry-row metadata list</td>
+<td>type, priority, position, depth, enabled, tokens</td>
+</tr>
+</tbody>
+</table>
+<p>Automatic token counts use the selected profile model and existing tokenizer
+endpoint, with <code>Math.ceil(content.length / 4)</code> only as a failure fallback.
+Simultaneous editing requires monotonic revisions and stale-write conflicts;
+second-resolution <code>updated_at</code> is not a valid concurrency token.</p>
+<h2 id="reset-and-troubleshooting">Reset And Troubleshooting<a class="headerlink" href="#reset-and-troubleshooting" title="Permanent link">&para;</a></h2>
+<p>Use the Productivity/Layout settings reset for the affected section when it is
+available. For development or recovery against stored data:</p>
+<ol>
+<li>Reset the relevant key to its constant in
+   <code>frontend/src/lib/uiProductivityDefaults.ts</code>.</li>
+<li>Reload the frontend.</li>
+<li>For geometry-only failures, reset <code>rect</code> or <code>halfRect</code> and retain the rest.</li>
+<li>If stale arrays hide all content, reset the complete array field rather than
+   merging one element into it.</li>
+</ol>
+<p>Common cases:</p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Recovery</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Toolbar disappeared</td>
+<td>Re-enable it, reset <code>visibleTabIds</code>/<code>iconOrder</code>, then reset <code>rect</code></td>
+</tr>
+<tr>
+<td>Picker is too large or off-screen</td>
+<td>Reset <code>rect</code>, <code>sectionSpacing</code>, and <code>columnWidths</code></td>
+</tr>
+<tr>
+<td>Lore indicator is noisy</td>
+<td>Use V2, disable metadata, or hide/remove V4 items</td>
+</tr>
+<tr>
+<td>Portrait is off-screen</td>
+<td>Reset <code>rect</code>, set <code>dockSide</code> to the preferred edge, then reload</td>
+</tr>
+<tr>
+<td>Character cards are malformed</td>
+<td>Reset thumbnail dimensions, density, footer, and metadata arrays</td>
+</tr>
+<tr>
+<td>Lorebook panes collapse</td>
+<td>Reset all three pane widths and <code>halfRect</code></td>
+</tr>
+<tr>
+<td>Old connection tags remain</td>
+<td>Normalize metadata, then remove unknown IDs from complete <code>tagIds</code> arrays</td>
+</tr>
+</tbody>
+</table>
+<h2 id="upgrade-and-rebase-maintenance">Upgrade And Rebase Maintenance<a class="headerlink" href="#upgrade-and-rebase-maintenance" title="Permanent link">&para;</a></h2>
+<p>Keep the overhaul as isolated components, typed settings, and small host hooks.
+During an upstream rebase:</p>
+<ol>
+<li>Recheck drawer action IDs before accepting toolbar conflicts.</li>
+<li>Recheck settings hydration and <code>DATA_KEYS</code>.</li>
+<li>Recheck composer, ChatView, homepage, Character Browser, and world-book
+   editor mount points.</li>
+<li>Recheck <code>WORLD_INFO_ACTIVATED</code> payload compatibility.</li>
+<li>Recheck connection metadata merging and active profile/model ownership.</li>
+<li>Recheck extension input actions and dock panels beside host surfaces.</li>
+<li>Run the focused tests, typecheck/build, docs builds, and manual capture
+   matrix before accepting the rebase.</li>
+</ol>
+<p>Avoid generated CSS-module selectors and broad DOM surgery. A separate frontend
+fork would duplicate routes, stores, websocket behavior, extension placements,
+and API types, making upstream maintenance substantially more expensive.</p>
+<h2 id="known-limitations">Known Limitations<a class="headerlink" href="#known-limitations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The persisted schema can exist before every settings control or surface is
+  wired in an in-progress branch. Confirm component mounts before documenting a
+  feature as released.</li>
+<li>Arrays replace defaults. Partial-array writes can unintentionally hide
+  actions or metadata.</li>
+<li>The Lore Indicator cannot truthfully show first-trigger ordering without
+  backend trace data.</li>
+<li>Profile tags are navigation metadata, not model capability tags.</li>
+<li>Homepage summary loading intentionally omits Character Tab import, batch, and
+  pagination behavior.</li>
+<li>Desktop layout reservation does not apply to mobile portrait/editor drawers.</li>
+<li>Spindle can complement these surfaces but cannot own their internal settings,
+  routes, or exact host layout.</li>
+<li>Visual acceptance requires the final screenshot comparison; functional
+  presence alone is insufficient.</li>
+</ul>
+<h2 id="verification">Verification<a class="headerlink" href="#verification" title="Permanent link">&para;</a></h2>
+<p>Focused automated checks currently present:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">bun</span> <span class="n">test</span> <span class="n">tests</span><span class="p">/</span><span class="n">character-display-settings</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">ts</span>
+<span class="n">bun</span> <span class="n">test</span> <span class="n">tests</span><span class="p">/</span><span class="n">connections-picker</span><span class="p">.</span><span class="n">test</span><span class="p">.</span><span class="n">ts</span>
+</code></pre></div>
+<p>Final source verification:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">bun</span> <span class="p">-</span><span class="n">-cwd</span> <span class="n">frontend</span> <span class="n">run</span> <span class="n">typecheck</span>
+<span class="n">bun</span> <span class="n">run</span> <span class="n">build</span><span class="p">:</span><span class="n">frontend</span>
+</code></pre></div>
+<p>Documentation verification:</p>
+<div class="language-powershell highlight"><pre><span></span><code><span class="n">uvx</span> <span class="n">zensical</span> <span class="n">build</span> <span class="p">-</span><span class="n">-config</span><span class="o">-file</span> <span class="n">developer-docs</span><span class="p">/</span><span class="n">zensical</span><span class="p">.</span><span class="n">toml</span>
+<span class="n">uvx</span> <span class="n">zensical</span> <span class="n">build</span> <span class="p">-</span><span class="n">-config</span><span class="o">-file</span> <span class="n">user-docs</span><span class="p">/</span><span class="n">zensical</span><span class="p">.</span><span class="n">toml</span>
+</code></pre></div>
+<p>Graphify refresh is deliberately final-only for this implementation effort.
+Run <code>bun run graphify:refresh</code> after all source and documentation lanes have
+finished, not during this documentation lane.</p>
+<p>Manual QA must follow
+<code>.omx/plans/test-spec-lumiverse-ui-productivity-overhaul.md</code>, including desktop
+<code>1738x862</code>, narrow <code>390x844</code>, a second installed theme, increased font scale,
+and every confirmed design state.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../settings-to-css-map/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Settings to CSS">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Settings to CSS
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../backend-modification-map/" class="md-footer__link md-footer__link--next" aria-label="Next: Backend Modification Map">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Backend Modification Map
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 Lumiverse
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.tabs","navigation.top","navigation.tracking","search.highlight","toc.follow"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.6e5f0216.min.js"></script>
+      
+    
+  </body>
+</html>

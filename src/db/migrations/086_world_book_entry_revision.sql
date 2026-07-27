@@ -1,0 +1,2 @@
+ALTER TABLE world_book_entries ADD COLUMN revision INTEGER NOT NULL DEFAULT 1;
+
