@@ -1,0 +1,812 @@
+{
+  "nodes": [
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+      "label": "Spindle Extensibility V2 Specification",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_types_runtime",
+      "label": "Spindle Types & Runtime Extensibility",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_toolbar_docking",
+      "label": "Toolbar Overhaul and Docking Systems",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_connection_picker_parity",
+      "label": "Universal Connection Picker Parity",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_acceptance_criteria",
+      "label": "Spindle Modernization Acceptance Criteria",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_doc",
+      "label": "Grok Implementation Handoff Document",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_mission",
+      "label": "Spindle Extensibility Implementation Mission",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_worktree_protection",
+      "label": "Worktree Protection and Non-Negotiable Invariants",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Preserve worktree changes from other active tracks; execute isolated, verifiable task units."
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_execution_sequence",
+      "label": "Implementation Task Execution Sequence",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_doc",
+      "label": "Plan Rewrite Retrospective & Agent Instruction Amendments",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\plan-rewrite-retrospective-and-agent-instruction-amendments.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_accounting",
+      "label": "25 Plan Rewrite Passes and Canonical Accounting",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\plan-rewrite-retrospective-and-agent-instruction-amendments.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_agent_amendments",
+      "label": "Agent Instruction Amendments for Strict Evidence Contracts",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\plan-rewrite-retrospective-and-agent-instruction-amendments.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Bind planning agents to single-source evidence ledgers and prohibit unbound speculative edits."
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_ui_bugfix_session_handoff_20260817_doc",
+      "label": "UI Bugfix Session Handoff (2026-08-17)",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\ui-bugfix-session-handoff-20260817.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_ui_bugfix_session_handoff_20260817_broken_items",
+      "label": "Persistent Broken Items in Connection Pickers and Floating Toolbar",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\ui-bugfix-session-handoff-20260817.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_review_evidence_ledger_doc",
+      "label": "Track Evidence Ledger",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\review\\evidence-ledger.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_review_evidence_ledger_resolutions",
+      "label": "Critique Findings and Resolution Verification Targets",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\review\\evidence-ledger.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_index_doc",
+      "label": "Bugfix Track Manifest: Connection Picker Parity and Toolbar Auto-Fit",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\index.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "label": "Bugfix Implementation Plan: Picker Parity & Toolbar Auto-Fit",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p1_picker",
+      "label": "Phase 1: Shared Sidecar Connection Picker & Settings Parity (TDD)",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p2_toolbar",
+      "label": "Phase 2: Quick Toolbar Floating V2 Auto-Fit Sizing (TDD)",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p3_edit_send",
+      "label": "Phase 3: Direct In-Place Edit-and-Send (Save + Swipe) (TDD)",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p4_build",
+      "label": "Phase 4: Full Build, Typecheck, and Delivery Checkpoint",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_spec_doc",
+      "label": "Bugfix Track Specification: Picker Parity & Toolbar Auto-Fit",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_spec_functional_reqs",
+      "label": "Bugfix Functional Requirements & Acceptance Criteria",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\spec.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_handoff_doc",
+      "label": "Bugfix Builder Handoff Instruction",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\builder-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_doc",
+      "label": "Bugfix Track Builder Packet",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\BUILDER_PACKET.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_constraints",
+      "label": "Hard Constraints & Golden Token Visuals",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\BUILDER_PACKET.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Copy design system tokens, preserve exact layer hierarchies, and prevent layout regressions."
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_2_doc",
+      "label": "Builder Packet 2: Embeddings & Toolbar Remount Fixes",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\BUILDER_PACKET_2.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_grok_handoff_doc",
+      "label": "Bugfix Grok Handoff Specification",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\grok-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase1_summary_doc",
+      "label": "Phase 1 Summary: Sidecar Picker Parity",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phase1-summary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase2_summary_doc",
+      "label": "Phase 2 Summary: Quick Toolbar Floating V2 Auto-Fit",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phase2-summary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase3_summary_doc",
+      "label": "Phase 3 Summary: In-Place Edit and Send",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phase3-summary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phasea_summary_doc",
+      "label": "Phase A Summary: Embeddings Picker and Empty Trigger Icon",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phaseA-summary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phaseb_summary_doc",
+      "label": "Phase B Summary: Quick Toolbar Remount and Hug-All",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phaseB-summary.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_index_doc",
+      "label": "Toolbar Dock and Composer Track Manifest",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\index.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_followup_grok_handoff_doc",
+      "label": "Follow-up Handoff: Toolbar & Composer DnD and Hold-Time",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\followup-grok-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_followup_grok_handoff_dnd_rules",
+      "label": "Drag-and-Drop 500ms Hold Time & Reordering Rules",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\followup-grok-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Reduces drag activation hold time from 1000ms to 500ms for snappier composer and action bar reordering."
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_doc",
+      "label": "Toolbar Dock & Composer Builder Handoff",
+      "file_type": "document",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\grok-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_product_rules",
+      "label": "V2 Dock Collapse, Select Messages Action, and Floating Rail",
+      "file_type": "concept",
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\grok-handoff.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_types_runtime",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_toolbar_docking",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_connection_picker_parity",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_acceptance_criteria",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_mission",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_worktree_protection",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_execution_sequence",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\grok-implementation-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_accounting",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\plan-rewrite-retrospective-and-agent-instruction-amendments.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_agent_amendments",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\plan-rewrite-retrospective-and-agent-instruction-amendments.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_ui_bugfix_session_handoff_20260817_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_ui_bugfix_session_handoff_20260817_broken_items",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\handoff\\ui-bugfix-session-handoff-20260817.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_review_evidence_ledger_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_review_evidence_ledger_resolutions",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\review\\evidence-ledger.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p1_picker",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p2_toolbar",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p3_edit_send",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p4_build",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_index_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\index.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_spec_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_spec_functional_reqs",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\spec.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_spec_doc",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_constraints",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\BUILDER_PACKET.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_grok_handoff_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_handoff_doc",
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\grok-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_followup_grok_handoff_doc",
+      "target": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_followup_grok_handoff_dnd_rules",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\followup-grok-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_doc",
+      "target": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_product_rules",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\grok-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_index_doc",
+      "target": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_doc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\index.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_followup_grok_handoff_doc",
+      "target": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_doc",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\followup-grok-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\plan.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_doc",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_ui_bugfix_session_handoff_20260817_broken_items",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\BUILDER_PACKET.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_product_rules",
+      "target": "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_toolbar_docking",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\handoff\\grok-handoff.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase1_summary_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p1_picker",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phase1-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase2_summary_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p2_toolbar",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phase2-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase3_summary_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_p3_edit_send",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phase3-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phasea_summary_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_2_doc",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phaseA-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phaseb_summary_doc",
+      "target": "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_2_doc",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\handoff\\phaseB-summary.md",
+      "source_location": null,
+      "weight": 1.0
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "he_spindle_extensibility_handoff_and_review_suite",
+      "label": "Spindle Extensibility V2 Handoffs, Retrospective, and Evidence Ledger Suite",
+      "nodes": [
+        "conductor_tracks_spindle_extensibility_ui_modernization_20260816_spec_doc",
+        "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_grok_implementation_handoff_doc",
+        "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_plan_rewrite_retrospective_doc",
+        "conductor_tracks_spindle_extensibility_ui_modernization_20260816_handoff_ui_bugfix_session_handoff_20260817_doc",
+        "conductor_tracks_spindle_extensibility_ui_modernization_20260816_review_evidence_ledger_doc"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_extensibility_ui_modernization_20260816\\spec.md"
+    },
+    {
+      "id": "he_spindle_ui_bugfix_track_system",
+      "label": "Spindle UI Bugfix, Connection Picker Parity, and Toolbar Autofit Track System",
+      "nodes": [
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_index_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_plan_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_spec_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_handoff_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_builder_packet_2_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase1_summary_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase2_summary_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phase3_summary_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phasea_summary_doc",
+        "conductor_tracks_spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817_handoff_phaseb_summary_doc"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_bugfix_picker_parity_toolbar_autofit_20260817\\index.md"
+    },
+    {
+      "id": "he_spindle_toolbar_dock_composer_track",
+      "label": "Toolbar Dock Collapse, Message Selection, and Composer Reordering Track",
+      "nodes": [
+        "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_index_doc",
+        "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_grok_handoff_doc",
+        "conductor_tracks_spindle_ui_toolbar_dock_composer_20260817_handoff_followup_grok_handoff_doc"
+      ],
+      "relation": "implement",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "G:\\AI\\All lumiverse repos\\Lumiverse\\conductor\\tracks\\spindle_ui_toolbar_dock_composer_20260817\\index.md"
+    }
+  ],
+  "input_tokens": 0,
+  "output_tokens": 0
+}

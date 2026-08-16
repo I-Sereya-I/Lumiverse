@@ -1,0 +1,8 @@
+ENOENT: no such file or directory, open 'src/components/chat/ChatView.module.css'
+    path: "src/components/chat/ChatView.module.css",
+ syscall: "open",
+   errno: -2,
+    code: "ENOENT"
+
+
+Bun v1.3.14 (Windows x64)

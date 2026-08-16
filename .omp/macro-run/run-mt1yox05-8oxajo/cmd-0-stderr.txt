@@ -1,0 +1,119 @@
+
+src\components\chat\chatDockContract.test.ts:
+(pass) P12 chat dock preservation contracts > uses one retained Quick Toolbar request predicate for dock, retained float, and hidden float [0.17ms]
+(pass) P12 chat dock preservation contracts > keeps ChatView DOM mount anchors total and distinct [1.36ms]
+(pass) P12 chat dock preservation contracts > keeps ChatView occupancy, literal dock requests, and top-height plumbing local to generic DOM refs [1.34ms]
+(pass) P12 chat dock preservation contracts > publishes composer and input safe zones through one ResizeObserver path [1.38ms]
+(pass) P12 chat dock preservation contracts > preserves claimed and unclaimed H9 fallback behavior for native and message avatars [1.13ms]
+(pass) P12 chat dock preservation contracts > does not publish the removed chat bottom inset variable anywhere in frontend/src [78.87ms]
+(pass) P12 chat dock preservation contracts > keeps lore dock hit testing limited to real controls [0.80ms]
+(pass) P12 chat dock preservation contracts > flattens the half-editor host wrapper into the chat flex row [2.32ms]
+(pass) P12 chat dock preservation contracts > gives a strip-mounted Quick Toolbar the remaining top-dock width [0.37ms]
+(pass) P12 chat dock preservation contracts > keeps the sparse strip rail centered while Select Messages stays at the right edge [0.57ms]
+(pass) P12 chat dock preservation contracts > keeps the chat top dock as a stable host while toolbar wrappers are empty or pending [0.40ms]
+(pass) P12 chat dock preservation contracts > suppresses the transient blank rail when a retained dock surface is empty [0.38ms]
+(pass) P12 chat dock preservation contracts > keeps docked cards inside the rail while trailing controls keep their space [0.39ms]
+(pass) P12 chat dock preservation contracts > keeps fill-mode cards intrinsic while the rail strip consumes slack [0.47ms]
+
+src\components\quick-toolbar\QuickToolbar.backdrop.test.tsx:
+(pass) QuickToolbar opaque backdrop > defaults off and emits data-opaque-backdrop only when enabled [167.63ms]
+(pass) QuickToolbar opaque backdrop > plate uses custom fallback backdrop and stays confined to the QT root [0.85ms]
+
+src\components\quick-toolbar\QuickToolbar.geometry.test.tsx:
+(pass) QuickToolbar geometry > renders exactly one top dock for V1 and V2 across floating and chat_top_dock placement [88.60ms]
+(pass) QuickToolbar geometry > persisted hideInChatTopDock cannot unmount QuickToolbar in dock or float [14.31ms]
+(pass) QuickToolbar geometry > acceptDockedV2BudgetSample grows immediately and needs two shrink samples [0.16ms]
+(pass) QuickToolbar geometry > acceptDockedV2BudgetSample replaces a pending shrink when delta > 1 and ignores 0/NaN [0.10ms]
+(pass) QuickToolbar geometry > resolveFloatingV2Rail keeps the original dock/column rail when fill is off [0.11ms]
+(pass) QuickToolbar geometry > V2 geometry contract keeps fill rails on the strip while cards stay intrinsic [0.09ms]
+(pass) QuickToolbar geometry > configured gap participates in fit budget rather than hardcoded spacing [0.12ms]
+(pass) QuickToolbar geometry > fill sizing has no raw viewport unit selector and backdrop has a fallback token [0.55ms]
+(pass) QuickToolbar geometry > preserves dock placement through reload and viewport change [12.57ms]
+(pass) QuickToolbar geometry > gives dock children correct order width and zero dead space [6.16ms]
+(pass) QuickToolbar geometry > coalesces resize updates to one layout batch per frame [0.14ms]
+(pass) QuickToolbar geometry > cancels observer and animation frame work on unload [4.36ms]
+(pass) QuickToolbar geometry > floating V2 shows selected cards instead of staying pending on a zero budget [32.10ms]
+(pass) QuickToolbar geometry > floating V2 auto-fit shows all selected cards instead of the pinned 453 persist width [30.70ms]
+(pass) QuickToolbar geometry > floating V2 auto-fit at 1920 shows all 12 selected cards instead of persist 453 [30.99ms]
+(pass) QuickToolbar geometry > floating V2 auto-fit at 700 packs a prefix and shows overflow instead of persist 453 [26.83ms]
+(pass) QuickToolbar geometry > floating V2 auto-fit fill OFF paints chat-column rail and ignores persist x/width [23.83ms]
+(pass) QuickToolbar geometry > floating V2 fill-on is edge-to-edge even when auto-fit is off [21.78ms]
+(pass) QuickToolbar geometry > floating V2 free mode preserves both real viewport edges [34.35ms]
+(pass) QuickToolbar geometry > floating V2 manual mode ignores stale auto-fit width after toggling off [30.59ms]
+(pass) QuickToolbar geometry > V1 persist 453 switches to floating V2 without painting 453 [25.82ms]
+(pass) QuickToolbar geometry > floating V2 becomes fit-ready when Settings overlay hides [15.81ms]
+(pass) QuickToolbar geometry > floating V2 unpinned with auto-fit off packs to viewport and overflows instead of 920 [27.64ms]
+(pass) QuickToolbar geometry > floating V2 auto-fit off at a narrow viewport shows overflow instead of clipping [23.28ms]
+(pass) QuickToolbar geometry > docked V2 packs against remaining width after the native toolbar button [29.53ms]
+(pass) QuickToolbar geometry > docked V2 resets its sampled budget and repacks immediately when fill is disabled [28.35ms]
+(pass) QuickToolbar geometry > docked V2 stays mounted under overlays with fill and native sibling space [12.95ms]
+(pass) QuickToolbar geometry > docked V2 re-enables to a ready fit without a blank action scroller [15.34ms]
+(pass) QuickToolbar geometry > docked V2 keeps Loom and Extensions in the nav when the rail fits all selected actions [17.78ms]
+
+src\components\quick-toolbar\QuickToolbarCustomizeModal.v2.test.tsx:
+163 |   test('floating V2 shows Auto-fit and full-screen fill, without free-float chrome', async () => {
+164 |     settings.variant = 'v2-settings-adjacent'
+165 |     settings.quickToolbarPlacement = 'floating'
+166 |     const { host, root } = await renderModal()
+167 | 
+168 |     expect(host.textContent).toContain('Auto-fit toolbar bounds to content')
+                                   ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "Auto-fit toolbar bounds to content"
+Received: ""
+
+      at <anonymous> (G:\AI\All lumiverse repos\Lumiverse\frontend\src\components\quick-toolbar\QuickToolbarCustomizeModal.v2.test.tsx:168:30)
+(fail) QuickToolbarCustomizeModal V2 > floating V2 shows Auto-fit and full-screen fill, without free-float chrome [1.09ms]
+182 |   test('docked V2 uses chat-top fill label and still omits Scale/Rotation/Snap/Resize/Orientation', async () => {
+183 |     settings.variant = 'v2-settings-adjacent'
+184 |     settings.quickToolbarPlacement = 'chat_top_dock'
+185 |     const { host, root } = await renderModal()
+186 | 
+187 |     expect(host.textContent).toContain('Fill chat top bar width')
+                                   ^
+error: expect(received).toContain(expected)
+
+Expected to contain: "Fill chat top bar width"
+Received: ""
+
+      at <anonymous> (G:\AI\All lumiverse repos\Lumiverse\frontend\src\components\quick-toolbar\QuickToolbarCustomizeModal.v2.test.tsx:187:30)
+(fail) QuickToolbarCustomizeModal V2 > docked V2 uses chat-top fill label and still omits Scale/Rotation/Snap/Resize/Orientation [0.69ms]
+
+src\components\settings\ProductivitySettings.test.tsx:
+
+# Unhandled error between tests
+-------------------------------
+SyntaxError: Export named 'DESIGN_DEFAULT_IDS' not found in module 'G:\AI\All lumiverse repos\Lumiverse\frontend\src\components\quick-toolbar\useQuickToolbarActions.ts'.
+-------------------------------
+
+
+src\components\settings\ProductivitySettingsModel.test.ts:
+(pass) P8 productivity panel model > covers all seven immutable defaults and every declared control [0.08ms]
+(pass) P8 productivity panel model > reorders without mutating the persisted source array [0.06ms]
+(pass) P8 productivity panel model > binds patches immutably for persisted settings [0.04ms]
+(pass) P8 productivity panel model > normalizes hex and rgb colors with a safe fallback [0.16ms]
+(pass) P8 productivity panel model > provides previews for each persisted surface [0.12ms]
+(pass) P8 productivity panel model > default migration fields remain available to every control [0.07ms]
+(pass) P8 productivity panel model > parses precise numeric edits without escaping the control range [0.17ms]
+(pass) P8 productivity panel model > reorders visible toolbar items without dropping a hidden item [0.22ms]
+(pass) P8 productivity panel model > normalizes malformed legacy lore appearance rows to complete canonical defaults [0.17ms]
+(pass) P8 productivity panel model > normalizes legacy quick toolbar backdrop colors to the safe default [0.22ms]
+
+src\lib\spindle\productivity-host-surface-retained-dock.integration.test.tsx:
+
+# Unhandled error between tests
+-------------------------------
+SyntaxError: Export named 'flushSettingsNow' not found in module 'G:\AI\All lumiverse repos\Lumiverse\frontend\src\store\slices\settings.ts'.
+-------------------------------
+
+
+4 tests failed:
+(fail) QuickToolbarCustomizeModal V2 > floating V2 shows Auto-fit and full-screen fill, without free-float chrome [1.09ms]
+(fail) QuickToolbarCustomizeModal V2 > docked V2 uses chat-top fill label and still omits Scale/Rotation/Snap/Resize/Orientation [0.69ms]
+
+ 55 pass
+ 4 fail
+ 2 errors
+ 349 expect() calls
+Ran 59 tests across 7 files. [1.88s]

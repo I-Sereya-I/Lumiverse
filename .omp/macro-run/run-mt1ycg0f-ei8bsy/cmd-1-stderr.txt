@@ -1,0 +1,9 @@
+$ bun run extract-props && bun run extract-css-vars && tsc -b
+$ bun run scripts/extract-props.ts
+[2.46s] createProgram
+[766.37ms] getTypeChecker
+[343.54ms] AST Traversal
+[7.54ms] Writing output files
+[3.58s] Total Extraction Time
+$ bun run scripts/extract-css-vars.ts
+error: script "typecheck" exited with code 1

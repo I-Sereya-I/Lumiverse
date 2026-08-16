@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "active": true,
+  "skill": "ralph",
+  "keyword": "",
+  "phase": "reviewing",
+  "activated_at": "2026-08-19T01:54:27.564Z",
+  "updated_at": "2026-08-19T22:15:05.584Z",
+  "source": "state-operations",
+  "owner_codex_session_id": "01a017a4-5fa5-7080-8962-2d285296aadf",
+  "input_lock": null
+}

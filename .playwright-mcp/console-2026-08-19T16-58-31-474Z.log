@@ -1,0 +1,4 @@
+[     316ms] [LOG] [WS] Connected to ws://localhost:7860/api/ws @ http://localhost:7860/assets/index-BbRSECcO.js:21
+[     801ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7860/api/v1/settings/spindle%3Alumiverse_suite%3Acharacter_display%3AcharacterDisplaySettings:0
+[    2512ms] [LOG] [la-geom] initial layout snapshot {viewport: Object, drawer: Object, thread: Object, composer: Object, mousey: Object} @ blob:http://localhost:7860/e002d9cd-8dce-4a97-bf09-763f8f14399c:8113
+[    3122ms] [LOG] [lumiagent] chats_pushed received {msgCharacterId: d6c51e90-6f2a-4e8a-866d-5f8a36e6a6ac, stateCharacterId: d6c51e90-6f2a-4e8a-866d-5f8a36e6a6ac, pinnedChatId: null, chatCount: 1, applies: true} @ blob:http://localhost:7860/e002d9cd-8dce-4a97-bf09-763f8f14399c:7837

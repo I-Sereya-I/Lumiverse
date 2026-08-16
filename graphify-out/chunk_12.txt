@@ -1,0 +1,15 @@
+G:\AI\All lumiverse repos\Lumiverse\data\images\672c6c3f-3fbb-4d8b-af80-b805b1f653a5.png
+G:\AI\All lumiverse repos\Lumiverse\data\images\672c6c3f-3fbb-4d8b-af80-b805b1f653a5_thumb_lg_v2.webp
+G:\AI\All lumiverse repos\Lumiverse\data\images\672c6c3f-3fbb-4d8b-af80-b805b1f653a5_thumb_sm_v2.webp
+G:\AI\All lumiverse repos\Lumiverse\desktop\src\assets\tray-mac.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src\assets\tray-win.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\128x128.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\128x128@2x.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\32x32.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\64x64.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\icon.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\Square107x107Logo.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\Square142x142Logo.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\Square150x150Logo.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\Square284x284Logo.png
+G:\AI\All lumiverse repos\Lumiverse\desktop\src-tauri\icons\Square30x30Logo.png
