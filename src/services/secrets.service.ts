@@ -18,6 +18,13 @@ interface SecretRow {
  */
 export const SYSTEM_SECRET_PRINCIPAL = "__system__";
 
+/**
+ * Reserved email of the system principal row. First-user resolution queries
+ * (owner seeding, migrations, default presets) exclude this address so the
+ * synthetic row can never be mistaken for a real account.
+ */
+export const SYSTEM_SECRET_PRINCIPAL_EMAIL = "system@lumiverse.local";
+
 let _cachedKey: CryptoKey | null = null;
 const warnedUnreadableSecrets = new Set<string>();
 
@@ -99,12 +106,43 @@ export function listSecretKeys(userId: string): string[] {
  * secrets.user_id -> user(id) foreign key.
  */
 function ensureSystemPrincipalRow(): void {
-  getDb()
-    .query(
-      `INSERT OR IGNORE INTO "user" (id, name, email, emailVerified, role, createdAt, updatedAt)
-       VALUES (?, 'System', 'system@lumiverse.local', 1, 'system', 0, 0)`,
-    )
-    .run(SYSTEM_SECRET_PRINCIPAL);
+  const db = getDb();
+  const now = Math.floor(Date.now() / 1000);
+
+  // Resolve on the reserved id/email explicitly instead of INSERT OR IGNORE:
+  // a silent skip (e.g. an unrelated account already holding the reserved
+  // email) would leave secrets writes failing on the foreign key with no
+  // explanation. Fail loudly instead.
+  const existing = db
+    .query('SELECT id FROM "user" WHERE id = ? OR email = ?')
+    .get(SYSTEM_SECRET_PRINCIPAL, SYSTEM_SECRET_PRINCIPAL_EMAIL) as { id: string } | null;
+
+  if (!existing) {
+    // Real timestamps: createdAt = 0 would sort the synthetic row before every
+    // real user in ORDER BY createdAt ASC consumers (owner seeding, ST
+    // migration, default presets).
+    db.query(
+      `INSERT INTO "user" (id, name, email, emailVerified, role, createdAt, updatedAt)
+       VALUES (?, 'System', ?, 1, 'system', ?, ?)`,
+    ).run(SYSTEM_SECRET_PRINCIPAL, SYSTEM_SECRET_PRINCIPAL_EMAIL, now, now);
+    return;
+  }
+
+  if (existing.id !== SYSTEM_SECRET_PRINCIPAL) {
+    throw new Error(
+      `Reserved system principal email "${SYSTEM_SECRET_PRINCIPAL_EMAIL}" is held by account "${existing.id}". ` +
+        "Rename or delete that account before provisioning system broker secrets.",
+    );
+  }
+
+  // Repair legacy rows created with createdAt = 0 so first-user ordering
+  // consumers never see the synthetic row as the oldest account.
+  db.query(
+    `UPDATE "user"
+     SET createdAt = CASE WHEN createdAt IS NULL OR createdAt = 0 THEN ? ELSE createdAt END,
+         updatedAt = ?
+     WHERE id = ?`,
+  ).run(now, now, SYSTEM_SECRET_PRINCIPAL);
 }
 
 export async function putSecret(userId: string, key: string, value: string): Promise<void> {
