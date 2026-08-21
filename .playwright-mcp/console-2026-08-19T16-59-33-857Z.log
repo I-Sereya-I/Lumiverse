@@ -1,8 +1,0 @@
-[     256ms] [LOG] [WS] Connected to ws://localhost:7860/api/ws @ http://localhost:7860/assets/index-BbRSECcO.js:21
-[     692ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7860/api/v1/settings/spindle%3Alumiverse_suite%3Acharacter_display%3AcharacterDisplaySettings:0
-[    2246ms] [LOG] [la-geom] initial layout snapshot {viewport: Object, drawer: Object, thread: Object, composer: Object, mousey: Object} @ blob:http://localhost:7860/05fa77f6-6218-4ca4-a1fb-732259972163:8113
-[    2898ms] [LOG] [lumiagent] chats_pushed received {msgCharacterId: d6c51e90-6f2a-4e8a-866d-5f8a36e6a6ac, stateCharacterId: d6c51e90-6f2a-4e8a-866d-5f8a36e6a6ac, pinnedChatId: null, chatCount: 1, applies: true} @ blob:http://localhost:7860/05fa77f6-6218-4ca4-a1fb-732259972163:7837
-[  145875ms] [LOG] [WS] Connected to ws://localhost:7860/api/ws @ http://localhost:7860/assets/index-jmGeXD1e.js:21
-[  146457ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7860/api/v1/settings/spindle%3Alumiverse_suite%3Acharacter_display%3AcharacterDisplaySettings:0
-[  148187ms] [LOG] [la-geom] initial layout snapshot {viewport: Object, drawer: Object, thread: Object, composer: Object, mousey: Object} @ blob:http://localhost:7860/70bf2d21-ba9a-410c-a35b-6f68e9c41cd3:8113
-[  148823ms] [LOG] [lumiagent] chats_pushed received {msgCharacterId: d6c51e90-6f2a-4e8a-866d-5f8a36e6a6ac, stateCharacterId: d6c51e90-6f2a-4e8a-866d-5f8a36e6a6ac, pinnedChatId: null, chatCount: 1, applies: true} @ blob:http://localhost:7860/70bf2d21-ba9a-410c-a35b-6f68e9c41cd3:7837

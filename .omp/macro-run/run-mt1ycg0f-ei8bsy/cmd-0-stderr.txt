@@ -1,9 +1,0 @@
-
-frontend\src\components\quick-toolbar\QuickToolbarCustomizeModal.v2.test.tsx:
-(pass) QuickToolbarCustomizeModal V2 > floating V2 shows Auto-fit and full-screen fill, without free-float chrome [48.90ms]
-(pass) QuickToolbarCustomizeModal V2 > docked V2 uses chat-top fill label and still omits Scale/Rotation/Snap/Resize/Orientation [14.33ms]
-
- 2 pass
- 0 fail
- 20 expect() calls
-Ran 2 tests across 1 file. [875.00ms]

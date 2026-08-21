@@ -1,8 +1,0 @@
-
-src\lib\spindle\productivity-host-surface-retained-dock.integration.test.tsx:
-(pass) Quick Toolbar retained dock host lifecycle > keeps the mounted host root through floating and docked request transitions [40.41ms]
-
- 1 pass
- 0 fail
- 14 expect() calls
-Ran 1 test across 1 file. [2.08s]
