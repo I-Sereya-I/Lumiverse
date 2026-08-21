@@ -652,10 +652,6 @@ const PROVIDER_DEFAULT_URL: Record<EmbeddingProvider, string> = {
   google_vertex: "https://aiplatform.googleapis.com",
 };
 
-const VALID_EMBEDDING_PROVIDERS: EmbeddingProvider[] = [
-  "openai-compatible", "openai", "openrouter", "electronhub", "bananabread", "nanogpt", "google_vertex",
-];
-
 function isKnownEmbeddingProvider(provider: string): provider is EmbeddingProvider {
   return VALID_EMBEDDING_PROVIDERS.includes(provider as EmbeddingProvider);
 }
