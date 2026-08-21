@@ -93,7 +93,22 @@ export function listSecretKeys(userId: string): string[] {
   return rows.map((r) => r.key);
 }
 
+/**
+ * The reserved system principal is not a login account, so it must be
+ * materialized once before secrets can reference it via the
+ * secrets.user_id -> user(id) foreign key.
+ */
+function ensureSystemPrincipalRow(): void {
+  getDb()
+    .query(
+      `INSERT OR IGNORE INTO "user" (id, name, email, emailVerified, role, createdAt, updatedAt)
+       VALUES (?, 'System', 'system@lumiverse.local', 1, 'system', 0, 0)`,
+    )
+    .run(SYSTEM_SECRET_PRINCIPAL);
+}
+
 export async function putSecret(userId: string, key: string, value: string): Promise<void> {
+  if (userId === SYSTEM_SECRET_PRINCIPAL) ensureSystemPrincipalRow();
   const { encrypted, iv, tag } = await encrypt(value);
   const now = Math.floor(Date.now() / 1000);
 
