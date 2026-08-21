@@ -1,4 +1,5 @@
 import { getDb } from "../db/connection";
+import type { SQLQueryBindings } from "bun:sqlite";
 
 export type EditAndSendOutboxStatus =
   | "pending"
@@ -244,15 +245,25 @@ function invokeIsGenerationActive(userId: string, generationId: string): boolean
 
 function markOutbox(id: string, fields: Record<string, unknown>): void {
   const assignments: string[] = [];
-  const values: unknown[] = [];
+  const values: SQLQueryBindings[] = [];
   for (const [key, value] of Object.entries(fields)) {
     assignments.push(`${key} = ?`);
-    values.push(value);
+    values.push(toSqlBinding(value));
   }
   assignments.push("updated_at = ?");
   values.push(nowMs());
   values.push(id);
   getDb().query(`UPDATE generation_outbox SET ${assignments.join(", ")} WHERE id = ?`).run(...values);
+}
+
+/** Coerce arbitrary field values into SQLite-bindable primitives. */
+function toSqlBinding(value: unknown): SQLQueryBindings {
+  if (value === null || value === undefined) return null;
+  if (typeof value === "string" || typeof value === "number" || typeof value === "bigint" || typeof value === "boolean") {
+    return value;
+  }
+  if (value instanceof Uint8Array) return value;
+  return String(value);
 }
 
 function markDispatchFailure(row: GenerationOutboxRow, errorCode: string): void {

@@ -865,7 +865,7 @@ function normalizeConfig(input: any): EmbeddingConfig {
     : undefined;
   const vertex_project = normalizeOptionalString(input?.vertex_project);
 
-  const rawProfiles = Array.isArray(input?.connectionProfiles) ? input.connectionProfiles : [];
+  const rawProfiles: any[] = Array.isArray(input?.connectionProfiles) ? input.connectionProfiles : [];
   let connectionProfiles = rawProfiles
     .filter((profile: unknown) => profile && typeof profile === "object")
     .map((profile: any) => stripProfileSecrets(profile));
@@ -1649,7 +1649,7 @@ const NVIDIA_NIM_EMBEDDING_MODELS = [
 
 type EmbeddingInputType = "query" | "passage";
 
-function nvidiaNimNeedsInputType(cfg: Pick<EmbeddingConfig, "provider" | "model">): boolean {
+function nvidiaNimNeedsInputType(cfg: { provider: string; model: string }): boolean {
   return cfg.provider === "nvidia-nim" && [
     "nvidia/llama-nemotron-embed-1b-v2",
     "nvidia/nv-embedqa-e5-v5",
@@ -2009,9 +2009,16 @@ function readRawEmbeddingConfig(userId: string): EmbeddingConfig {
   return cfg;
 }
 
+/** Config whose connection-profile status fields are resolved;
+ *  provider_profiles key status is applied separately by
+ *  withEmbeddingSecretStatus. */
+type EmbeddingConfigPreStatus = Omit<EmbeddingConfigWithStatus, "provider_profiles"> & {
+  provider_profiles?: EmbeddingConfig["provider_profiles"];
+};
+
 async function withEmbeddingSecretStatus(
   userId: string,
-  config: EmbeddingConfig,
+  config: EmbeddingConfigPreStatus,
   inherited = false,
 ): Promise<EmbeddingConfigWithStatus> {
   const profiles = config.provider_profiles ?? {};
@@ -2021,8 +2028,12 @@ async function withEmbeddingSecretStatus(
       { ...profile, has_api_key: await hasEmbeddingSecret(userId, provider as EmbeddingProvider) },
     ] as const),
   )) as Partial<Record<EmbeddingProvider, EmbeddingProviderProfileWithStatus>>;
-  const has_api_key = profilesWithStatus[config.provider]?.has_api_key
-    ?? await hasEmbeddingSecret(userId, config.provider);
+  // toConfigWithStatus already resolved has_api_key from the selected
+  // connection profile's secret; only fall back to provider-key lookups when
+  // that signal is absent (e.g. legacy configs without connection profiles).
+  const has_api_key = config.has_api_key
+    || profilesWithStatus[config.provider]?.has_api_key === true
+    || await hasEmbeddingSecret(userId, config.provider);
   return {
     ...config,
     has_api_key,
@@ -2080,7 +2091,7 @@ async function toConfigWithStatus(
   userId: string,
   cfg: EmbeddingConfig,
   inherited?: boolean,
-): Promise<EmbeddingConfigWithStatus> {
+): Promise<EmbeddingConfigPreStatus> {
   const profiles = await Promise.all((cfg.connectionProfiles ?? []).map(async (profile) => ({
     ...stripProfileSecrets(profile),
     hasSecret: await hasProfileSecret(userId, profile),
@@ -2147,9 +2158,10 @@ export async function updateEmbeddingConfig(
   }
 
   const current = readRawEmbeddingConfig(userId);
-  const incomingProfiles = Array.isArray(input.connectionProfiles)
-    ? input.connectionProfiles.map((profile) => ({ ...profile, id: ensureProfileId(profile.id) }))
-    : undefined;
+  const incomingProfiles: Array<EmbeddingConnectionProfile & { api_key?: string | null; hasSecret?: boolean }> | undefined =
+    Array.isArray(input.connectionProfiles)
+      ? input.connectionProfiles.map((profile) => ({ ...profile, id: ensureProfileId(profile.id) }))
+      : undefined;
   const patched = applyLegacyConnectionPatch(current, {
     ...current,
     ...input,
@@ -2520,7 +2532,7 @@ async function requestEmbeddingsWithDriver(
 async function requestEmbeddings(
   userId: string,
   texts: string[],
-  options?: { omitDimensions?: boolean; signal?: AbortSignal },
+  options?: { omitDimensions?: boolean; signal?: AbortSignal; inputType?: EmbeddingInputType },
 ): Promise<number[][]> {
   // Resolve which user's settings + API key actually drive this call. In gate
   // mode non-owners inherit the owner's config and use the owner's key.
@@ -3404,7 +3416,6 @@ export const __test__ = {
   hasProfileSecret,
   resolveProfileSecret,
   embeddingProfileSecretKey,
-  normalizeConfig,
   persistableConfig,
   profileToDriverConfig,
   stripProfileSecrets,

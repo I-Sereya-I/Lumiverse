@@ -2462,7 +2462,11 @@ export class WorkerHost {
         this.handleProviderUnregister(msg);
         break;
       case "provider_result":
-        providerRegistry.handleProviderResult(msg, { installationId: this.extensionId });
+        providerRegistry.handleProviderResult(msg, {
+          installationId: this.extensionId,
+          installScope: this.installScope,
+          installedByUserId: this.installedByUserId,
+        });
         break;
       default:
         // Fail fast for unrecognized message types so the worker's
@@ -2875,7 +2879,7 @@ export class WorkerHost {
   }
 
   private handleProviderRegister(msg: Extract<RuntimeWorkerToHost, { type: "provider_register" }>): void {
-    const providerKind = (msg as unknown as { kind?: string }).kind ?? "";
+    const providerKind = msg.kind;
     const permission = `providers.${providerKind}.register` as ManagedSpindlePermission;
     if (!providerKind || !this.hasPermission(permission)) {
       console.warn(
@@ -2898,7 +2902,7 @@ export class WorkerHost {
   }
 
   private handleProviderUnregister(msg: Extract<RuntimeWorkerToHost, { type: "provider_unregister" }>): void {
-    const providerKind = (msg as unknown as { kind?: string }).kind ?? "";
+    const providerKind = msg.kind;
     const permission = `providers.${providerKind}.register` as ManagedSpindlePermission;
     if (!providerKind || !this.hasPermission(permission)) {
       console.warn(
