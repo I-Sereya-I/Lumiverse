@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useEffect, useLayoutEffect } from 'react'
+import { useState, useCallback, useMemo, useRef, useEffect, useLayoutEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router'
 import { useStore } from '@/store'
@@ -419,7 +419,7 @@ export function useMessageCard(message: Message, chatId: string) {
     }
 
     setEditAndSendPending(true)
-    setEditingMessageId(null)
+    clearMessageEdit()
     const previousContent = message.content
     updateMessage(message.id, { ...message, content: cleanContent })
 
@@ -470,7 +470,7 @@ export function useMessageCard(message: Message, chatId: string) {
     } finally {
       setEditAndSendPending(false)
     }
-  }, [chatId, editAndSendPending, editContent, isStreaming, message, t, updateMessage, addToast, setEditingMessageId])
+  }, [chatId, editAndSendPending, editContent, isStreaming, message, t, updateMessage, addToast, clearMessageEdit])
 
   const doDeleteMessage = useCallback(async () => {
     try {
