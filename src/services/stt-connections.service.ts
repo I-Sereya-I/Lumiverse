@@ -134,10 +134,10 @@ export function listProviders(userId?: string): SttProviderInfo[] {
   return [...STT_PROVIDERS, ...extras];
 }
 
-export function getProvider(providerId: string): SttProviderInfo | null {
+export function getProvider(providerId: string, userId?: string): SttProviderInfo | null {
   const builtin = STT_PROVIDERS.find((provider) => provider.id === providerId);
   if (builtin) return builtin;
-  const record = visibleSttRecords().find((entry) => entry.key.id === providerId);
+  const record = visibleSttRecords(userId).find((entry) => entry.key.id === providerId);
   return record ? registrySttProvider(record) : null;
 }
 
@@ -236,8 +236,8 @@ export function registerSttEngine(id: string, engine: HostSttEngine): () => void
   };
 }
 
-export function resolveSttApiUrl(profile: { provider: string; api_url?: string | null }): string {
-  const provider = getProvider(profile.provider);
+export function resolveSttApiUrl(profile: { provider: string; api_url?: string | null }, userId?: string): string {
+  const provider = getProvider(profile.provider, userId);
   const raw = (profile.api_url || "").trim();
   const baseUrl = raw || provider?.capabilities.defaultUrl || "https://api.openai.com/v1";
   return baseUrl.replace(/\/+$/, "");
@@ -262,11 +262,12 @@ async function fetchSttModels(
   provider: SttProviderInfo,
   apiKey: string,
   profile: { provider: string; api_url?: string | null },
+  userId?: string,
 ): Promise<Array<{ id: string; label: string }>> {
   const data = await fetchProviderJson<any>(
     provider.name,
     "model listing",
-    `${resolveSttApiUrl(profile)}/models`,
+    `${resolveSttApiUrl(profile, userId)}/models`,
     { headers: { Authorization: `Bearer ${apiKey}` } },
   );
   return filterSttModels(data);
@@ -276,10 +277,11 @@ export async function resolveConnectionModel(
   provider: SttProviderInfo,
   profile: SttConnectionProfile,
   apiKey: string,
+  userId?: string,
 ): Promise<string> {
   if (profile.model.trim()) return profile.model.trim();
 
-  const models = await fetchSttModels(provider, apiKey, profile);
+  const models = await fetchSttModels(provider, apiKey, profile, userId);
   const firstModel = models[0]?.id;
   if (firstModel) return firstModel;
 
@@ -468,7 +470,7 @@ export async function testConnection(userId: string, id: string): Promise<{ succ
   const profile = getConnection(userId, id);
   if (!profile) return { success: false, message: "Connection not found", provider: "" };
 
-  const provider = getProvider(profile.provider);
+  const provider = getProvider(profile.provider, userId);
   if (!provider) {
     return { success: false, message: `Unknown provider: ${profile.provider}`, provider: profile.provider };
   }
@@ -479,12 +481,12 @@ export async function testConnection(userId: string, id: string): Promise<{ succ
   }
 
   try {
-    const model = await resolveConnectionModel(provider, profile, apiKey || "");
+    const model = await resolveConnectionModel(provider, profile, apiKey || "", userId);
     const formData = new FormData();
     formData.append("model", model);
     formData.append("file", new Blob([new Uint8Array(44)], { type: "audio/wav" }), "test.wav");
 
-    const res = await fetch(`${resolveSttApiUrl(profile)}/audio/transcriptions`, {
+    const res = await fetch(`${resolveSttApiUrl(profile, userId)}/audio/transcriptions`, {
       method: "POST",
       headers: { Authorization: `Bearer ${apiKey}` },
       body: formData,
@@ -524,7 +526,7 @@ export async function listConnectionModelsPreview(
   const existing = input.connection_id ? getConnection(userId, input.connection_id) : null;
   const providerId = input.provider;
 
-  const provider = getProvider(providerId);
+  const provider = getProvider(providerId, userId);
   if (!provider) return { models: [], provider: providerId, error: `Unknown provider: ${providerId}` };
 
   let apiKey = input.api_key;
@@ -540,7 +542,7 @@ export async function listConnectionModelsPreview(
     const models = await fetchSttModels(provider, apiKey || "", {
       provider: providerId,
       api_url: input.api_url ?? existing?.api_url ?? "",
-    });
+    }, userId);
     const error = models.length === 0
       ? "Provider model listing did not include any obvious transcription models"
       : undefined;
