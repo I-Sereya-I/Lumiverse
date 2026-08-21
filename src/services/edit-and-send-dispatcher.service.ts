@@ -283,6 +283,10 @@ function markDispatchFailure(row: GenerationOutboxRow, errorCode: string): void 
     status: "pending",
     last_error_code: errorCode,
     next_attempt_at: now + backoffMs(row.attempt_count),
+    // Clear the previous attempt's dispatch marker: a pending row must be
+    // fully re-dispatchable (dispatchClaimedEditAndSendOutbox skips rows
+    // whose dispatched_at is still set).
+    dispatched_at: null,
     lease_owner: null,
     lease_expires_at: null,
   });
@@ -508,6 +512,9 @@ function resolveOrphanedRunningRow(row: GenerationOutboxRow, now: number): void 
     next_attempt_at: now + backoffMs(attempts),
     last_error_code: "output_not_verified",
     terminal_reason: null,
+    // Clear the previous attempt's dispatch marker so the periodic sweep can
+    // re-claim and fully re-dispatch this row (see markDispatchFailure).
+    dispatched_at: null,
   });
 }
 
