@@ -65,6 +65,8 @@ interface DisplayPreprocessBody {
 interface DisplayPreprocessOutcome {
   content: string
   ok: boolean
+  touchedVars?: readonly string[]
+  cacheable?: boolean
 }
 
 interface PendingDisplayPreprocess {
@@ -76,6 +78,19 @@ const displayRegexResolutionCache = new Map<string, DisplayRegexCacheEntry>()
 const displayRegexContentCache = new Map<string, DisplayRegexContentCacheEntry>()
 const displayPreprocessCache = new Map<string, { value?: string; promise?: Promise<DisplayPreprocessOutcome>; touchedVars?: ReadonlySet<string>; messageId?: string }>()
 const DISPLAY_PREPROCESS_CACHE_MAX = 500
+const DISPLAY_REGEX_CONTENT_CACHE_MAX = 300
+
+// FIFO eviction for displayRegexContentCache; streaming inserts one key per
+// chunk with full content embedded, so the map needs a hard size bound.
+function evictDisplayRegexContentCacheOverflow(): void {
+  if (displayRegexContentCache.size <= DISPLAY_REGEX_CONTENT_CACHE_MAX) return
+  const drop = displayRegexContentCache.size - DISPLAY_REGEX_CONTENT_CACHE_MAX
+  let i = 0
+  for (const k of displayRegexContentCache.keys()) {
+    if (i++ >= drop) break
+    displayRegexContentCache.delete(k)
+  }
+}
 const displayRegexCacheListeners = new Set<() => void>()
 let displayRegexGlobalCv = 0
 const displayRegexPerMessageCv = new Map<string, number>()
@@ -238,7 +253,7 @@ function enqueueDisplayPreprocess(chatId: string, body: DisplayPreprocessBody): 
   })
 }
 
-function fetchDisplayPreprocess(chatId: string, body: DisplayPreprocessBody): Promise<DisplayPreprocessOutcome> {
+export function fetchDisplayPreprocess(chatId: string, body: DisplayPreprocessBody): Promise<DisplayPreprocessOutcome> {
   if (isDisplayChatOwned(chatId)) {
     const resolver = getDisplayResolverForChat(chatId)
     if (resolver) {
@@ -256,7 +271,16 @@ function fetchDisplayPreprocess(chatId: string, body: DisplayPreprocessBody): Pr
           },
         })
         .then((local) => {
-          if (local) return { content: local.content, ok: true }
+          if (local) {
+            return {
+              content: local.content,
+              ok: true,
+              ...(Array.isArray(local.touchedVars) && local.touchedVars.length > 0
+                ? { touchedVars: local.touchedVars }
+                : {}),
+              cacheable: local.cacheable !== false,
+            }
+          }
           console.error(`[display] resolver.resolveBody returned null for owned chat=${chatId}; showing raw (no backend fallback)`)
           return { content: body.rawContent, ok: false }
         })
@@ -333,8 +357,14 @@ function useDisplayPreprocessedState(
       })
         .then((next) => {
           if (displayPreprocessCache.get(key)?.promise === assignedPromise) {
-            if (next.ok) {
-              displayPreprocessCache.set(key, { value: next.content, messageId: messageIdForEntry })
+            if (next.ok && next.cacheable !== false) {
+              displayPreprocessCache.set(key, {
+                value: next.content,
+                messageId: messageIdForEntry,
+                ...(next.touchedVars && next.touchedVars.length > 0
+                  ? { touchedVars: new Set(next.touchedVars) }
+                  : {}),
+              })
               if (displayPreprocessCache.size > DISPLAY_PREPROCESS_CACHE_MAX) {
                 const drop = displayPreprocessCache.size - DISPLAY_PREPROCESS_CACHE_MAX
                 let i = 0
@@ -483,11 +513,9 @@ export function invalidateDisplayRegexCacheForVars(changedVars: ReadonlySet<stri
   const affectedMessages = new Set<string>()
   for (const [key, entry] of displayRegexContentCache) {
     const fp = entry.touchedVars
-    if (!fp) {
-      displayRegexContentCache.delete(key)
-      if (entry.messageId) affectedMessages.add(entry.messageId)
-      continue
-    }
+    // Entries without touchedVars are dependency-free (output depends only on
+    // their cache key), so var-scoped invalidation cannot affect them.
+    if (!fp) continue
     for (const v of fp) {
       if (changedVars.has(v)) {
         displayRegexContentCache.delete(key)
@@ -498,11 +526,7 @@ export function invalidateDisplayRegexCacheForVars(changedVars: ReadonlySet<stri
   }
   for (const [key, entry] of displayPreprocessCache) {
     const fp = entry.touchedVars
-    if (!fp) {
-      displayPreprocessCache.delete(key)
-      if (entry.messageId) affectedMessages.add(entry.messageId)
-      continue
-    }
+    if (!fp) continue
     for (const v of fp) {
       if (changedVars.has(v)) {
         displayPreprocessCache.delete(key)
@@ -521,6 +545,48 @@ export function invalidateDisplayRegexCacheForVars(changedVars: ReadonlySet<stri
   }
   for (const messageId of affectedMessages) bumpPerMessageCv(messageId)
   bumpGlobalCv()
+}
+
+export function seedDisplayPreprocessEntryForTests(entry: {
+  key: string
+  value: string
+  messageId?: string
+  touchedVars?: Iterable<string>
+}): void {
+  displayPreprocessCache.set(entry.key, {
+    value: entry.value,
+    ...(entry.messageId ? { messageId: entry.messageId } : {}),
+    ...(entry.touchedVars ? { touchedVars: new Set(entry.touchedVars) } : {}),
+  })
+}
+
+export function getDisplayPreprocessCacheStatsForTests(): { size: number } {
+  return { size: displayPreprocessCache.size }
+}
+
+export function seedDisplayContentEntryForTests(entry: {
+  key: string
+  value: string
+  messageId?: string
+  touchedVars?: Iterable<string>
+}): void {
+  displayRegexContentCache.set(entry.key, {
+    value: entry.value,
+    ...(entry.messageId ? { messageId: entry.messageId } : {}),
+    ...(entry.touchedVars ? { touchedVars: new Set(entry.touchedVars) } : {}),
+  })
+  evictDisplayRegexContentCacheOverflow()
+}
+
+export function getDisplayContentCacheStatsForTests(): { size: number; hasKey(key: string): boolean } {
+  return { size: displayRegexContentCache.size, hasKey: (k) => displayRegexContentCache.has(k) }
+}
+
+export function resetDisplayRegexCachesForTests(): void {
+  displayPreprocessCache.clear()
+  displayRegexContentCache.clear()
+  displayRegexResolutionCache.clear()
+  displayRegexPerMessageCv.clear()
 }
 
 async function resolveMacrosBatchChunked(
@@ -942,6 +1008,7 @@ export function useDisplayRegex(
                 ...(touchedVars ? { touchedVars } : {}),
                 ...(preprocessOpts?.messageId ? { messageId: preprocessOpts.messageId } : {}),
               })
+              evictDisplayRegexContentCacheOverflow()
             } else {
               displayRegexContentCache.delete(contentCacheKey)
             }
